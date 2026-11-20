@@ -684,20 +684,20 @@
       "order": 21,
       "wingId": "cd-wing-3",
       "title": "Grupos Maiores",
-      "summaryText": "Um grupo de `2ⁿ` células **elimina `n` variáveis** da expressão. Um par elimina uma variável; um quarteto elimina duas; um grupo de 16 elimina quatro — e nesse caso a saída é simplesmente `1`.\n\nQuanto maior o grupo, menor o termo resultante. Por isso a ordem de agrupamento importa: procure os quartetos e octetos antes de fechar pares, sempre respeitando o formato retangular e a potência de 2.\n\nCélulas podem pertencer a mais de um grupo quando isso ajuda a formar um bloco maior. O objetivo não é desenhar bonito: é escrever a menor expressão que ainda descreve a mesma função.",
+      "summaryText": "Para projetar com um **Mapa de Karnaugh** de quatro variáveis, coloque **AB nas linhas e CD nas colunas** e transfira ao mapa **somente as células com valor 1** — são essas que a simplificação analisa. Com três variáveis, o desenho usa A nas linhas e BC nas colunas; a ideia é a mesma: cada linha da tabela-verdade acende uma célula, e dentro de cada agrupamento as variáveis que variam desaparecem, restando apenas as que permanecem constantes.\n\nA **ordem dos agrupamentos** é o ponto central da aula: comece pelas células que **só podem formar pares**, depois procure os **octetos** e só então as **quadras** (blocos de quatro). **Reutilizar uma célula** em mais de um agrupamento é permitido — e necessário para alcançar o termo mais curto. A **expressão de saída é a soma das expressões dos agrupamentos**: no primeiro exemplo, `A'CD + BC' + A'B`. A aula mostra também o custo de inverter a ordem: começar pelo quadrado central gera uma expressão **menos simplificada** do que a obtida respeitando os pares primeiro.\n\nTabelas com **duas saídas** pedem **dois mapas**, um para cada saída. No exemplo com S e V, o mapa de S (A nas linhas, BC nas colunas) leva a `S = C' + B`, enquanto o de V, fechando os pares obrigatórios, dá `V = BC + AB + AC`. Cada mapa é independente; o que vale em um não se transporta para o outro.\n\nO mapa é **contínuo nas laterais e no topo/base**: a borda esquerda toca a direita, e o topo toca a base, tornando **adjacentes** células que parecem distantes. Graças a isso, o par que cruza as laterais produz `Z = AC + A'C'`, e quatro 1 aparentemente isolados formam uma quadra que rende `BD + B'D'`. Ao terminar, some os termos e confira se nenhum 1 ficou sem agrupamento.",
       "youtubeUrl": "https://www.youtube.com/watch?v=rv2r_hSLRN0",
       "challenge": {
         "type": "quiz",
-        "question": "Ao agrupar quatro células no mapa de Karnaugh, quantas variáveis são eliminadas?",
+        "question": "Na aula, qual é a ordem correta de agrupamento no mapa de Karnaugh para obter a expressão mais simplificada?",
         "options": [
-          "Nenhuma",
-          "Uma",
-          "Duas",
-          "Quatro"
+          "Começar pelos octetos, depois formar os pares e, por fim, as quadras",
+          "Agrupar primeiro as células que só podem formar pares, depois os octetos e só então as quadras",
+          "Começar pelas quadras, passar aos pares e terminar nos octetos",
+          "Qualquer ordem serve, pois a expressão final é sempre a mesma"
         ],
-        "correctIndex": 2
+        "correctIndex": 1
       },
-      "hint": "Quatro é 2 elevado a 2. O número de variáveis eliminadas é o expoente."
+      "hint": "Você está perto: lembre do mapa em que começar pelo quadrado central deixou a expressão maior do que o necessário. Pense em qual tipo de célula precisa ser resolvida antes das outras — o restante vem depois."
     },
     {
       "id": "cd-3-3",
