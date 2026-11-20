@@ -14,16 +14,23 @@ Este arquivo é a **porta de entrada**. Ele não substitui os agentes: ele diz *
 | Adicionar aulas, alas ou disciplinas (conteúdo em JSON) | [Fábrica de Aulas](docs/agents/content-factory.md) | JSON válido com `order` sequencial e desafios variados |
 | Projetar mapas, salas, layout, visual, paleta ou atmosfera | [Arquiteto de Mapas & Atmosfera](docs/agents/level-architect.md) | **Proposta em texto com ASCII + aprovação do usuário antes de qualquer código** |
 | Mexer em física, Canvas, UI, controles touch, save ou Tauri | [Engenheiro de Motor & Multiplataforma](docs/agents/engine-dev.md) | Código com save versionado, fallback procedural e build verde |
-| Revisar e fechar uma atualização | [Auditor de Qualidade & Continuidade](docs/agents/qa-auditor.md) | Parecer **APROVADO** / **REPROVADO** com agente responsável |
+| Verificar furos de roteiro, cronologia ou uso de termos | [Auditor de Cânone & Continuidade](docs/agents/canon-auditor.md) | Relatório **somente leitura** com arquivo, ID do log/nível e conflito → devolve ao `lorekeeper` |
+| Testar se os mistérios geram boas teorias sem dar spoiler | [Simulador de Teorias & Mistério](docs/agents/theory-tester.md) | Teorias da comunidade + riscos SPOILER / BECO SEM SAÍDA / TOM → devolve ao `lorekeeper` |
+| Revisar e fechar uma atualização | [Auditor de Qualidade & Continuidade](docs/agents/qa-auditor.md) | Parecer **APROVADO** / **REPROVADO** com agente responsável, **após** os dois pareceres acima |
 
 **Tarefas que atravessam vários domínios:** siga a ordem da tabela. Exemplo — nova disciplina completa:
 
 ```
-lorekeeper  →  content-factory  →  level-architect (proposta + aval)  →  engine-dev  →  qa-auditor
-   lore          JSON validado           mapa aprovado                    código          parecer final
+lorekeeper → content-factory → level-architect (proposta + aval) → engine-dev
+   lore          JSON validado        mapa aprovado                  código
+                                                                       ↓
+   canon-auditor → theory-tester → qa-auditor
+     cânone limpo   mistério testado   parecer final
 ```
 
 > **Gate especial:** o `level-architect` nunca escreve código ou JSON de mapa sem uma proposta visual em texto e a aprovação explícita do usuário.
+
+> **Gate de revisão narrativa:** toda Ala concluída **e toda atualização de lore** passam por `canon-auditor` e `theory-tester`, nessa ordem, antes do `qa-auditor`. Os dois emitem parecer **APROVADO** ou **REPROVADO**; reprovação devolve ao `lorekeeper` (ou ao `content-factory`, se o problema for texto didático colado ao fragmento). Ambos são **somente leitura**: apontam, nunca reescrevem. O `qa-auditor` **não fecha** sem os dois pareceres verdes.
 
 ---
 
@@ -43,6 +50,8 @@ npm run tauri build   # quando houver mudança nativa (Rust/capabilities)
 
 Regra complementar: **antes de escrever qualquer novo log, diálogo ou texto narrativo**, leia os cinco arquivos de `docs/lore/`; **depois**, atualize-os. O `lorekeeper` é o dono dessa regra.
 
+Toda alteração de lore também está sujeita ao **gate de revisão narrativa** da seção 1 — o validador verde é condição necessária, mas não substitui os pareceres do `canon-auditor` e do `theory-tester`.
+
 ---
 
 ## 3. Estrutura real de pastas
@@ -56,12 +65,14 @@ Regra complementar: **antes de escrever qualquer novo log, diálogo ou texto nar
 ├── .gitattributes / .gitignore
 │
 ├── docs/
-│   ├── agents/                     # ⭐ Os 5 agentes especializados
-│   │   ├── lorekeeper.md
+│   ├── agents/                     # ⭐ Os 7 agentes especializados
+│   │   ├── lorekeeper.md           # escreve o cânone
 │   │   ├── content-factory.md
 │   │   ├── level-architect.md
 │   │   ├── engine-dev.md
-│   │   └── qa-auditor.md
+│   │   ├── canon-auditor.md        # só leitura: contradições e termos
+│   │   ├── theory-tester.md        # só leitura: teorias e spoilers
+│   │   └── qa-auditor.md           # fecha depois dos dois pareceres
 │   ├── lore/                       # Cânone obrigatório
 │   │   ├── README.md               # Premissa, regras e cronologia
 │   │   ├── glossario.md
@@ -123,6 +134,6 @@ Regra complementar: **antes de escrever qualquer novo log, diálogo ou texto nar
 - `camelCase` para código, `PascalCase` para componentes/types, `kebab-case` para slugs.
 - IDs de fragmento: `log-<slug>-<nivel>-<palavra>` (ex.: `log-cd-01-architects`).
 - Commits: `feat:`, `data:`, `lore:` (`lore!:` para mudança de cânone), `fix:`, `docs:`, `refactor:`, `chore:`, `qa:`.
-- Antes de abrir PR, o `qa-auditor` emite o parecer final.
+- Antes de abrir PR, `canon-auditor` e `theory-tester` aprovam a narrativa e só então o `qa-auditor` emite o parecer final.
 
 > A Cidadela não se acende de uma vez. Ela volta, fio por fio, pergunta por pergunta — e todos os fios passam pelo validador.

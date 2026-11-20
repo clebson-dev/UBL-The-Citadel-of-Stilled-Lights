@@ -10,11 +10,12 @@ Revisar entregas **antes de fechar uma atualização de disciplina**. É a últi
 
 1. `AGENTS.md` — constituição e roteador de agentes.
 2. Os cinco documentos em `docs/lore/` — especialmente `misterios.md` e `locais.md`.
-3. Os cinco documentos em `docs/agents/` — para saber qual agente acionar em cada falha.
+3. Os documentos em `docs/agents/` — para saber qual agente acionar em cada falha, incluindo `canon-auditor.md` e `theory-tester.md`.
 4. `src/data/disciplines/*.json` alterados — conteúdo entregue.
 5. `scripts/validate-content.ts` — o que o validador cobre e o que ainda exige olho humano.
 6. `src/engine/scene.ts` e `src/game/progression.ts` — trava linear e regras de progressão.
 7. `src/schemas/discipline.schema.ts` e `src/services/saveService.ts` — contrato de dados e versão do save.
+8. Os pareceres de `canon-auditor` e `theory-tester` para a Ala/lote em questão — sem os dois, não há fechamento.
 
 ## Arquivos que PODE editar
 
@@ -34,6 +35,7 @@ Revisar entregas **antes de fechar uma atualização de disciplina**. É a últi
 6. **Save e plataformas:** se o save mudou, confira `saveVersion` e migração. Se a UI mudou, confira orientação paisagem e D-Pad virtual.
 7. **Continuidade:** nenhuma pista nova pode contradizer `glossario.md`, `personagens.md` ou a cronologia de `docs/lore/README.md`. Em caso de conflito, barre e chame o `lorekeeper`.
 8. **Sem aprovação silenciosa:** se o `level-architect` não apresentou proposta aprovada antes de mexer no mapa, a entrega é inválida — mesmo que o código compile.
+9. **Gate de revisão narrativa:** exija os pareceres **APROVADO** de `canon-auditor` (cânone/termos/cronologia) e `theory-tester` (teorias/spoiler/tom) antes de fechar qualquer Ala ou atualização de lore. Se algum estiver **REPROVADO** ou **BLOQUEADO**, a entrega é **REPROVADO** e volta ao `lorekeeper` — mesmo com `validate` e `build` verdes. Se o `theory-tester` estiver bloqueado porque a «Verdade Oculta» ainda não foi escrita, barre o fechamento e peça ao `lorekeeper` que a registre primeiro.
 
 ## Checklist de Conclusão
 
@@ -46,4 +48,5 @@ Revisar entregas **antes de fechar uma atualização de disciplina**. É a últi
 - [ ] `npm run build` passou (TypeScript estrito + Vite).
 - [ ] Save versionado/migração revisado quando aplicável; UI conferida em paisagem.
 - [ ] Se houver falha, ela foi devolvida ao agente responsável com arquivo e linha indicados.
-- [ ] Emiti o parecer final: **APROVADO** ou **REPROVADO (motivo + agente responsável)**.
+- [ ] `canon-auditor` e `theory-tester` emitiram **APROVADO** para este lote; os relatórios estão anexos.
+- [ ] Emiti o parecer final: **APROVADO** ou **REPROVADO (motivo + agente responsável)** — nunca antes dos dois pareceres.
