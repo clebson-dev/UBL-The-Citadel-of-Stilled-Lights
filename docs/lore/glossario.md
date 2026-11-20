@@ -20,9 +20,11 @@ O Ruído é a presença que ocupou o lugar da luz após o Apagão, corroendo os 
 **Uso canônico:** a força adversária difusa; a razão pela qual os terminais devolvem confusão.  
 **Não confundir com:** um vilão com intenções, um monstro caçador ou simples interferência técnica de rádio.
 
+**Ressalva interna:** trata-se de uma condição impessoal da malha de sentido, nunca de um agente nem de um fenômeno eletromagnético. A natureza exata dessa condição está no apêndice selado de `README.md` e **não** pode aparecer em texto de jogo; use apenas os efeitos observáveis — repetição, sílaba deslocada, estática.
+
 ### Receptáculo
 
-O Receptáculo é o reservatório profundo sob o Pátio Central, desenhado para acumular e devolver a luz de todas as disciplinas quando o Projeto Átrio fosse concluído. Adormeceu durante o Apagão e hoje guarda, sem saber, os fragmentos que o Ruído desprezou. Sua pista aparece no terceiro terminal do Setor de Circuitos Digitais.
+O Receptáculo é o reservatório profundo sob o Pátio Central, destinado a acumular e devolver a luz de todas as disciplinas quando o Projeto Átrio fosse concluído. Adormeceu durante o Apagão e hoje guarda, sem saber, os fragmentos que o Ruído desprezou. Sua pista aparece no terceiro terminal do Setor de Circuitos Digitais.
 
 **Uso canônico:** o núcleo adormecido; o destino final das fusões entre disciplinas.  
 **Não confundir com:** um baú de recompensas, um checkpoint ou um terminal comum.
@@ -33,6 +35,8 @@ Os Arquitetos foram os construtores da Cidadela do Conhecimento e os responsáve
 
 **Uso canônico:** os autores da estrutura e das intenções escondidas no mapa.  
 **Não confundir com:** deuses, criadores do Ruído ou uma ordem religiosa.
+
+**Ressalva interna:** a ausência de nomes nos registros é intencional e anterior ao Apagão; os detalhes estão no apêndice selado de `README.md`. Nunca apresente essa ausência como rito, sacrifício, perda ou punição.
 
 ### Fragmentos de Log
 
@@ -47,6 +51,31 @@ Terminais são os pontos de interface onde o saber voltou a ser consultável: pe
 
 **Uso canônico:** o nó de gameplay e narrativa; a "aula" transformada em objeto do mundo.  
 **Não confundir com:** portais (que ligam alas), receptáculos (que acumulam luz) ou cabos (que transportam energia).
+
+---
+
+## Termos do Projeto Átrio
+
+### Projeto Átrio
+
+O Projeto Átrio é a intenção escondida no primeiro desenho de Vetra: um núcleo que deveria manter todas as disciplinas ligadas entre si, de modo que nenhuma acendesse sozinha. Ele não é uma sala, um objeto nem um lugar para onde se vá — é a ideia de uma ligação que ainda não foi terminada. Seu desenho sobrevive como uma tabela de decisões incompleta.
+
+**Uso canônico:** a direção secreta da história; o que dá sentido às pistas de Vetra e ao destino do Receptáculo.  
+**Não confundir com:** um mapa do tesouro, uma planta de construção literal ou uma sala ainda não descoberta.
+
+### Linha em Branco
+
+A Linha em Branco é o retângulo vazio na última linha da tabela do Projeto Átrio: o campo que deveria dizer o que fazer com o que foi descartado. No jogo ela aparece como objeto — uma lacuna na placa, um espaço sem inscrição — e nunca deve ser explicada em texto.
+
+**Uso canônico:** a pergunta que o Ruído repetiu em vez de responder; o gancho para Cálculo e Algoritmos.  
+**Não confundir com:** um erro de desenho, um bug ou uma resposta escondida que o jogador deve adivinhar.
+
+### A Margem
+
+A Margem é o que fica fora do índice: o espaço que a malha não lê e onde, por isso, ainda pode restar algo. Manifesta-se como anotação à margem, travessão antes de um nome e página 0. É a mesma ideia do vão sob o Pátio e do Fragmento de Log, em outra escala.
+
+**Uso canônico:** a condição de possibilidade dos fragmentos; a assinatura de Cerna quando ela estrear.  
+**Não confundir com:** um esconderijo físico, um segredo de menu ou uma área secreta do mapa.
 
 ---
 

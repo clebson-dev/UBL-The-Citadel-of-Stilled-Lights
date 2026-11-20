@@ -15,7 +15,7 @@ Atua depois que uma Ala ou uma atualização de lore foi concluída e **antes** 
 ### Passo 1 — somente o que o jogador vê
 
 1. Os `loreFragment` presentes nos JSONs de `src/data/disciplines/` — `text`, `speaker` e o nível em que aparecem.
-2. As descrições ambientais de `docs/lore/locais.md` — o que o jogador enxerga nos cenários, as marcas e as paletas.
+2. As descrições ambientais de `docs/lore/locais.md` — o que o jogador enxerga nos cenários, as marcas e as paletas. **Ignorar** a seção «Marcas recorrentes para o `level-architect`» e qualquer parágrafo marcado como uso interno: são notas de designer, não conteúdo visível ao jogador.
 3. Títulos de alas, `description` e `hubReward` dos JSONs — o que aparece na interface.
 
 > **Trava do Passo 1:** é proibido abrir `docs/lore/README.md` neste momento. Anote as teorias **antes** de saber a resposta. Se a verdade já foi lida, descarte a leitura, limpe as anotações e refaça o passo: um teste com spoiler não mede nada.
@@ -26,7 +26,7 @@ Atua depois que uma Ala ou uma atualização de lore foi concluída e **antes** 
 
 4. `docs/lore/README.md` — especificamente a seção **«A Verdade Oculta (uso interno)»**, depois de `glossario.md` e `personagens.md` para conferir os nomes.
 
-> **Pré-condição (estado atual do repositório):** a seção «A Verdade Oculta (uso interno)» **ainda não existe** em `docs/lore/README.md` — ela pertence à proposta de consolidação narrativa aguardando aprovação. Até que o `lorekeeper` a escreva, emita **BLOQUEADO — Verdade Oculta ausente** e não dê parecer de spoiler nem de beco sem saída. O Passo 1 continua válido e pode ser entregue sozinho como diagnóstico provisório das teorias da comunidade.
+> **Pré-condição:** a seção «A Verdade Oculta (uso interno)» precisa existir em `docs/lore/README.md`. Se ela faltar, emita **BLOQUEADO — Verdade Oculta ausente** e não dê parecer de spoiler nem de beco sem saída; o Passo 1 continua válido e pode ser entregue sozinho como diagnóstico provisório das teorias da comunidade. A seção foi gravada na consolidação do Passo 0 — se algo a removeu, isso é dívida de cânone e vai parar no relatório.
 
 ## Arquivos que PODE editar
 

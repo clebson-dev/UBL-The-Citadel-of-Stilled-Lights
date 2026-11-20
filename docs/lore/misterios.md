@@ -2,11 +2,13 @@
 
 > Tabela viva das pistas plantadas. Todo fragmento que existe no jogo **precisa** aparecer aqui — e nenhuma linha aqui pode apontar para um fragmento que não existe em `src/data/disciplines/`.
 
+As resoluções planejadas abaixo seguem a Verdade Oculta registrada no apêndice selado de `docs/lore/README.md`. Elas são o destino previsto de cada pista — nunca o texto a ser entregue ao jogador.
+
 | ID do Log | Disciplina/Nível | Pista Plantada | Status [Em Aberto / Resolvido] | Resolução Planejada |
 | --- | --- | --- | --- | --- |
-| `log-cd-01-architects` | circuitos-digitais / cd-1-1 | pista sobre Vetra e o primeiro desenho da Cidadela | Em Aberto | Revelação futura sobre o **Projeto Átrio**: o primeiro desenho de Vetra não era apenas a planta da Cidadela, mas o esboço de um núcleo que ligaria todas as disciplinas. A revelação virá quando outra ala acender e o mapa puder ser lido por completo. |
-| `log-cd-02-noise` | circuitos-digitais / cd-1-2 | pista sobre interferência do Ruído nos barramentos | Em Aberto | Resolução futura em disciplina de **Sistemas Operacionais/Redes**: as medições de Lin serão reinterpretadas como um ataque à camada de transporte do saber, explicando por que o Ruído desfaz referências em vez de destruir suportes. |
-| `log-cd-03-receptacle` | circuitos-digitais / cd-1-3 | pista sobre o Receptáculo adormecido sob o Pátio | Em Aberto | Resolução final na **fusão das disciplinas**: quando várias alas estiverem acesas, o Receptáculo deixará de ser um depósito e passará a distribuir luz — fechando o arco do Projeto Átrio e respondendo, enfim, à voz que falou pelo Ruído. |
+| `log-cd-01-architects` | circuitos-digitais / cd-1-1 | pista sobre Vetra e o primeiro desenho da Cidadela | Em Aberto | Revelação futura sobre o **Projeto Átrio**: o primeiro desenho de Vetra não era uma planta, mas uma tabela de decisões com uma **Linha em Branco** — o campo que deveria dizer o que fazer com o que foi descartado. A «assinatura» sobrevivente é a marca da mão, não um nome escrito; o nome de Vetra persistiu porque Cerna falhou em apagar o último. A revelação virá quando outra ala acender e a tabela puder ser lida por completo. |
+| `log-cd-02-noise` | circuitos-digitais / cd-1-2 | pista sobre interferência do Ruído nos barramentos | Em Aberto | Resolução futura em disciplina de **Sistemas Operacionais/Redes**: as medições de Lin serão reinterpretadas como um ataque à camada de transporte do saber — **um ataque sem atacante**, cometido pela autorregulação órfã da malha. Isso explica por que o Ruído desfaz referências em vez de destruir suportes. A suspeita de origem intencional deve permanecer em pé até lá; não corrigi-la agora em Circuitos Digitais. |
+| `log-cd-03-receptacle` | circuitos-digitais / cd-1-3 | pista sobre o Receptáculo adormecido sob o Pátio | Em Aberto | Resolução final na **fusão das disciplinas**: quando várias alas estiverem acesas, o Receptáculo deixará de ser um depósito e passará a distribuir luz — fechando o arco do Projeto Átrio e respondendo, enfim, à voz que falou pelo Ruído. A pergunta repetida não é do Ruído: é o eco do vão, a primeira pergunta do próprio Receptáculo, que se tornou o Andarilho. O motivo «devolva o que sabe», dito pelo Índice em Cálculo, retorna aqui como a frase que finalmente recebe resposta. |
 
 ---
 

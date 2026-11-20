@@ -43,3 +43,14 @@
 **Função de gameplay.** Introdução pedagógica. Os primeiros terminais ensinam a reconhecer uma única resposta correta e a usar a dica sem medo de errar. O desbloqueio das alas seguintes depende da compreensão destes níveis.
 
 **Fragmentos associados.** `log-cd-01-architects` — o primeiro fragmento, plantado no primeiro terminal e ligado ao desenho de Vetra.
+
+---
+
+## Marcas recorrentes para o `level-architect`
+
+Quatro sinais podem ser escondidos nos cenários das Alas. São **elementos visuais**: aparecem, não recebem letreiro, não são comentados por NPC e nunca são explicados em `loreFragment`. A descrição abaixo é para quem projeta o mapa — o jogador deve perceber a marca e formular a própria pergunta. As paletas canônicas acima permanecem obrigatórias e inalteradas.
+
+1. **A Linha em Branco** — retângulo vazio na última linha de toda tabela ou placa, às vezes tremendo. Em Cálculo vira limite sem valor; em Algoritmos, um retorno sem destino. Objeto concreto, nunca glossado.
+2. **O Eixo que Abre para Dentro** — assinatura de Vetra: dobradiça invertida, arco que parece sair e entra. Sugere que o Átrio não é para onde se vai, mas o que se abre dentro.
+3. **A Sílaba Deslocada** — assinatura do Ruído: uma letra um espaço à direita do devido em letreiros; no áudio, o nome chega um segundo atrasado. Nunca corrigir a grafia no cenário — o deslocamento é a pista.
+4. **O Ponto de Costura** — nó de luz com dois fios desiguais gravado na pedra. Indica que o Receptáculo já passou por ali; essa informação **nunca** pode ser dita em texto de jogo.
