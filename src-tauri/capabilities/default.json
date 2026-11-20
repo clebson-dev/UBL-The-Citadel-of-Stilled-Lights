@@ -1,0 +1,17 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability padrão da janela principal da Cidadela.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-start-dragging",
+    "fs:allow-read-text-file",
+    "fs:allow-write-text-file",
+    "fs:allow-exists",
+    {
+      "identifier": "fs:scope",
+      "allow": ["$APPDATA/ubl-citadel-save.json"]
+    }
+  ]
+}

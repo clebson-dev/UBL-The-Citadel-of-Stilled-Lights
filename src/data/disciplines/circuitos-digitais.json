@@ -1,0 +1,100 @@
+{
+  "id": "circuitos-digitais",
+  "name": "Circuitos Digitais",
+  "description": "Aprenda a linguagem da Cidadela: do binário às portas lógicas, cada sinal dominado devolve um pouco de luz ao Pátio.",
+  "locked": false,
+  "themeColors": {
+    "background": "#070d18",
+    "light": "#57e0ff",
+    "cableActive": "#5ef2c8",
+    "cableInactive": "#1b3446",
+    "accent": "#f2c14e"
+  },
+  "hubReward": {
+    "title": "A Tocha dos Circuitos",
+    "description": "Ao domar os três primeiros desafios, o Setor de Circuitos volta a respirar: as luminárias do Pátio se acendem em cascata e novos caminhos se revelam.",
+    "effect": "Restaura a iluminação do Setor de Circuitos no Pátio e desbloqueia o Dash do Andarilho, permitindo avanços rápidos entre plataformas."
+  },
+  "wings": [
+    {
+      "id": "cd-wing-1",
+      "order": 1,
+      "name": "Ala 1: Fundamentos da Lógica",
+      "description": "Os alicerces silenciosos de toda máquina: números, sinais e decisões elementares.",
+      "themeColors": {
+        "background": "#0a1422",
+        "light": "#6ee7d8",
+        "cableActive": "#5ef2c8",
+        "cableInactive": "#1b3446",
+        "accent": "#f2c14e"
+      }
+    }
+  ],
+  "levels": [
+    {
+      "id": "cd-1-1",
+      "order": 1,
+      "wingId": "cd-wing-1",
+      "title": "Sistemas Numéricos e Binário",
+      "summaryText": "Computadores não \"entendem\" dígitos decimais: eles funcionam com **sinais elétricos** que têm apenas dois estados confiáveis — desligado e ligado. Por isso adotamos a **base 2 (binária)**, onde cada posição vale uma potência de 2. Onde nós escrevemos `11₁₀`, a máquina representa `1011₂`.\n\nPara converter, some as potências de 2 correspondentes às casas ocupadas:\n\n- `2³ = 8`\n- `2¹ = 2`\n- `2⁰ = 1`\n\nEm `1011₂`, temos `8 + 0 + 2 + 1 = 11₁₀`. Repare que a casa do `2²` (valor 4) está zerada, por isso não entra na soma.\n\nOperações **bitwise** (bit a bit) tratam cada posição como um interruptor independente: um `AND`, por exemplo, só mantém o bit em 1 se ambos os bits de entrada forem 1. Dominar essa leitura é o primeiro passo para desenhar circuitos.",
+      "youtubeUrl": null,
+      "challenge": {
+        "type": "quiz",
+        "question": "Qual é o valor decimal do número binário 1011₂?",
+        "options": ["9", "10", "11", "13"],
+        "correctIndex": 2
+      },
+      "hint": "Leia a imagem da direita para a esquerda: as casas valem 1, 2, 4 e 8. Some apenas as casas que estão em 1 — você vai chegar lá!",
+      "loreFragment": {
+        "id": "log-cd-01-architects",
+        "title": "O Primeiro Desenho",
+        "content": "O primeiro esquema da Cidadela saiu das mãos de Vetra, a Arquiteto-Mor, em uma noite em que o Pátio ainda não tinha nome. Ela desenhou os conduítes como quem desenha respirações, e dizem que cada fio guardava uma sílaba do Projeto Átrio. Quando as luzes se acenderam pela primeira vez, Vetra não estava mais lá para vê-las. O projeto permaneceu incompleto, como uma assinatura que o tempo se recusou a apagar."
+      }
+    },
+    {
+      "id": "cd-1-2",
+      "order": 2,
+      "wingId": "cd-wing-1",
+      "title": "Portas Lógicas: AND, OR e NOT",
+      "summaryText": "Uma **porta lógica** é uma decisão mínima feita com elétrons: ela recebe sinais de entrada e devolve um único sinal de saída. As três portas fundamentais são:\n\n- **AND**: só devolve `1` se *todas* as entradas forem `1`.\n- **OR**: devolve `1` se *pelo menos uma* entrada for `1`.\n- **NOT**: inverte a entrada — `0` vira `1` e `1` vira `0`.\n\nNa bancada, cada chave que você alterna muda o valor de `A` ou `B`. O desafio é combinar as chaves **e** escolher a porta que leva a saída ao valor pedido. Se o resultado não aparecer, troque a porta antes de trocar as chaves: a lógica da porta define a regra do jogo.\n\nCom `A = 1` e `B = 0`, por exemplo, a porta **OR** já entrega `1` — e é essa a beleza do sistema: caminhos diferentes levam ao mesmo sinal.",
+      "youtubeUrl": null,
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Ajuste as chaves A e B e escolha a porta lógica que faz a saída ser 1. Qual combinação funciona?",
+        "inputs": [
+          { "id": "A", "label": "Chave A", "initialValue": 0 },
+          { "id": "B", "label": "Chave B", "initialValue": 0 }
+        ],
+        "allowedOperations": ["AND", "OR", "NOT"],
+        "expectedOutput": 1,
+        "explanation": "Com a porta **OR**, basta uma entrada em 1: ajustando A = 1 e B = 0, a saída é 1. A porta **AND** exigiria A = 1 *e* B = 1. Já a porta **NOT** trabalha com uma única entrada e a inverte: se A = 0, a saída é 1 e B fica sem efeito. Todas essas são formas válidas de chegar ao sinal desejado — o importante é observar a regra de cada porta."
+      },
+      "hint": "Comece observando a OR: ela só precisa de uma chave ligada. Se ainda não der certo, experimente ligar A e manter B desligada.",
+      "loreFragment": {
+        "id": "log-cd-02-noise",
+        "title": "Interferência no Barramento",
+        "content": "[REGISTRO CORROMPIDO — canal 0x1F] Engenheira Lin registrando. O barramento norte da Cidadela está se corroendo outra vez: o ruído sobe quando a corrente cai, como se algo respondesse ao silêncio. Anotei a assinatura três vezes e as três saíram diferentes — não é falha de solda, é interferência com origem. Se alguém ler isto, não confie no último byte... ele não é meu."
+      }
+    },
+    {
+      "id": "cd-1-3",
+      "order": 3,
+      "wingId": "cd-wing-1",
+      "title": "Tabela-Verdade e Expressões",
+      "summaryText": "Uma **tabela-verdade** é o mapa completo de uma expressão booleana: para cada combinação possível das entradas, ela registra o valor da saída. Com duas variáveis, `A` e `B`, existem quatro linhas — `00`, `01`, `10` e `11`. Nada de adivinhação: a tabela cobre todos os casos.\n\nPara construí-la, siga os passos:\n\n1. Liste todas as combinações de entrada.\n2. Aplique as portas **NOT**, depois **AND**, depois **OR** (essa é a ordem de precedência).\n3. Anote o resultado final em cada linha.\n\nA expressão `A AND NOT B` é um caso clássico: ela só acende quando `A = 1` **e** `B = 0`, ou seja, apenas na linha `10`. Já `A OR B` acende em três linhas, e `A AND B` apenas na `11`. Aprender a ler essas linhas é o que transforma um emaranhado de fios em uma ideia clara.",
+      "youtubeUrl": null,
+      "challenge": {
+        "type": "quiz",
+        "question": "Qual expressão booleana produz saída 1 apenas quando A = 1 e B = 0?",
+        "options": ["A AND B", "A OR B", "A AND NOT B", "NOT A AND B"],
+        "correctIndex": 2
+      },
+      "hint": "Pense na linha 10 da tabela: A precisa permanecer em 1, então não pode ser negada. O que precisa ser negado é B — e os dois termos devem ser ligados por AND.",
+      "loreFragment": {
+        "id": "log-cd-03-receptacle",
+        "title": "O Receptáculo Adormecido",
+        "content": "Sob o Pátio Central, algo adormecido escuta o último pulsar das luzes. Quando o brilho se extingue, ele responde — não com palavras, mas com um deslocamento quase imperceptível no concreto. A autoria deste fragmento é incerta; o Ruído a reivindica em sussurros, entre um estalo e outro do cabeamento. Talvez ele apenas lembre o que a Cidadela esqueceu."
+      }
+    }
+  ]
+}

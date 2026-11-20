@@ -1,0 +1,38 @@
+{
+  "name": "ubl-citadel-of-stilled-lights",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Jogo educacional 2D atmosférico e data-driven da Universidade Brasileira Livre",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "validate": "tsx scripts/validate-content.ts",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.9.0",
+    "@tauri-apps/plugin-fs": "^2.4.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@tauri-apps/cli": "^2.9.0",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  }
+}

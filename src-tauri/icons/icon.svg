@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Andarilho da Cidadela dentro de um terminal hexagonal">
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#57e0ff" stop-opacity="0.28"/>
+      <stop offset="55%" stop-color="#5ef2c8" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#070d18" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="core" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#ffe6a8"/>
+      <stop offset="45%" stop-color="#f2c14e"/>
+      <stop offset="100%" stop-color="#f2c14e" stop-opacity="0.25"/>
+    </radialGradient>
+    <linearGradient id="cloak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5ef2c8" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#57e0ff" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="92" fill="#070d18"/>
+  <circle cx="256" cy="256" r="214" fill="url(#halo)"/>
+
+  <path d="M256 66 420.6 161 420.6 351 256 446 91.4 351 91.4 161Z"
+        fill="#0a1526" stroke="#57e0ff" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M256 100 388.4 179 388.4 333 256 412 123.6 333 123.6 179Z"
+        fill="none" stroke="#5ef2c8" stroke-opacity="0.45" stroke-width="3" stroke-linejoin="round"/>
+
+  <g stroke="#f2c14e" stroke-width="7" stroke-linecap="round">
+    <path d="M256 66v26"/>
+    <path d="M420.6 161l-23 13"/>
+    <path d="M91.4 161l23 13"/>
+    <path d="M256 446v-26"/>
+  </g>
+
+  <path d="M256 176 214 212 180 338 224 302 256 356 288 302 332 338 298 212Z"
+        fill="url(#cloak)" stroke="#5ef2c8" stroke-opacity="0.7" stroke-width="4" stroke-linejoin="round"/>
+
+  <g stroke="#57e0ff" stroke-opacity="0.8" stroke-width="4" stroke-linecap="round">
+    <path d="M232 272 200 298"/>
+    <path d="M280 272 312 298"/>
+    <path d="M256 316v80" stroke-dasharray="10 12" stroke-opacity="0.5"/>
+  </g>
+  <circle cx="256" cy="396" r="6" fill="#f2c14e"/>
+
+  <path d="M226 248h60l16 92h-92Z"
+        fill="#070d18" stroke="#57e0ff" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="256" cy="212" r="25" fill="#070d18" stroke="#57e0ff" stroke-width="5"/>
+  <g stroke="#5ef2c8" stroke-width="5" stroke-linecap="round">
+    <path d="M246 210v6"/>
+    <path d="M266 210v6"/>
+  </g>
+
+  <circle cx="256" cy="290" r="34" fill="url(#core)" opacity="0.35"/>
+  <circle cx="256" cy="290" r="19" fill="url(#core)"/>
+  <circle cx="256" cy="290" r="6" fill="#fff4d6"/>
+</svg>

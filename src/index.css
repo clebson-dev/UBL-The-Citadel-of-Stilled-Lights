@@ -1,0 +1,219 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-citadel-void: #03060d;
+  --color-citadel-night: #070d18;
+  --color-citadel-panel: #0b1626;
+  --color-citadel-line: #1b3446;
+  --color-citadel-cyan: #57e0ff;
+  --color-citadel-mint: #5ef2c8;
+  --color-citadel-amber: #f2c14e;
+  --font-display: 'Georgia', 'Times New Roman', serif;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--color-citadel-void);
+  color: #d7e6f2;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.citadel-glass {
+  background: linear-gradient(160deg, rgba(11, 22, 38, 0.94), rgba(4, 9, 17, 0.97));
+  border: 1px solid rgba(87, 224, 255, 0.18);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 24px 70px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(87, 224, 255, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.citadel-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(87, 224, 255, 0.24);
+  border-radius: 0.5rem;
+  background: rgba(12, 28, 45, 0.8);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #cfe8f5;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease,
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.citadel-button:hover:not(:disabled) {
+  border-color: rgba(87, 224, 255, 0.7);
+  color: #ffffff;
+  background: rgba(20, 46, 68, 0.9);
+  box-shadow: 0 0 18px rgba(87, 224, 255, 0.14);
+}
+
+.citadel-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.citadel-button--primary {
+  border-color: rgba(94, 242, 200, 0.5);
+  background: linear-gradient(140deg, rgba(28, 82, 78, 0.85), rgba(12, 43, 53, 0.9));
+  color: #d8fff3;
+}
+
+.citadel-button--primary:hover:not(:disabled) {
+  border-color: #5ef2c8;
+  box-shadow: 0 0 24px rgba(94, 242, 200, 0.24);
+}
+
+.citadel-button--danger {
+  border-color: rgba(242, 193, 78, 0.35);
+  color: #f6dca4;
+}
+
+.citadel-tab {
+  border-bottom: 2px solid transparent;
+  color: #7f9bb1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.7rem 0.35rem;
+  transition: all 150ms ease;
+}
+
+.citadel-tab--active {
+  color: #9ff5ff;
+  border-bottom-color: #57e0ff;
+  text-shadow: 0 0 14px rgba(87, 224, 255, 0.45);
+}
+
+.citadel-markdown h2,
+.citadel-markdown h3 {
+  font-family: var(--font-display);
+  color: #bff2ff;
+  margin: 1rem 0 0.5rem;
+}
+
+.citadel-markdown p {
+  margin: 0 0 0.75rem;
+  line-height: 1.7;
+}
+
+.citadel-markdown strong {
+  color: #f2d79b;
+}
+
+.citadel-markdown code {
+  background: rgba(87, 224, 255, 0.1);
+  border: 1px solid rgba(87, 224, 255, 0.18);
+  border-radius: 0.25rem;
+  color: #9ff5ff;
+  padding: 0.05rem 0.3rem;
+  font-size: 0.9em;
+}
+
+.citadel-markdown ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.citadel-markdown li {
+  margin-bottom: 0.3rem;
+}
+
+.citadel-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(87, 224, 255, 0.28) transparent;
+}
+
+.citadel-scroll::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.citadel-scroll::-webkit-scrollbar-thumb {
+  background: rgba(87, 224, 255, 0.28);
+  border-radius: 99px;
+}
+
+.touch-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(56px, 9vmin, 82px);
+  height: clamp(56px, 9vmin, 82px);
+  border-radius: 1rem;
+  border: 1px solid rgba(87, 224, 255, 0.3);
+  background: rgba(9, 24, 39, 0.66);
+  color: #bfeaf7;
+  font-size: 1.3rem;
+  font-weight: 700;
+  user-select: none;
+  touch-action: none;
+}
+
+.touch-button:active,
+.touch-button[data-pressed='true'] {
+  background: rgba(33, 88, 104, 0.85);
+  border-color: rgba(94, 242, 200, 0.8);
+  box-shadow: 0 0 22px rgba(94, 242, 200, 0.3);
+}
+
+.touch-button--interact[data-highlight='true'] {
+  border-color: #f2c14e;
+  box-shadow: 0 0 26px rgba(242, 193, 78, 0.55);
+  animation: citadel-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes citadel-pulse {
+  50% {
+    box-shadow: 0 0 38px rgba(242, 193, 78, 0.85);
+  }
+}
+
+@keyframes citadel-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.citadel-enter {
+  animation: citadel-fade-in 220ms ease-out both;
+}
+
+@media (orientation: portrait) and (max-width: 900px) {
+  .citadel-rotate-hint {
+    display: flex !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .citadel-enter,
+  .touch-button--interact[data-highlight='true'] {
+    animation: none;
+  }
+}

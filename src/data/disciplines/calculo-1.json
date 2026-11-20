@@ -1,0 +1,55 @@
+{
+  "id": "calculo-1",
+  "name": "Cálculo I",
+  "description": "Em Construção — uma futura jornada por limites, continuidade e derivadas no Setor de Cálculo da Cidadela. Volte em breve.",
+  "locked": true,
+  "themeColors": {
+    "background": "#0b0720",
+    "light": "#b9a3ff",
+    "cableActive": "#8b5cf6",
+    "cableInactive": "#2a2350",
+    "accent": "#d8b4fe"
+  },
+  "hubReward": {
+    "title": "A Tocha do Cálculo",
+    "description": "Um farol ainda apagado aguarda o domínio dos limites. Esta recompensa está Em Construção — por enquanto, ela guarda o lugar do futuro brilho do Setor de Cálculo.",
+    "effect": "Em Construção: a iluminação do Setor de Cálculo e seus benefícios serão ativados em uma atualização futura."
+  },
+  "wings": [
+    {
+      "id": "ca-wing-1",
+      "order": 1,
+      "name": "Ala 1: Limites e Continuidade",
+      "description": "O primeiro passo para descrever mudanças: aproximar-se, observar e reconhecer quando o caminho se mantém inteiro.",
+      "themeColors": {
+        "background": "#120d2e",
+        "light": "#c4b5fd",
+        "cableActive": "#8b5cf6",
+        "cableInactive": "#2a2350",
+        "accent": "#d8b4fe"
+      }
+    }
+  ],
+  "levels": [
+    {
+      "id": "ca-1-1",
+      "order": 1,
+      "wingId": "ca-wing-1",
+      "title": "Limites: o Valor que se Aproxima",
+      "summaryText": "O **limite** descreve o comportamento de uma função quando a variável se aproxima de um ponto — não necessariamente o valor nela. Escrevemos `lim x→2 f(x) = L` para dizer que `f(x)` fica tão próximo quanto quisermos de `L` quando `x` se aproxima de `2`.\n\nAlgumas ideias-chave:\n\n- A aproximação pode vir dos dois lados: pela esquerda (`x < 2`) e pela direita (`x > 2`).\n- Se os dois lados chegam ao mesmo valor, dizemos que o limite **existe**.\n- A função pode até não estar definida no ponto e ainda assim ter limite.\n\nQuando os lados discordam, surge uma **descontinuidade**: é como um fio interrompido no circuito. Entender limites é o primeiro passo para falar de continuidade e, mais adiante, de derivadas.",
+      "youtubeUrl": null,
+      "challenge": {
+        "type": "quiz",
+        "question": "O que afirma a expressão lim x→2 de x² = 4?",
+        "options": [
+          "Que x² vale 4 em x = 2, mas nada diz sobre os arredores",
+          "Que, à medida que x se aproxima de 2, o valor de x² se aproxima de 4",
+          "Que x² é sempre igual a 4",
+          "Que a função não está definida em x = 2"
+        ],
+        "correctIndex": 1
+      },
+      "hint": "Não pense no valor \"em\" x = 2 — pense no que acontece por perto. Aproxime x dos dois lados e observe para onde a imagem caminha."
+    }
+  ]
+}
