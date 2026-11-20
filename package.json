@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "validate": "tsx scripts/validate-content.ts",
+    "transcript": "tsx scripts/get-transcript.ts",
     "tauri": "tauri"
   },
   "dependencies": {

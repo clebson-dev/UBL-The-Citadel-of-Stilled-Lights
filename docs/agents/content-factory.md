@@ -15,6 +15,25 @@ Trabalha com dados, nunca com código do motor. Se o conteúdo exigir um novo ti
 3. O JSON da disciplina alvo em `src/data/disciplines/` — para manter paleta, alas, sequência e voz já estabelecidas.
 4. `src/types/game.ts` — quando precisar confirmar o formato de `Challenge` e `Level`.
 5. Se houver qualquer texto narrativo novo: `docs/agents/lorekeeper.md` e os cinco arquivos de `docs/lore/`.
+6. `docs/playlists/<disciplina>.txt` — índice, título e URL reais das aulas da disciplina alvo.
+
+## Fluxo obrigatório de transcrição (uma Ala por vez)
+
+Antes de redigir `summaryText`, `challenge` e `hint` de um lote, execute este fluxo **somente para as aulas daquela Ala**:
+
+1. Extraia as URLs do lote de `docs/playlists/<disciplina>.txt`.
+2. Para cada aula do lote, rode:
+
+   ```bash
+   npm run transcript -- "<URL da aula>" "<id-da-aula>"
+   ```
+
+3. Leia os arquivos `docs/transcripts/<id-da-aula>.txt` gerados. Eles são a fonte de verdade para o conteúdo: o resumo deve refletir o que a aula **realmente ensina**, e o desafio deve testar exatamente esse conteúdo.
+4. Após redigir o lote, rode `npm run validate` (regra global) e só então avance para a próxima Ala.
+
+**Regra de Fallback:** se alguma aula não tiver legenda em pt/pt-BR, o script avisa e não cria o `.txt`. Nesse caso, **não invente transcrição**: registre o aviso (ID da aula e motivo) no relatório final do lote entregue ao `qa-auditor` e elabore o `summaryText`, o `challenge` e a `hint` daquela aula a partir do **título real da playlist** e da **teoria consolidada da disciplina**. Marque no relatório quais aulas seguiram esse caminho.
+
+Os arquivos em `docs/transcripts/` são temporários e estão no `.gitignore` — nunca versioná-los nem transformá-los em conteúdo canônico.
 
 ## Arquivos que PODE editar
 
@@ -35,10 +54,13 @@ Trabalha com dados, nunca com código do motor. Se o conteúdo exigir um novo ti
 7. **Vídeo é opcional:** `youtubeUrl` pode ser `null`. Nunca invente URL — use apenas links reais de aulas da UBL.
 8. **Lore sob responsabilidade:** qualquer `loreFragment` novo deve ser escrito seguindo `docs/agents/lorekeeper.md` e registrado em `docs/lore/misterios.md` antes de validar.
 9. **Paleta documentada:** reutilize as paletas de `docs/lore/locais.md`. Se a disciplina trouxer uma paleta nova, peça ao `lorekeeper` para registrá-la primeiro.
+10. **Fidelidade à aula:** nenhum `summaryText`, `challenge` ou `hint` pode ser escrito antes de rodar `npm run transcript` para as aulas da Ala e ler os `.txt` correspondentes. Se não houver legenda, aplique a **Regra de Fallback** acima e deixe o aviso explícito no relatório.
 
 ## Checklist de Conclusão
 
-- [ ] Li o schema Zod, o template e o JSON da disciplina alvo antes de editar.
+- [ ] Li o schema Zod, o template, a playlist e o JSON da disciplina alvo antes de editar.
+- [ ] Rodei `npm run transcript` para **todas** as aulas do lote e li os `.txt` gerados antes de escrever resumo, desafio e dica.
+- [ ] Aulas sem legenda seguiram a Regra de Fallback e foram listadas com aviso no relatório final.
 - [ ] `order` de wings/levels é `1..N` sem buracos; IDs únicos; `wingId` válido.
 - [ ] Os tipos de desafio alternam-se ao longo da ala.
 - [ ] Cada `summaryText` é didático, em Markdown e verificável como conteúdo real da aula.
