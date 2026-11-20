@@ -171,7 +171,15 @@ export class Renderer {
       } else {
         ctx.strokeStyle = rgba('#2b4a63', 0.25)
         ctx.lineWidth = 1
-        for (let x = platform.x + 40; x < platform.x + platform.w; x += 130) {
+        // O chão agora cobre o mundo inteiro; desenhar os detalhes apenas na
+        // janela visível preserva o padrão e mantém o custo constante.
+        const firstDetail =
+          platform.x + 40 + Math.max(0, Math.ceil((cameraX - 50 - platform.x - 40) / 130)) * 130
+        for (
+          let x = firstDetail;
+          x < platform.x + platform.w && x < cameraX + viewWidth + 50;
+          x += 130
+        ) {
           ctx.beginPath()
           ctx.moveTo(x, top + 14)
           ctx.lineTo(x + 18, top + 32)
@@ -184,12 +192,19 @@ export class Renderer {
 
   private drawCables(state: RenderState): void {
     const { ctx } = this
-    const { scene, time, reducedMotion } = state
+    const { scene, time, reducedMotion, cameraX, viewWidth } = state
     const terminals = scene.terminals
     for (let i = 0; i < terminals.length - 1; i += 1) {
       const from = terminals[i]
       const to = terminals[i + 1]
       if (!from || !to) continue
+      // A curva fica entre os dois terminais; se ambos estão fora, nada a desenhar.
+      if (
+        (from.x < cameraX - 140 && to.x < cameraX - 140) ||
+        (from.x > cameraX + viewWidth + 140 && to.x > cameraX + viewWidth + 140)
+      ) {
+        continue
+      }
       const active = from.state === 'completed'
       const color = active ? scene.theme.cableActive : scene.theme.cableInactive
       const y0 = from.y - 66
@@ -237,8 +252,10 @@ export class Renderer {
 
   private drawTerminals(state: RenderState): void {
     const { ctx } = this
-    const { scene, time, nearby, reducedMotion } = state
+    const { scene, time, nearby, reducedMotion, cameraX, viewWidth } = state
     for (const terminal of scene.terminals) {
+      // Halo, sprite e rótulo cabem em ~140px; o resto fica fora da tela.
+      if (terminal.x < cameraX - 140 || terminal.x > cameraX + viewWidth + 140) continue
       const color =
         terminal.state === 'completed'
           ? scene.theme.cableActive

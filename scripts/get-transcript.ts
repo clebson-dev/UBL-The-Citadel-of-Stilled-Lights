@@ -6,9 +6,10 @@
  * O arquivo gerado em docs/transcripts/ é temporário (ignorado pelo Git) e serve
  * apenas para o content-factory redigir resumo/desafio com fidelidade à aula.
  * Sem legendas em português, o script termina sem erro e pede o fallback.
+ * Em caso de falha do yt-dlp (inclusive 429), o stderr real é mostrado no terminal.
  */
 
-import { spawnSync } from 'node:child_process'
+import { spawnSync, type SpawnSyncReturns } from 'node:child_process'
 import {
   existsSync,
   mkdirSync,
@@ -24,6 +25,7 @@ import { fileURLToPath } from 'node:url'
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const outputDir = join(projectRoot, 'docs', 'transcripts')
+const apiFallback = join(projectRoot, 'scripts', 'fetch-transcript-api.py')
 
 /** Falha esperada: não é erro de código, é ausência de legenda/ferramenta. */
 class TranscriptUnavailable extends Error {}
@@ -36,6 +38,60 @@ interface YtDlpRunner {
 const YOUTUBE_URL = /^https:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)[\w-]+/
 const TIMESTAMP = /^\d{1,2}:\d{2}(?::\d{2})?[.,]\d{1,3}\s*-->/
 const OUTPUT_ID = /^[A-Za-z0-9_-]+$/
+const RATE_LIMIT = /429|too many requests|rate.?limit/i
+const MAX_ATTEMPTS = 3
+
+/** Espera síncrona (o script é sequencial) entre tentativas de download. */
+function sleep(ms: number): void {
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms)
+}
+
+/** Mostra o erro original do yt-dlp, sem tentar adivinhar a causa. */
+function showYtDlpError(result: SpawnSyncReturns<string>, attempt: number, id: string): string {
+  const stderr = (result.stderr ?? '').trim()
+  const detail = stderr
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => /^ERROR\b/i.test(line))
+    .slice(-1)
+    .join(' ')
+    .replace(/^ERROR:\s*/i, '')
+
+  console.error(`yt-dlp falhou para ${id} (tentativa ${attempt}/${MAX_ATTEMPTS}):`)
+  if (stderr) {
+    console.error(stderr)
+  } else if (result.error) {
+    console.error(result.error.message)
+  } else {
+    console.error(`processo terminou com status ${String(result.status)} e sem stderr.`)
+  }
+
+  return detail
+}
+
+/** Último recurso: usa youtube-transcript-api quando o yt-dlp recebe 429. */
+function fallbackWithApi(url: string, outputPath: string, id: string): boolean {
+  if (!existsSync(apiFallback)) return false
+  const videoId = new URL(url).searchParams.get('v') ?? ''
+  if (!videoId) return false
+
+  const result = spawnSync('python', [apiFallback, videoId, outputPath], {
+    cwd: projectRoot,
+    encoding: 'utf8',
+    windowsHide: true,
+    timeout: 120_000,
+  })
+
+  if (result.status === 0 && existsSync(outputPath)) {
+    const lines = readFileSync(outputPath, 'utf8').trim().split('\n').length
+    console.log(`✔ Transcrição salva via API: docs/transcripts/${id}.txt (${lines} linhas)`)
+    return true
+  }
+
+  const detail = (result.stderr ?? '').trim() || result.error?.message || `status ${String(result.status)}`
+  console.error(`Fallback por API falhou para ${id}: ${detail}`)
+  return false
+}
 
 function probe(command: string, args: string[]): boolean {
   const result = spawnSync(command, args, {
@@ -112,7 +168,7 @@ export function parseVtt(raw: string): string {
 function warnFallback(reason: string): void {
   console.warn(`AVISO: ${reason}`)
   console.warn(
-    'FALLBACK: sem transcrição em pt/pt-BR. Registre o aviso no relatório e redija o lote a partir do título da aula e da teoria consolidada da disciplina.',
+    'FALLBACK: sem transcrição em português. Registre o aviso no relatório e redija o lote a partir do título da aula e da teoria consolidada da disciplina.',
   )
 }
 
@@ -140,7 +196,11 @@ function main(): void {
       '--write-sub',
       '--write-auto-sub',
       '--sub-lang',
-      'pt,pt-BR',
+      'pt.*',
+      '--sleep-subtitles',
+      '3',
+      '--sleep-requests',
+      '2',
       '--skip-download',
       '--sub-format',
       'vtt',
@@ -151,28 +211,42 @@ function main(): void {
 
     // YouTube tem exigido um runtime JS para alguns formatos; use o Node quando existir.
     if (probe('node', ['--version'])) {
-      args.push('--js-runtimes', 'node')
+      args.push('--js-runtimes', 'node', '--remote-components', 'ejs:github')
     }
     args.push(url)
 
-    const result = spawnSync(runner.command, [...runner.prefixArgs, ...args], {
-      cwd: tempDir,
-      encoding: 'utf8',
-      windowsHide: true,
-      timeout: 180_000,
-    })
+    let result: SpawnSyncReturns<string> | undefined
+    let failureDetail = ''
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
+      result = spawnSync(runner.command, [...runner.prefixArgs, ...args], {
+        cwd: tempDir,
+        encoding: 'utf8',
+        windowsHide: true,
+        timeout: 180_000,
+      })
 
-    if (result.error || result.status !== 0) {
-      const detail = (result.stderr ?? '')
-        .split('\n')
-        .map((line) => line.trim())
-        .filter((line) => /^ERROR\b/i.test(line))
-        .slice(-1)
-        .join(' ')
-        .replace(/^ERROR:\s*/i, '')
-      warnFallback(
-        `yt-dlp não conseguiu obter legendas para ${id}${detail ? `: ${detail}` : '.'}`,
-      )
+      if (!result.error && result.status === 0) {
+        failureDetail = ''
+        break
+      }
+
+      const detail = showYtDlpError(result, attempt, id)
+      failureDetail = detail ? `: ${detail}` : '.'
+      const rateLimited =
+        RATE_LIMIT.test(result.stderr ?? '') || RATE_LIMIT.test(result.error?.message ?? '')
+
+      if (rateLimited && attempt < MAX_ATTEMPTS) {
+        const waitMs = 5000 + (attempt - 1) * 3000
+        console.warn(`Rate limit do YouTube: aguardando ${waitMs / 1000}s antes de tentar de novo...`)
+        sleep(waitMs)
+        continue
+      }
+      break
+    }
+
+    if (!result || result.error || result.status !== 0) {
+      if (fallbackWithApi(url, outputPath, id)) return
+      warnFallback(`yt-dlp não conseguiu obter legendas para ${id}${failureDetail || '.'}`)
       return
     }
 
@@ -183,15 +257,18 @@ function main(): void {
     const vttFile =
       vttFiles.find((file) => /\.pt-br\.vtt$/i.test(file)) ??
       vttFiles.find((file) => /\.pt\.vtt$/i.test(file)) ??
+      vttFiles.find((file) => /\.pt[-_.][a-z0-9]+\.vtt$/i.test(file)) ??
       vttFiles[0]
 
     if (!vttFile) {
+      if (fallbackWithApi(url, outputPath, id)) return
       warnFallback(`o vídeo ${id} não possui legendas em português.`)
       return
     }
 
     const transcript = parseVtt(readFileSync(join(tempDir, vttFile), 'utf8'))
     if (!transcript) {
+      if (fallbackWithApi(url, outputPath, id)) return
       warnFallback(`a legenda em português de ${id} estava vazia após a limpeza.`)
       return
     }

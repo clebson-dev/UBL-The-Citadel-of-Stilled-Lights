@@ -1,6 +1,6 @@
 # Locais da Cidadela
 
-> Arquitetura, cor e função narrativa dos três primeiros espaços canônicos. As paletas abaixo são **obrigatórias** nos temas dos JSONs: se um local aparecer com outra cor, corrija o dado, não o cânone.
+> Arquitetura, cor e função narrativa dos três primeiros espaços canônicos. As paletas abaixo são **obrigatórias** nos temas dos JSONs: se um local aparecer com outra cor, corrija o dado, não o cânone. As nove Alas de Circuitos Digitais têm paletas próprias, registradas no fim deste arquivo.
 
 ---
 
@@ -32,7 +32,7 @@
 
 ---
 
-## Ala 1: Fundamentos da Lógica
+## Ala 1: O Alfabeto dos Sinais
 
 **Descrição arquitetônica.** A primeira ala a reacender, discreta e quase doméstica ao lado da imponência do Setor: salas pequenas, paredes baixas e bancos de leitura alinhados em filas perfeitas. Tudo foi desenhado para caber numa ideia simples antes de tentar conter o mundo. É aqui que a Cidadela volta a ensinar em vez de apenas guardar.
 
@@ -42,7 +42,7 @@
 
 **Função de gameplay.** Introdução pedagógica. Os primeiros terminais ensinam a reconhecer uma única resposta correta e a usar a dica sem medo de errar. O desbloqueio das alas seguintes depende da compreensão destes níveis.
 
-**Fragmentos associados.** `log-cd-01-architects` — o primeiro fragmento, plantado no primeiro terminal e ligado ao desenho de Vetra.
+**Fragmentos associados.** `log-cd-01-architects` — o primeiro fragmento, plantado no primeiro terminal e ligado ao desenho de Vetra. `log-cd-02-noise` e `log-cd-03-receptacle` também nascem nesta Ala: a interferência nos barramentos e o vão sob o Pátio são as outras duas primeiras vozes do Setor.
 
 ---
 
@@ -54,3 +54,23 @@ Quatro sinais podem ser escondidos nos cenários das Alas. São **elementos visu
 2. **O Eixo que Abre para Dentro** — assinatura de Vetra: dobradiça invertida, arco que parece sair e entra. Sugere que o Átrio não é para onde se vai, mas o que se abre dentro.
 3. **A Sílaba Deslocada** — assinatura do Ruído: uma letra um espaço à direita do devido em letreiros; no áudio, o nome chega um segundo atrasado. Nunca corrigir a grafia no cenário — o deslocamento é a pista.
 4. **O Ponto de Costura** — nó de luz com dois fios desiguais gravado na pedra. Indica que o Receptáculo já passou por ali; essa informação **nunca** pode ser dita em texto de jogo.
+
+---
+
+## Paletas das Alas de Circuitos Digitais
+
+As nove Alas formam uma só descida: o verde-ar dos circuitos esfria enquanto o âmbar do Ruído aquece, até que a última Ala termina no dourado do Ponto de Costura. Os cinco campos são, em ordem, `background`, `light`, `cableActive`, `cableInactive` e `accent`. Nenhuma Ala pode trocar seus valores sem passar pelo `lorekeeper`.
+
+| Ala | Aulas | Nome | Paleta (`fundo · luz · ativo · inativo · acento`) |
+| --- | --- | --- | --- |
+| 1 | 01–10 | O Alfabeto dos Sinais | `#0a1422 · #6ee7d8 · #5ef2c8 · #1b3446 · #57e0ff` |
+| 2 | 11–19 | A Álgebra das Decisões | `#0b1725 · #72e0cc · #55dcc0 · #1c3646 · #d8a746` |
+| 3 | 20–30 | O Mapa e a Soma | `#0c1a28 · #78dbc0 · #4fd8b4 · #1e3a48 · #dfae48` |
+| 4 | 31–40 | Comparar, Converter, Decodificar | `#0d1d2a · #80d5b4 · #49d3a8 · #203e4a · #e5b44c` |
+| 5 | 41–50 | O Caminho Escolhido | `#0e202c · #88cda8 · #43cd9d · #22424c · #ebbb52` |
+| 6 | 51–60 | A Máquina que Decide | `#10232e · #90c59c · #3dc791 · #254650 · #f2c14e` |
+| 7 | 61–71 | O Instante Guardado | `#122630 · #98bd90 · #37c186 · #284a54 · #f2c14e` |
+| 8 | 72–82 | O Desenho do Caminho | `#142933 · #a0b584 · #31bb7b · #2b4e58 · #f5c95e` |
+| 9 | 83–93 | O Estado que se Reconhece | `#162c36 · #a8ad78 · #2bb570 · #2e525c · #ffd873` |
+
+**Nota de continuidade.** A Ala 1 não usa âmbar: ainda não há falha a sinalizar. O acento ciano `#57e0ff` é o da resposta que acende; o âmbar `#d8a746` entra na Ala 2, quando a sílaba deslocada aparece, e o âmbar canônico `#f2c14e` chega em toda a sua força na Ala 6, com o barramento já tomado pelo Ruído, e segue na Ala 7. As paletas do Pátio (`#070d18`/`#57e0ff`) e do Setor (`#070d18`/`#5ef2c8`/`#f2c14e`) permanecem como estão — são o exterior das Alas, não o seu interior.

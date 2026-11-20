@@ -42,7 +42,7 @@ O jogo começa no **Pátio Central**, onde os portais das disciplinas ainda resp
 | **O Apagamento dos Nomes** | Para criar um ponto fora do índice, os Arquitetos retiram os próprios nomes do mapa. Cerna, encarregada de apagar o último, não conclui o gesto; Vetra desaparece. | `log-cd-01-architects` — a assinatura que o tempo se recusou a apagar. |
 | **O Apagão** | O Ruído infiltra os barramentos e corrói a relação entre símbolo e sentido. Os terminais continuam de pé, mas mudos; o Receptáculo sob o Pátio adormece. | `log-cd-02-noise` (cd-1-2) e `log-cd-03-receptacle` (cd-1-3). |
 | **O Despertar do Andarilho** | Um autômato de capa desperta entre as pedras frias com um fio de luz no peito. Não sabe quem o construiu; sabe apenas que há terminais esperando uma pergunta. | Pátio Central, ponto de partida; portais ainda respiram. |
-| **Era atual — O Reacendimento** | O Andarilho religa os primeiros terminais da Ala 1 e começa a devolver fragmentos. Cada pista plantada aponta para uma disciplina ainda adormecida. | Setor de Circuitos Digitais; Ala 1: Fundamentos da Lógica; tabela de mistérios. |
+| **Era atual — O Reacendimento** | O Andarilho religa os primeiros terminais da Ala 1 e começa a devolver fragmentos. Cada pista plantada aponta para uma disciplina ainda adormecida. | Setor de Circuitos Digitais; Ala 1: O Alfabeto dos Sinais; tabela de mistérios. |
 
 ---
 

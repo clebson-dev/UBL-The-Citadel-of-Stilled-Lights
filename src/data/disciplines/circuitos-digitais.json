@@ -1,7 +1,6 @@
 {
   "id": "circuitos-digitais",
   "name": "Circuitos Digitais",
-  "description": "Aprenda a linguagem da Cidadela: do binário às portas lógicas, cada sinal dominado devolve um pouco de luz ao Pátio.",
   "locked": false,
   "themeColors": {
     "background": "#070d18",
@@ -12,21 +11,125 @@
   },
   "hubReward": {
     "title": "A Tocha dos Circuitos",
-    "description": "Ao domar os três primeiros desafios, o Setor de Circuitos volta a respirar: as luminárias do Pátio se acendem em cascata e novos caminhos se revelam.",
+    "description": "Ao domar os noventa e três terminais, o Setor de Circuitos volta a respirar: as luminárias do Pátio se acendem em cascata e novos caminhos se revelam.",
     "effect": "Restaura a iluminação do Setor de Circuitos no Pátio e desbloqueia o Dash do Andarilho, permitindo avanços rápidos entre plataformas."
   },
   "wings": [
     {
       "id": "cd-wing-1",
       "order": 1,
-      "name": "Ala 1: Fundamentos da Lógica",
-      "description": "Os alicerces silenciosos de toda máquina: números, sinais e decisões elementares.",
+      "name": "Ala 1: O Alfabeto dos Sinais",
+      "description": "Do sinal analógico ao binário: bases, códigos, aritmética e as primeiras portas que decidem.",
       "themeColors": {
         "background": "#0a1422",
         "light": "#6ee7d8",
         "cableActive": "#5ef2c8",
         "cableInactive": "#1b3446",
+        "accent": "#57e0ff"
+      }
+    },
+    {
+      "id": "cd-wing-2",
+      "order": 2,
+      "name": "Ala 2: A Álgebra das Decisões",
+      "description": "As leis que regram as portas: propriedades, análise, formas canônicas e o mapa que simplifica.",
+      "themeColors": {
+        "background": "#0b1725",
+        "light": "#72e0cc",
+        "cableActive": "#55dcc0",
+        "cableInactive": "#1c3646",
+        "accent": "#d8a746"
+      }
+    },
+    {
+      "id": "cd-wing-3",
+      "order": 3,
+      "name": "Ala 3: O Mapa e a Soma",
+      "description": "Do agrupamento de Karnaugh à aritmética construída com portas: universalidade, somadores e transportes.",
+      "themeColors": {
+        "background": "#0c1a28",
+        "light": "#78dbc0",
+        "cableActive": "#4fd8b4",
+        "cableInactive": "#1e3a48",
+        "accent": "#dfae48"
+      }
+    },
+    {
+      "id": "cd-wing-4",
+      "order": 4,
+      "name": "Ala 4: Comparar, Converter, Decodificar",
+      "description": "Somadores BCD, multiplicadores, comparadores, paridade e a arte de traduzir um código em outro.",
+      "themeColors": {
+        "background": "#0d1d2a",
+        "light": "#80d5b4",
+        "cableActive": "#49d3a8",
+        "cableInactive": "#203e4a",
+        "accent": "#e5b44c"
+      }
+    },
+    {
+      "id": "cd-wing-5",
+      "order": 5,
+      "name": "Ala 5: O Caminho Escolhido",
+      "description": "Codificadores, multiplexadores e demultiplexadores: escolher uma entre muitas trilhas.",
+      "themeColors": {
+        "background": "#0e202c",
+        "light": "#88cda8",
+        "cableActive": "#43cd9d",
+        "cableInactive": "#22424c",
+        "accent": "#ebbb52"
+      }
+    },
+    {
+      "id": "cd-wing-6",
+      "order": 6,
+      "name": "Ala 6: A Máquina que Decide",
+      "description": "Da ULA às máquinas de estados: o circuito passa a lembrar do que fez antes.",
+      "themeColors": {
+        "background": "#10232e",
+        "light": "#90c59c",
+        "cableActive": "#3dc791",
+        "cableInactive": "#254650",
         "accent": "#f2c14e"
+      }
+    },
+    {
+      "id": "cd-wing-7",
+      "order": 7,
+      "name": "Ala 7: O Instante Guardado",
+      "description": "Latches, flip-flops e a borda do relógio: o valor deixa de ser copiado o tempo todo e passa a existir só no instante certo.",
+      "themeColors": {
+        "background": "#122630",
+        "light": "#98bd90",
+        "cableActive": "#37c186",
+        "cableInactive": "#284a54",
+        "accent": "#f2c14e"
+      }
+    },
+    {
+      "id": "cd-wing-8",
+      "order": 8,
+      "name": "Ala 8: O Desenho do Caminho",
+      "description": "Da especificação ao circuito: contadores, detectores, estados de espera e a máquina que aprende a reconhecer o próprio rastro.",
+      "themeColors": {
+        "background": "#142933",
+        "light": "#a0b584",
+        "cableActive": "#31bb7b",
+        "cableInactive": "#2b4e58",
+        "accent": "#f5c95e"
+      }
+    },
+    {
+      "id": "cd-wing-9",
+      "order": 9,
+      "name": "Ala 9: O Estado que se Reconhece",
+      "description": "Duas arquiteturas, uma mesma resposta: minimizar, converter e codificar até a última pergunta voltar a ser feita.",
+      "themeColors": {
+        "background": "#162c36",
+        "light": "#a8ad78",
+        "cableActive": "#2bb570",
+        "cableInactive": "#2e525c",
+        "accent": "#ffd873"
       }
     }
   ],
@@ -35,41 +138,58 @@
       "id": "cd-1-1",
       "order": 1,
       "wingId": "cd-wing-1",
-      "title": "Sistemas Numéricos e Binário",
-      "summaryText": "Computadores não \"entendem\" dígitos decimais: eles funcionam com **sinais elétricos** que têm apenas dois estados confiáveis — desligado e ligado. Por isso adotamos a **base 2 (binária)**, onde cada posição vale uma potência de 2. Onde nós escrevemos `11₁₀`, a máquina representa `1011₂`.\n\nPara converter, some as potências de 2 correspondentes às casas ocupadas:\n\n- `2³ = 8`\n- `2¹ = 2`\n- `2⁰ = 1`\n\nEm `1011₂`, temos `8 + 0 + 2 + 1 = 11₁₀`. Repare que a casa do `2²` (valor 4) está zerada, por isso não entra na soma.\n\nOperações **bitwise** (bit a bit) tratam cada posição como um interruptor independente: um `AND`, por exemplo, só mantém o bit em 1 se ambos os bits de entrada forem 1. Dominar essa leitura é o primeiro passo para desenhar circuitos.",
-      "youtubeUrl": null,
+      "title": "Analógico, Digital e o Bit",
+      "summaryText": "Um sinal **analógico** pode assumir infinitos valores de amplitude: a voz é assim. Um sinal **digital** só admite alguns valores — em geral dois, representados por `0` e `1`. A lâmpada, que está ou acesa ou apagada, é digital.\n\nOs níveis elétricos costumam ser cerca de `0 V` para o baixo e `5 V` para o alto. Trabalhar com apenas dois estados torna o projeto mais simples, o armazenamento mais fácil e o circuito **imune a ruído**: uma pequena variação de tensão não muda o valor lido.\n\nO mundo físico é analógico, mas podemos convertê-lo: a conversão **A/D** amostra, quantiza e codifica; a conversão **D/A** faz o caminho de volta. A perda é desprezível na maioria dos casos.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=1lsU6RoU9Ko",
       "challenge": {
         "type": "quiz",
-        "question": "Qual é o valor decimal do número binário 1011₂?",
-        "options": ["9", "10", "11", "13"],
-        "correctIndex": 2
+        "question": "Qual é a diferença principal entre um sinal analógico e um sinal digital?",
+        "options": [
+          "O analógico assume infinitos valores de amplitude; o digital, apenas finitos, em geral 0 e 1.",
+          "O digital é sempre mais rápido do que o analógico, qualquer que seja o circuito.",
+          "O analógico só existe em lâmpadas; o digital, apenas em gravações de voz.",
+          "A conversão A/D aumenta a perda de informação em vez de reduzi-la."
+        ],
+        "correctIndex": 0
       },
-      "hint": "Leia a imagem da direita para a esquerda: as casas valem 1, 2, 4 e 8. Some apenas as casas que estão em 1 — você vai chegar lá!",
+      "hint": "Olhe o eixo vertical da amplitude e conte quantos valores diferentes ele pode assumir.",
       "loreFragment": {
         "id": "log-cd-01-architects",
         "title": "O Primeiro Desenho",
-        "content": "O primeiro esquema da Cidadela saiu das mãos de Vetra, a Arquiteto-Mor, em uma noite em que o Pátio ainda não tinha nome. Ela desenhou os conduítes como quem desenha respirações, e dizem que cada fio guardava uma sílaba do Projeto Átrio. Quando as luzes se acenderam pela primeira vez, Vetra não estava mais lá para vê-las. O projeto permaneceu incompleto, como uma assinatura que o tempo se recusou a apagar."
+        "content": "O primeiro esquema da Cidadela saiu das mãos de Vetra, a Arquiteto-Mor, quando os Cabos de Energia ainda estavam sendo estendidos. Ela desenhou os conduítes como quem desenha respirações, e dizem que cada fio guardava uma sílaba do Projeto Átrio. Quando a luz circulou pela primeira vez, Vetra ainda conferia o traço das emendas. O projeto permaneceu incompleto, como uma assinatura que o tempo se recusou a apagar."
       }
     },
     {
       "id": "cd-1-2",
       "order": 2,
       "wingId": "cd-wing-1",
-      "title": "Portas Lógicas: AND, OR e NOT",
-      "summaryText": "Uma **porta lógica** é uma decisão mínima feita com elétrons: ela recebe sinais de entrada e devolve um único sinal de saída. As três portas fundamentais são:\n\n- **AND**: só devolve `1` se *todas* as entradas forem `1`.\n- **OR**: devolve `1` se *pelo menos uma* entrada for `1`.\n- **NOT**: inverte a entrada — `0` vira `1` e `1` vira `0`.\n\nNa bancada, cada chave que você alterna muda o valor de `A` ou `B`. O desafio é combinar as chaves **e** escolher a porta que leva a saída ao valor pedido. Se o resultado não aparecer, troque a porta antes de trocar as chaves: a lógica da porta define a regra do jogo.\n\nCom `A = 1` e `B = 0`, por exemplo, a porta **OR** já entrega `1` — e é essa a beleza do sistema: caminhos diferentes levam ao mesmo sinal.",
-      "youtubeUrl": null,
+      "title": "Bases, Bits e Bytes",
+      "summaryText": "Um **sistema de numeração** é o conjunto de símbolos usado para representar quantidades; a **base** define quais dígitos existem e o peso de cada posição. A regra geral é simples: some cada dígito multiplicado pela base elevada à sua posição.\n\nNa base 10, `471932 = 4·10⁴ + 7·10³ + 1·10² + 9·10 + 3·2 + 2`… na prática, cada casa vale dez vezes a seguinte. Na base 2 só existem `0` e `1`: cada posição vale uma potência de 2. Um **bit** é um dígito binário e um **byte** reúne 8 bits.\n\nCom `n` bits cabem `2ⁿ` valores, e o maior deles é `2ⁿ − 1`. Em 8 bits são 256 valores, de 0 a 255. Na conversão decimal → binário por divisões sucessivas, os restos são lidos **de trás para frente**.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=RuXmtYdmQKY",
       "challenge": {
         "type": "logic_toggle",
-        "question": "Ajuste as chaves A e B e escolha a porta lógica que faz a saída ser 1. Qual combinação funciona?",
+        "question": "Com dois bits cabem quatro valores. Ajuste as chaves para o maior deles e escolha a operação que continua devolvendo 1.",
         "inputs": [
-          { "id": "A", "label": "Chave A", "initialValue": 0 },
-          { "id": "B", "label": "Chave B", "initialValue": 0 }
+          {
+            "id": "A",
+            "label": "Bit de maior peso",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Bit de menor peso",
+            "initialValue": 0
+          }
         ],
-        "allowedOperations": ["AND", "OR", "NOT"],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "XOR"
+        ],
         "expectedOutput": 1,
-        "explanation": "Com a porta **OR**, basta uma entrada em 1: ajustando A = 1 e B = 0, a saída é 1. A porta **AND** exigiria A = 1 *e* B = 1. Já a porta **NOT** trabalha com uma única entrada e a inverte: se A = 0, a saída é 1 e B fica sem efeito. Todas essas são formas válidas de chegar ao sinal desejado — o importante é observar a regra de cada porta."
+        "explanation": "O maior valor com dois bits é `11₂` (3). Com A = 1 e B = 1, a operação **AND** devolve 1. A OR também devolveria, mas a AND é a que exige as duas casas ocupadas — justamente o maior valor."
       },
-      "hint": "Comece observando a OR: ela só precisa de uma chave ligada. Se ainda não der certo, experimente ligar A e manter B desligada.",
+      "hint": "O maior número com dois bits tem as duas casas ligadas. Depois disso, pense em qual operação exige as duas entradas em 1.",
       "loreFragment": {
         "id": "log-cd-02-noise",
         "title": "Interferência no Barramento",
@@ -80,21 +200,2373 @@
       "id": "cd-1-3",
       "order": 3,
       "wingId": "cd-wing-1",
-      "title": "Tabela-Verdade e Expressões",
-      "summaryText": "Uma **tabela-verdade** é o mapa completo de uma expressão booleana: para cada combinação possível das entradas, ela registra o valor da saída. Com duas variáveis, `A` e `B`, existem quatro linhas — `00`, `01`, `10` e `11`. Nada de adivinhação: a tabela cobre todos os casos.\n\nPara construí-la, siga os passos:\n\n1. Liste todas as combinações de entrada.\n2. Aplique as portas **NOT**, depois **AND**, depois **OR** (essa é a ordem de precedência).\n3. Anote o resultado final em cada linha.\n\nA expressão `A AND NOT B` é um caso clássico: ela só acende quando `A = 1` **e** `B = 0`, ou seja, apenas na linha `10`. Já `A OR B` acende em três linhas, e `A AND B` apenas na `11`. Aprender a ler essas linhas é o que transforma um emaranhado de fios em uma ideia clara.",
-      "youtubeUrl": null,
+      "title": "Hexadecimal e Conversões",
+      "summaryText": "A base 16 usa os símbolos `0` a `9` e `A` a `F`, com `A = 10`, `B = 11`, …, `F = 15`. Cada dígito hexadecimal corresponde a **exatamente quatro bits**, e é essa correspondência que torna as conversões rápidas.\n\nPara converter hexa → decimal, aplique a regra geral: `2AF₁₆ = 2·256 + 10·16 + 15 = 687`. Para hexa → binário, troque cada dígito pelos seus quatro bits. Para binário → hexa, agrupe de quatro **da direita para a esquerda**, completando com zeros à esquerda se faltar.\n\nDecimal → hexa segue por divisões sucessivas por 16, com os restos lidos de trás para frente: `423₁₀ = 1A7₁₆`.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=MhaGPACGIEs",
       "challenge": {
         "type": "quiz",
-        "question": "Qual expressão booleana produz saída 1 apenas quando A = 1 e B = 0?",
-        "options": ["A AND B", "A OR B", "A AND NOT B", "NOT A AND B"],
-        "correctIndex": 2
+        "question": "Quanto vale 2AF₁₆ em decimal?",
+        "options": [
+          "687",
+          "697",
+          "557",
+          "692"
+        ],
+        "correctIndex": 0
       },
-      "hint": "Pense na linha 10 da tabela: A precisa permanecer em 1, então não pode ser negada. O que precisa ser negado é B — e os dois termos devem ser ligados por AND.",
+      "hint": "Troque A por 10 e F por 15 antes de aplicar a regra geral: 2·256 + 10·16 + 15.",
       "loreFragment": {
         "id": "log-cd-03-receptacle",
         "title": "O Receptáculo Adormecido",
         "content": "Sob o Pátio Central, algo adormecido escuta o último pulsar das luzes. Quando o brilho se extingue, ele responde — não com palavras, mas com um deslocamento quase imperceptível no concreto. A autoria deste fragmento é incerta; o Ruído a reivindica em sussurros, entre um estalo e outro do cabeamento. Talvez ele apenas lembre o que a Cidadela esqueceu."
       }
+    },
+    {
+      "id": "cd-1-4",
+      "order": 4,
+      "wingId": "cd-wing-1",
+      "title": "Exercícios de Numeração",
+      "summaryText": "A regra geral resolve qualquer conversão quando se identifica o peso de cada casa. Em `1011011₂`, some `2⁶ + 2⁴ + 2³ + 2¹ + 2⁰` para chegar a `91₁₀`.\n\nNo caminho de volta, `167₁₀ = 128 + 32 + 4 + 2 + 1 = 10100111₂`. Para binário → hexa, agrupe de quatro: `3AF₁₆ = 0011 1010 1111₂`. E `532₁₀ = 214₁₆`, porque as divisões por 16 deixam restos `4`, `5` e `2`, lidos de trás para frente.\n\nRepetir essas conversões em voz alta é o jeito mais seguro de fixar a ideia: **a base muda, a quantidade não**.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Pg2tvTNfBzQ",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "A conversão de 532 para hexadecimal termina com o resto 2. Ajuste as chaves e escolha a operação que devolve 1 quando exatamente uma delas estiver ligada.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Resto final",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Outro resto",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com A = 1 e B = 0, a operação **XOR** devolve 1: ela acende quando as entradas são diferentes. É o mesmo cuidado de observar qual casa mudou ao agrupar quatro bits."
+      },
+      "hint": "Ligue apenas uma das chaves. Em seguida, procure a operação que acende quando as entradas divergem."
+    },
+    {
+      "id": "cd-1-5",
+      "order": 5,
+      "wingId": "cd-wing-1",
+      "title": "Códigos Binários",
+      "summaryText": "Um **código** é uma representação de números, letras, palavras, estágios ou símbolos — o **código Morse**, feito de pontos e traços, é o exemplo clássico. Como a maioria dos sistemas digitais trabalha com **dados binários**, qualquer informação precisa ser traduzida em sequências de bits. O professor usa o controle de temperatura do motor de um carro: **frio (abaixo de 80 °C) → 00**, **normal (entre 80 °C e 100 °C) → 01** e **quente (acima de 100 °C) → 10**. Atribuir uma sequência de bits a cada elemento discreto de informação é o que se chama **codificação**.\n\nQuando se quer a menor quantidade possível de bits, usa-se o **código de largura mínima**: para `n` elementos, `L = ⌈log₂ n⌉`. Para seis elementos (A a F), `⌈log₂ 6⌉ = 3` bits — com 2 bits só cabem 4 sequências, com 3 cabem 8. Nem todo código é de largura mínima: o **one-hot**, por exemplo, gasta um bit por símbolo e mantém apenas um deles ligado por vez.\n\nA aula apresenta os códigos padronizados: **BCD** (cada dígito decimal vira 4 bits, então `35` vira `0011 0101` — não é a conversão do número inteiro), **Gray** ou reflexivo (**não posicional**: palavras consecutivas diferem por um único bit; constrói-se copiando o código anterior com `0` na frente e depois espelhando com `1`), **Johnson** (desloca sucessivamente `1`s e depois `0`s), **excesso 3** (soma 3 ao número antes de converter) e **ASCII** (7 bits para 128 caracteres, com o estendido de 8 bits para 256). Gray e one-hot representam estados e medem deslocamento — não servem para aritmética.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=ZQkNfdwaG2c",
+      "challenge": {
+        "type": "quiz",
+        "question": "Na aula, o professor converte o decimal 35 para BCD. Qual sequência de bits ele obtém?",
+        "options": [
+          "0011 0101 — cada dígito convertido separadamente em 4 bits.",
+          "0101 0011 — os dígitos convertidos, mas na ordem trocada.",
+          "100011 — o número 35 inteiro convertido para binário.",
+          "0011 0100 — o último dígito tratado como se fosse 4."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Você está no caminho certo: no BCD a conversão é **dígito por dígito**, sempre com 4 bits para cada um. Comece pelo 3 (`0011`) e só depois converta o 5 (`0101`)."
+    },
+    {
+      "id": "cd-1-6",
+      "order": 6,
+      "wingId": "cd-wing-1",
+      "title": "Aritmética Binária",
+      "summaryText": "As quatro operações com números binários positivas — adição, subtração, multiplicação e divisão — são executadas pela **ULA**. A adição segue a mesma lógica do papel, da direita para a esquerda: `0 + 0 = 0`, `0 + 1 = 1` e `1 + 1 = 0` com **vai-um**. Exemplo: `1100₂ + 0110₂ = 10010₂` (12 + 6 = 18).\n\nA subtração usa empréstimos: quando `0 − 1` aparece, pede-se um empréstimo à casa seguinte. Vale sempre conferir o resultado em decimal.\n\nNa multiplicação, as parcelas parciais são deslocadas à esquerda e somadas; a tabuada só tem `0` e `1`. A divisão repete comparações e subtrações, como na decimal.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=gBsNWWscIcg",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Some 1 + 1 na coluna menos significativa. Qual operação entrega o bit de vai-um?",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Primeiro 1",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Segundo 1",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com A = 1 e B = 1, a operação **AND** devolve 1 — é o transporte gerado quando os dois bits da coluna valem 1. A XOR entregaria o bit de soma, que é 0."
+      },
+      "hint": "Ligue as duas chaves. Uma operação dá o resultado da casa; a outra dá o vai-um. Escolha a segunda."
+    },
+    {
+      "id": "cd-1-7",
+      "order": 7,
+      "wingId": "cd-wing-1",
+      "title": "Números com Sinal",
+      "summaryText": "Há duas formas usuais de representar inteiros com sinal. Na **sinal-magnitude**, o bit mais significativo (MSB) é o sinal — `0` para positivo, `1` para negativo — e os demais bits guardam o módulo. O problema é que existem dois zeros: `+0` e `−0`.\n\nNo **complemento de 2**, inverte-se todos os bits do positivo e soma-se 1. Assim há um único zero e o MSB continua indicando o sinal. Em 6 bits, `+21 = 010101` e `−21 = 101011`.\n\nA grande vantagem é que a subtração vira soma: `A − B = A + complemento2(B)`. O mesmo somador serve para as duas operações. Cuidado com o **overflow**: se o resultado sai da faixa que a quantidade de bits comporta, o sinal pode mudar de forma inesperada.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=PceEtFggO_Q",
+      "challenge": {
+        "type": "quiz",
+        "question": "Qual afirmativa sobre o complemento de 2 está correta?",
+        "options": [
+          "Existe uma única representação para o zero.",
+          "Existem dois zeros: +0 e −0, como em sinal-magnitude.",
+          "O bit mais significativo deixa de indicar o sinal.",
+          "A subtração precisa de um circuito separado do somador."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Compare as duas convenções pelo destino do zero: em uma delas ele aparece duas vezes; na outra, uma só."
+    },
+    {
+      "id": "cd-1-8",
+      "order": 8,
+      "wingId": "cd-wing-1",
+      "title": "Aritmética BCD",
+      "summaryText": "Em **BCD** (*Binary Coded Decimal*), cada dígito decimal de 0 a 9 é representado por quatro bits. É o código tradicional das calculadoras: `25` vira `0010 0101`.\n\nNa adição, soma-se binariamente e depois se corrige. Se um dígito passou de `9` (`1001`) ou gerou vai-um, soma-se `0110` (6) àquele grupo de quatro bits e propaga-se o transporte. O exemplo `25 + 9` termina em `34`, ou `0011 0100`.\n\nA subtração BCD segue três etapas: complementar o subtraendo, somar e corrigir os dígitos sem empréstimo somando `10` (`1010`). A correção só é necessária quando o resultado sai do intervalo `0–9` do código.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=i48FGijMVO0",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "A correção BCD é necessária se o dígito passou de 9 OU se houve vai-um. Ajuste as chaves e escolha a operação que sinaliza a correção.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Passou de 9",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Houve vai-um",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Basta uma das condições para corrigir. Com A = 1 e B = 0, a operação **OR** devolve 1; a OR acende quando pelo menos uma entrada está ligada."
+      },
+      "hint": "Ligue só a chave que representa o dígito fora da faixa. A operação certa não exige as duas condições ao mesmo tempo."
+    },
+    {
+      "id": "cd-1-9",
+      "order": 9,
+      "wingId": "cd-wing-1",
+      "title": "Ferramentas de Descrição",
+      "summaryText": "A **álgebra booleana** (Boole, 1854; Shannon, 1938) descreve relações entre variáveis binárias, com `1` para verdadeiro e `0` para falso. Uma variável pode ser um nível de tensão — `0` a `0,8 V` como baixo, `2` a `5 V` como alto — ou um estado como chave aberta/fechada: a convenção é escolhida por quem projeta.\n\nOs operadores são **NOT**, **AND**, **OR**, **NAND**, **NOR**, **XOR** e **XNOR**. Um circuito **combinacional** depende só das entradas atuais; um **sequencial** depende também de estados armazenados.\n\nPara descrever um circuito há quatro ferramentas: tabela da verdade (**sempre** com `2ⁿ` linhas), diagrama de temporização (pode ser incompleto), expressão lógica e diagrama de circuito. A tabela de transição de estados só faz sentido para circuitos sequenciais.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=jzR0kYsay2U",
+      "challenge": {
+        "type": "quiz",
+        "question": "Um circuito combinacional tem três entradas. Quantas linhas tem a sua tabela da verdade?",
+        "options": [
+          "3",
+          "6",
+          "8",
+          "9"
+        ],
+        "correctIndex": 2
+      },
+      "hint": "Cada combinação binária possível das entradas ocupa uma linha. Com três entradas, são 2 elevado a 3."
+    },
+    {
+      "id": "cd-1-10",
+      "order": 10,
+      "wingId": "cd-wing-1",
+      "title": "Portas Lógicas: OR, AND e XOR",
+      "summaryText": "Uma **porta lógica** é uma decisão mínima feita com elétrons: recebe sinais de entrada e devolve um único sinal de saída. A **OR** (`+`) devolve 1 se pelo menos uma entrada estiver em 1; a **AND** (`·`) exige todas as entradas em 1; a **NOT** inverte.\n\nA **XOR** devolve 1 quando as duas entradas são diferentes, e a **XNOR** quando são iguais. Juntando a negação às duas portas básicas surgem a **NAND** (`NOT(AND)`) e a **NOR** (`NOT(OR)`), tratadas como caixas-pretas.\n\nNum alarme com duas janelas e uma porta, qualquer sensor em 1 dispara a OR de três entradas. Já um borrifador só aciona quando a temperatura está alta **e** o sistema está habilitado: uma AND.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=-4b58LvY6NI",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Escolha a porta que devolve 1 somente quando as duas entradas estiverem em 0.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Entrada A",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Entrada B",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "NOR",
+          "NAND"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com A = 0 e B = 0, a **NOR** devolve 1: ela é o NOT da OR, que só acende quando nenhuma entrada está em 1. A NAND devolveria 1, mas também acende com uma entrada em 0 — a NOR é a que exige as duas baixas."
+      },
+      "hint": "Comece da OR e depois aplique a inversão. A porta procurada só acende no caso em que a OR apagaria.",
+      "loreFragment": {
+        "id": "log-cd-10-inward",
+        "title": "A Dobradiça Invertida",
+        "content": "Na última bancada da Ala, o latão não mostra uma porta: mostra o lugar onde uma porta esteve. A dobradiça está do lado de dentro, como se o desenho tivesse sido traçado por quem já estava no aposento. Não há nome gravado — há o modo como a madeira se abria."
+      }
+    },
+    {
+      "id": "cd-2-1",
+      "order": 11,
+      "wingId": "cd-wing-2",
+      "title": "Propriedades da Álgebra Booleana",
+      "summaryText": "As identidades da álgebra booleana permitem reescrever expressões sem mudar o que elas fazem. Para AND: `A·0 = 0`, `A·1 = A`, `A·A = A` e `A·Ā = 0`. Para OR: `A+0 = A`, `A+1 = 1`, `A+A = A` e `A+Ā = 1`. A dupla negação devolve `¬¬A = A`.\n\nA **comutatividade** troca a ordem dos termos, a **associatividade** troca o agrupamento e a **distributividade** escreve `A(B+C) = AB + AC`. Para XOR valem `A⊕0 = A`, `A⊕1 = Ā`, `A⊕A = 0` e `A⊕Ā = 1`.\n\nOs teoremas de **De Morgan** são os mais usados: `¬(A+B) = Ā·B̄` e `¬(A·B) = Ā+B̄`. Com eles, uma inversão sobre um grupo passa para cada variável e troca o sinal da operação.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Px3W4QHfrHc",
+      "challenge": {
+        "type": "quiz",
+        "question": "Aplique De Morgan: quanto vale ¬(A + B)?",
+        "options": [
+          "Ā · B̄",
+          "Ā + B̄",
+          "A · B",
+          "A + B"
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Ao trocar o sinal da operação, complemente cada uma das variáveis envolvidas."
+    },
+    {
+      "id": "cd-2-2",
+      "order": 12,
+      "wingId": "cd-wing-2",
+      "title": "Análise de Expressões Lógicas",
+      "summaryText": "Analisar uma expressão é calcular sua saída para cada combinação de entradas. A **ordem de precedência** manda resolver parênteses e colchetes primeiro, depois o **NOT** (a barra), depois o **AND** e por fim o **OR**.\n\nQuando uma barra cobre várias variáveis, calcule primeiro o que está sob ela e só depois aplique a negação. Substituem-se as variáveis por `0` e `1` e avalia-se a expressão porta por porta, como quem segue um fio até o fim.\n\nRepetindo o cálculo para as `2ⁿ` combinações, obtém-se a tabela da verdade. As identidades da álgebra ajudam a encurtar o trabalho quando a expressão é longa.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=XoWag-f1UTY",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Numa expressão `A·B + C`, o primeiro termo avaliou 0 e C vale 1. Escolha a operação que entrega a saída final.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Resultado de A·B",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Valor de C",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "A precedência manda calcular `A·B` antes do `+`. Com o primeiro termo em 0 e C em 1, a operação **OR** devolve 1 — é exatamente o sinal `+` da expressão."
+      },
+      "hint": "Resolva primeiro o que vem antes do sinal de soma. Depois pense em qual operação representa esse sinal."
+    },
+    {
+      "id": "cd-2-3",
+      "order": 13,
+      "wingId": "cd-wing-2",
+      "title": "Análise de Circuitos Combinacionais",
+      "summaryText": "Analisar um diagrama combinacional é obter dele a **expressão lógica** e a **tabela da verdade**. Percorre-se o desenho das entradas até a saída, em cascata, escrevendo a expressão de cada porta no caminho.\n\nUm detalhe que muda tudo: a conexão entre fios é indicada por uma **bolinha**. Sem bolinha, os fios apenas se cruzam e não se ligam.\n\nNo exemplo `X = A·B + C`, se `C = 1` então `X = 1` qualquer que seja `A·B`; se `C = 0`, resta `X = A·B`. Essa leitura inteligente reduz uma tabela de 16 linhas a apenas duas contas.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=u7FJAOnWS08",
+      "challenge": {
+        "type": "quiz",
+        "question": "Para X = A·B + C, qual o valor de X quando C = 1?",
+        "options": [
+          "X = 1, independentemente de A e B.",
+          "X = 0, porque A·B é multiplicado por C.",
+          "X = A, pois B desaparece da expressão.",
+          "Não é possível saber sem a tabela completa."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Escreva a saída de cada porta na ordem em que o sinal avança. Depois observe o que acontece quando o último termo é 1."
+    },
+    {
+      "id": "cd-2-4",
+      "order": 14,
+      "wingId": "cd-wing-2",
+      "title": "Desenhando Diagramas Lógicos",
+      "summaryText": "A **síntese** faz o caminho inverso da análise: parte da expressão lógica e monta o diagrama com as portas adequadas, respeitando a precedência. Depois, analisa-se o desenho de volta para conferir se a expressão original reaparece.\n\nNa notação compacta, uma **bolinha na entrada** indica que a variável está negada; uma **bolinha na saída** indica a negação do termo, como em NAND e NOR.\n\nPortas físicas costumam ter apenas duas entradas. Uma função de três variáveis vira cascata: `A·B` primeiro, depois `(A·B)·C`. De Morgan permite trocar associações de inversores por NANDs ou NORs equivalentes.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=xzCpDBYKCTA",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Para fechar a cascata de uma AND de três entradas, o resultado parcial A·B já é 1. Escolha a operação que inclui C também em 1.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Resultado de A·B",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Entrada C",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com o resultado parcial em 1 e C em 1, a **AND** devolve 1: `(A·B)·C = 1`. É a segunda porta da cascata, que só acende quando as duas chegam juntas."
+      },
+      "hint": "Pense em duas portas de duas entradas em fila. A última precisa das duas entradas ligadas para acender."
+    },
+    {
+      "id": "cd-2-5",
+      "order": 15,
+      "wingId": "cd-wing-2",
+      "title": "Bancada no Logisim",
+      "summaryText": "O **Logisim** é um simulador gratuito e portátil — não precisa instalar, mas requer Java. A interface reúne barra de menus, toolbar, biblioteca de componentes, propriedades e área de trabalho.\n\nPara montar, arrastam-se portas da biblioteca. Na toolbar, o **quadrado** cria um pino de entrada e o **círculo** cria um pino de saída; as conexões ligam os pontinhos das peças. A barra de propriedades altera parâmetros, como o número de entradas de uma AND, e permite nomear pinos.\n\nA seta é o modo de seleção; a **mãozinha** é o modo de simulação. Clicando nos pinos de entrada, alterna-se entre `0` e `1` e observa-se a saída. Varrer todas as combinações permite montar a tabela da verdade direto na bancada.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=32ritDV6XxU",
+      "challenge": {
+        "type": "quiz",
+        "question": "No Logisim, qual ícone da toolbar cria um pino de entrada?",
+        "options": [
+          "O quadrado; o círculo cria a saída.",
+          "O círculo; o quadrado cria a saída.",
+          "A seta de seleção, sempre que clicada duas vezes.",
+          "A mãozinha de simulação."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Na toolbar, um dos dois ícones geométricos alimenta o circuito e o outro recolhe o resultado. O de entrada é o primeiro."
+    },
+    {
+      "id": "cd-2-6",
+      "order": 16,
+      "wingId": "cd-wing-2",
+      "title": "Formas Canônicas",
+      "summaryText": "As **formas canônicas** escrevem qualquer expressão lógica de um modo padronizado. Na **SOP** (*sum of products*), temos uma soma (OR) de termos produto (AND); na **POS** (*product of sums*), um produto (AND) de termos soma (OR). Em ambas, cada variável aparece uma única vez, normal ou complementada.\n\nUm **mintermo** é o termo produto de uma linha da tabela da verdade: variável valendo `1` aparece normal; valendo `0`, complementada. Ele é `1` apenas naquela linha e escreve-se `Σm(índices)`.\n\nO **maxtermo** segue a regra invertida (`0` vira forma normal, `1` vira complementada), é `0` apenas naquela linha e escreve-se `ΠM(índices)`. As barras nunca devem cobrir mais de uma variável.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Q2s6ZFX3de8",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Na linha A=0, B=1, C=1, o mintermo começa com Ā·B·C. Com Ā já avaliado em 1 e B em 1, escolha a operação que mantém o termo aceso.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Ā (A valia 0)",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "B",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 1,
+        "explanation": "No mintermo, `0` vira complementada e `1` vira forma normal: `Ā·B·C`. Com Ā = 1 e B = 1, a **AND** devolve 1; C também entra como 1 na linha escolhida."
+      },
+      "hint": "No mintermo, o 0 da variável aparece com barra e o 1 aparece sem. Depois é só juntar os fatores com AND.",
+      "loreFragment": {
+        "id": "log-cd-16-canonical",
+        "title": "A Forma de Todas",
+        "content": "Toda expressão da Cidadela parecia procurar uma única maneira de ser escrita. Quando a forma canônica aparecia, as variáveis ficavam na mesma ordem, como nomes chamados para uma lista que ninguém chegou a ler até o fim. A lista continuava aberta na última linha."
+      }
+    },
+    {
+      "id": "cd-2-7",
+      "order": 17,
+      "wingId": "cd-wing-2",
+      "title": "Síntese Combinacional",
+      "summaryText": "O **processo de síntese combinacional** transforma uma especificação no circuito lógico que realiza a função desejada. O professor resume o caminho em três passos: **1)** representar o problema na **tabela da verdade**; **2)** obter a **expressão lógica** a partir dela; **3)** desenhar o **diagrama do circuito**. O foco da aula é o passo 2 — a tabela já vem dada e o desenho do passo 3 havia sido visto nas aulas anteriores.\n\nA expressão aparece em uma forma **canônica**: **soma de produtos** (SOP) ou **produto de somas** (POS). Para a soma de produtos, analisam-se as linhas cuja **saída é 1**, escreve-se o **mintermo** de cada uma e somam-se todos com **OR**. Para o produto de somas, observam-se as linhas com **saída 0**, escreve-se o **maxtermo** de cada uma e multiplicam-se todos com **AND**.\n\nNos exemplos, cada linha com saída 1 vira uma porta **AND** com as variáveis na forma normal ou negada, e esses termos se encontram numa porta **OR**; o procedimento é repetido com duas, três e quatro entradas. No exemplo 4, o professor usa a mesma tabela do exemplo 1, mas pela forma **produto de somas** — maxtermos ligados por AND — e chega à mesma função. O passo seguinte da disciplina é reduzir o número de portas: a **simplificação**.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=lGIVvVAiR6U",
+      "challenge": {
+        "type": "quiz",
+        "question": "No processo de síntese combinacional, o que o professor faz no passo 2, que é o foco da aula?",
+        "options": [
+          "Obtém a expressão lógica a partir da tabela da verdade, em forma soma-de-produtos ou produto-de-somas.",
+          "Monta a tabela da verdade a partir da especificação do problema.",
+          "Desenha o diagrama do circuito com portas AND, OR e inversores.",
+          "Simplifica a expressão com mapas de Karnaugh para usar menos portas."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Você está perto: a aula começa com a tabela da verdade já pronta. O trabalho aqui é traduzir as linhas dela em uma expressão — o desenho do circuito fica para o passo seguinte."
+    },
+    {
+      "id": "cd-2-8",
+      "order": 18,
+      "wingId": "cd-wing-2",
+      "title": "Simplificação Algébrica",
+      "summaryText": "Simplificar um circuito combinacional é encontrar um circuito **equivalente** — com a **mesma tabela da verdade** — usando **menos portas lógicas** ou menos variáveis de entrada. Quanto menos componentes, mais barata a implementação. O professor lista três caminhos: **simplificação algébrica** (foco da aula, com as identidades da álgebra booleana), **mapas de Karnaugh** (uma forma gráfica a partir da tabela) e o **método tabular de Quine-McCluskey** (o mesmo raciocínio dos mapas, mais eficiente para algoritmos computacionais).\n\nA ferramenta é **colocar o termo comum em evidência**, usar a **distributividade** e os **teoremas de De Morgan**, agrupando termos semelhantes para eliminar variáveis. No primeiro exemplo, `A·B̄·C + A·B̄·C̄` vira `A·B̄·(C + C̄)`; como `C + C̄ = 1`, sobra apenas `A·B̄`. A variável C desaparece sem alterar a função.\n\nO segundo exemplo prova, por **dupla inversão e De Morgan**, que `A + Ā·B = A + B`: invertendo a expressão duas vezes, distribuindo e usando `Ā·A = 0`, chega-se a `(Ā·B̄)̄`, que volta a `A + B`. Os exemplos seguintes repetem o método — fatorar o termo que mais se repete e aplicar De Morgan quantas vezes for preciso — até chegar, por exemplo, a `C̄ + Ā·B`.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=mOBy3LJV5sM",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "No exemplo 1, depois de colocar o termo comum em evidência, sobra C + C̄. Ajuste as parcelas e escolha a operação que confirma que essa soma vale 1.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Parcela C",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Parcela C negado",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "OR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "O professor mostrou que C + C̄ = 1: basta uma das parcelas complementares estar em 1. Com C = 1 e C negado = 0, a **OR** devolve 1 — e é por isso que a variável C some da expressão, deixando só o fator comum."
+      },
+      "hint": "Você está muito perto: as duas parcelas são complementares. Deixe uma em 1 e a outra em 0 — a soma lógica (OR) acende e a variável pode sair da expressão."
+    },
+    {
+      "id": "cd-2-9",
+      "order": 19,
+      "wingId": "cd-wing-2",
+      "title": "Mapas de Karnaugh: Código Gray",
+      "summaryText": "O **mapa de Karnaugh** é uma representação gráfica da tabela da verdade feita para simplificar expressões. Cada célula corresponde a uma linha e recebe o valor da saída.\n\nO segredo é o **código Gray**: células vizinhas diferem em apenas uma variável, e a sequência é `00, 01, 11, 10` — depois de `01` vem `11`, não `10`. Assim, ao agrupar vizinhas, a variável que muda pode ser eliminada.\n\nO mapa pode ter 2 variáveis (`2×2`), 3 (`2×4`) ou 4 (`4×4`). Acima disso, a leitura fica difícil e recorre-se a dois mapas.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8_Ip6PzYqrs",
+      "challenge": {
+        "type": "quiz",
+        "question": "Qual é a ordem do código Gray nas linhas e colunas de um mapa de quatro variáveis?",
+        "options": [
+          "00, 01, 11, 10",
+          "00, 01, 10, 11",
+          "00, 10, 01, 11",
+          "01, 11, 00, 10"
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Depois de 01 vem 11, não 10: a regra é mudar apenas um bit por vez.",
+      "loreFragment": {
+        "id": "log-cd-19-syllable",
+        "title": "Um Espaço a Mais",
+        "content": "O letreiro da bancada dizia SOMA com o M um espaço fora do lugar. Lin passou o dedo pela letra deslocada três vezes; nas três, o espaço tinha crescido. O Ruído não apaga o que está escrito — apenas não deixa que fique onde devia."
+      }
+    },
+    {
+      "id": "cd-3-1",
+      "order": 20,
+      "wingId": "cd-wing-3",
+      "title": "Agrupando no Mapa",
+      "summaryText": "No mapa de Karnaugh, células vizinhas diferem em uma variável — e há adjacência também entre a primeira e a última linha, e entre a primeira e a última coluna: o mapa é **enrolado**.\n\nOs agrupamentos válidos são retângulos ou quadrados de `2, 4, 8, 16…` células, nunca 3 ou 5. Agrupa-se primeiro o par obrigatório, depois quartetos e grupos maiores, reaproveitando células quando ajuda. Uma célula isolada vira mintermo.\n\nNa expressão de um grupo ficam apenas as variáveis que **não mudam**: valor `1` aparece normal e valor `0` aparece complementada. A saída final é o OR das expressões dos grupos — uma SOP já minimizada.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=AVb_9sXqfSk",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Num grupo de duas células vizinhas, uma variável mudou e a outra ficou. Ajuste as chaves e escolha a operação que marca a diferença.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Primeira célula",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Célula vizinha",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "As duas células diferem, então a variável que muda é eliminada. Com A = 1 e B = 0, a operação **XOR** devolve 1 — ela acende quando as entradas são diferentes."
+      },
+      "hint": "Escreva só as variáveis que permanecem constantes dentro do grupo. A que muda desaparece."
+    },
+    {
+      "id": "cd-3-2",
+      "order": 21,
+      "wingId": "cd-wing-3",
+      "title": "Grupos Maiores",
+      "summaryText": "Um grupo de `2ⁿ` células **elimina `n` variáveis** da expressão. Um par elimina uma variável; um quarteto elimina duas; um grupo de 16 elimina quatro — e nesse caso a saída é simplesmente `1`.\n\nQuanto maior o grupo, menor o termo resultante. Por isso a ordem de agrupamento importa: procure os quartetos e octetos antes de fechar pares, sempre respeitando o formato retangular e a potência de 2.\n\nCélulas podem pertencer a mais de um grupo quando isso ajuda a formar um bloco maior. O objetivo não é desenhar bonito: é escrever a menor expressão que ainda descreve a mesma função.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=rv2r_hSLRN0",
+      "challenge": {
+        "type": "quiz",
+        "question": "Ao agrupar quatro células no mapa de Karnaugh, quantas variáveis são eliminadas?",
+        "options": [
+          "Nenhuma",
+          "Uma",
+          "Duas",
+          "Quatro"
+        ],
+        "correctIndex": 2
+      },
+      "hint": "Quatro é 2 elevado a 2. O número de variáveis eliminadas é o expoente."
+    },
+    {
+      "id": "cd-3-3",
+      "order": 22,
+      "wingId": "cd-wing-3",
+      "title": "Don't-Care e Armadilhas",
+      "summaryText": "Nem todo agrupamento é válido. Uma figura em **L** não é retângulo nem quadrado; um grupo de **3** células não é potência de 2. As duas armadilhas aparecem com frequência quando o mapa está quase cheio.\n\nTambém é possível ir direto da expressão para o mapa: variável negada vale `0`, normal vale `1`. Se um termo estiver incompleto, use um asterisco para a variável faltante e preencha todas as combinações possíveis.\n\nA condição de **não relevância** (*don't-care*) marca com `X` as entradas que nunca ocorrem. O projetista escolhe `0` ou `1` para cada X de modo a maximizar os agrupamentos e minimizar a expressão final.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qNXLHeHurpk",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Duas células vizinhas diferem em uma variável. Ajuste as chaves e escolha a operação que representa exatamente essa diferença.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Célula 1",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Célula 2",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "A diferença entre as duas células é o que sobra quando uma vale 1 e a outra 0. Com A = 1 e B = 0, a **XOR** devolve 1. Um grupo em L, ao contrário, não seria retângulo e não poderia ser agrupado."
+      },
+      "hint": "Confira duas coisas antes de agrupar: o formato é retangular e a quantidade de células é potência de 2."
+    },
+    {
+      "id": "cd-3-4",
+      "order": 23,
+      "wingId": "cd-wing-3",
+      "title": "Projeto Combinacional Completo",
+      "summaryText": "Um projeto combinacional percorre **cinco etapas**: especificação em texto, tabela da verdade, expressão lógica, diagrama e simulação no Logisim.\n\nNo exemplo de irrigação de jardim, as entradas são `I` (inverno), `U` (baixa umidade) e `T` (temperatura). Três entradas significam `2³ = 8` linhas na tabela. Cada frase da especificação vira uma condição: liga no inverno com solo seco; no verão com solo seco e calor; no verão com solo úmido e frio; no verão com solo seco e frio.\n\nCom a tabela preenchida, o mapa de Karnaugh produz uma expressão de dois termos: inversores, ANDs e uma OR final. A simulação testa as oito combinações e todas conferem.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=ttoNkYJ38zQ",
+      "challenge": {
+        "type": "quiz",
+        "question": "No exemplo de irrigação com três entradas, quantas linhas tem a tabela da verdade?",
+        "options": [
+          "3",
+          "6",
+          "8",
+          "16"
+        ],
+        "correctIndex": 2
+      },
+      "hint": "Converta cada frase da especificação em uma condição de entrada e lembre que três variáveis dão 2³ combinações."
+    },
+    {
+      "id": "cd-3-5",
+      "order": 24,
+      "wingId": "cd-wing-3",
+      "title": "Universalidade de NAND e NOR",
+      "summaryText": "Apenas portas **NAND** ou apenas portas **NOR** bastam para construir qualquer circuito combinacional. Essa propriedade é a **universalidade**.\n\nCom NAND: o NOT aparece ligando as duas entradas à mesma variável (`A↑A = Ā`); a AND é uma NAND seguida de uma NAND inversora; a OR usa NANDs inversoras nas entradas e uma NAND final, conforme De Morgan. Com NOR, o raciocínio é simétrico.\n\nUsar um único tipo de porta barateia a implementação comercial. Na prática, inversões em série se cancelam: negar duas vezes devolve o sinal original.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qXEx7nFvMh4",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Ligue as duas entradas da NAND à mesma variável A e observe a saída. Ajuste A para obter 0.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Variável A",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Mesma variável A",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "NAND"
+        ],
+        "expectedOutput": 0,
+        "explanation": "Com as duas entradas ligadas juntas, a NAND calcula `A·A = A` e depois inverte: `Ā`. Para a saída ser 0, basta A = 1. Ajuste as duas chaves em 1 — esta é a forma de obter um NOT com uma única porta."
+      },
+      "hint": "As duas entradas recebem o mesmo sinal. Lembre que negar A dá 1 quando A é 0 — e queremos o contrário.",
+      "loreFragment": {
+        "id": "log-cd-24-universal",
+        "title": "A Porta Única",
+        "content": "Uma só porta, repetida, bastava para fazer o trabalho de todas as outras. Os Arquitetos chamavam isso de economia; no desenho de Vetra, porém, a porta única aparecia ligada a todas as Alas por um fio que não levava a nenhuma saída. O fio continuava lá, intacto."
+      }
+    },
+    {
+      "id": "cd-3-6",
+      "order": 25,
+      "wingId": "cd-wing-3",
+      "title": "Meio e Meio: Somadores",
+      "summaryText": "Um **somador** é um circuito combinacional que soma dois números de `n` bits e devolve `S` (n bits) mais um bit de transporte. Fazer a tabela da verdade direta seria inviável: um somador de 8 bits teria `2¹⁶ = 65.536` linhas.\n\nA estratégia é imitar a soma feita à mão, coluna por coluna, da direita para a esquerda. O **meio somador** recebe A e B e entrega `S = A ⊕ B` com `C = A·B`. O **somador completo** recebe também o transporte anterior `Cᵢ`: `S = A ⊕ B ⊕ Cᵢ` e `Cₒ = AB + BCᵢ + ACᵢ`.\n\nUsa-se o meio somador na coluna menos significativa e somadores completos nas demais.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=r_DpiGT0YmA",
+      "challenge": {
+        "type": "quiz",
+        "question": "Quais são as expressões de saída de um meio somador?",
+        "options": [
+          "Soma S = A ⊕ B e transporte C = A·B.",
+          "Soma S = A·B e transporte C = A ⊕ B.",
+          "Soma S = A + B e transporte C = A − B.",
+          "Soma S = A·B̄ e transporte C = Ā·B."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Pense em 1 + 1: o resultado da casa é 0 e o vai-um é 1. Uma operação entrega o 0, a outra entrega o 1."
+    },
+    {
+      "id": "cd-3-7",
+      "order": 26,
+      "wingId": "cd-wing-3",
+      "title": "Somadores em Cascata",
+      "summaryText": "Um somador completo também pode ser montado com **dois meios somadores e uma OR**: `S = (A⊕B)⊕Cᵢ` e `Cₒ = AB + (A⊕B)·Cᵢ`.\n\nO **somador ripple carry** de 4 bits coloca um meio somador no bit 0 e três somadores completos em cascata: o transporte de cada coluna alimenta a seguinte. A representação compacta é uma caixa com A (4 bits) e B (4 bits) entrando, e S (4 bits) mais C4 (1 bit) saindo.\n\nTrocar o meio somador do início por um somador completo cria a entrada **carry-in**: com `Cᵢ = 0` soma A+B; com `Cᵢ = 1`, calcula A+B+1. Cascateando o C4 de um bloco no Cᵢ do seguinte, chega-se a um somador de 8 bits.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=rhZ0QmX6Gf0",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Para que serve o carry-in (Cᵢ) de um somador de 4 bits?",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Transporte recebido",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Próxima parcela",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "OR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "O carry-in recebe o vai-um da coluna anterior. Com o transporte em 0 e a parcela em 1, a operação **OR** devolve 1 e o sinal segue adiante. Na primeira coluna de uma soma simples, Cᵢ deve ficar em 0."
+      },
+      "hint": "É a entrada do vai-um da coluna anterior. No começo da soma, deixe-a em zero para não alterar A+B."
+    },
+    {
+      "id": "cd-3-8",
+      "order": 27,
+      "wingId": "cd-wing-3",
+      "title": "Somadores no Logisim",
+      "summaryText": "No Logisim, a construção é **hierárquica**: meio somador (XOR + AND) → somador completo (dois meios + OR) → somador de 4 bits → somador de 8 bits por cascateamento.\n\nCada bloco vira um **subcircuito** com pinos azuis de entrada e saída. Usando o navegador de circuitos, um duplo clique alterna entre `half adder`, `full adder`, `adder4b` e `adder8b`.\n\nAs simulações revelam os limites: `3 + 6 = 9` (`1001₂`); `9 + 7 = 16` gera **overflow** em 4 bits (`S = 0000`, `C4 = 1`); `27 + 35 = 62` (`00111110₂`) e com `Cᵢ = 1` chega a 63. Hierarquia e abstração são as lições finais: blocos simples compõem os complexos, e a caixa pode ser usada sem olhar seu interior.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=6sBkmAlJlvs",
+      "challenge": {
+        "type": "quiz",
+        "question": "Ao somar 9 + 7 num somador de 4 bits, o que indica C4 = 1?",
+        "options": [
+          "Overflow: 16 não cabe em 4 bits e a saída deve ser desconsiderada.",
+          "Que a soma terminou sem transporte.",
+          "Que o carry-in foi ligado erroneamente.",
+          "Que o resultado 0000 é o valor correto, 16."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Com 4 bits o maior número é 15. Quando a soma passa disso, o último transporte acende como aviso.",
+      "loreFragment": {
+        "id": "log-cd-27-measure",
+        "title": "Três Leituras",
+        "content": "Lin mediu o mesmo somador três vezes: 9, 10 e 12. A terceira leitura veio com um segundo de atraso, como se o barramento tivesse ouvido a pergunta antes de respondê-la. «Ainda estou medindo», escreveu ela, por baixo do número que não era dela."
+      }
+    },
+    {
+      "id": "cd-3-9",
+      "order": 28,
+      "wingId": "cd-wing-3",
+      "title": "Subtratores",
+      "summaryText": "O **subtrator** calcula `A − B` e entrega também um bit de empréstimo (*borrow*). O **meio subtrator** produz `D = A ⊕ B` e `Bₒ = Ā·B` — a diferença é a mesma, mas o empréstimo muda porque a subtração **não é comutativa**.\n\nO subtrator completo inclui o empréstimo anterior `Bᵢ`: `D = A ⊕ B ⊕ Bᵢ` e `Bₒ = Ā·B + B·Bᵢ + Ā·Bᵢ`. Cascateando, chega-se a um subtrator de 4 ou 8 bits.\n\nNa prática usa-se o somador com **complemento de 2**: `A − B = A + B̄ + 1`. Invertem-se os bits de B e liga-se `Cᵢ = 1`. O seletor `M` escolhe: `M = 0` mantém B e soma; `M = 1` inverte B e subtrai.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=TQfRSFsRDAU",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "O minuendo A está em 1 e o subtraendo B em 0. Escolha a operação que devolve A − B.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Minuendo A",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Subtraendo B",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com A = 1 e B = 0, `1 − 0 = 1`. A operação **XOR** devolve 1 e é a mesma da diferença do meio subtrator. Se trocássemos a ordem, `0 − 1` exigiria empréstimo — a subtração não é comutativa."
+      },
+      "hint": "Atenção à ordem: o minuendo vem primeiro. Ajuste as chaves e pense qual operação entrega a diferença sem empréstimo."
+    },
+    {
+      "id": "cd-3-10",
+      "order": 29,
+      "wingId": "cd-wing-3",
+      "title": "Somador-Subtrator Controlado",
+      "summaryText": "O professor monta no **Logisim** um **somador-subtrator controlado de 4 bits** a partir do projeto da aula 27: quatro **somadores completos** e quatro portas **XOR** comandadas pelo sinal `M` (`M = 0` soma, `M = 1` subtrai). Antes de montar, ele mostra como editar a **forma do subcircuito**: quadrados são as entradas e círculos as saídas, na ordem `Cin, A, B` e `S, Cout`; mudar o símbolo e acrescentar rótulos não altera o esquema do somador completo.\n\nO princípio é o **complemento de 2**: com `M = 1`, cada bit de B passa pela XOR e é invertido (`B̄`), e o próprio `M` entra no **carry-in** do somador menos significativo, somando o `+1`. A saída é então `A + B̄ + 1`, que realiza a subtração `A − B`. Com `M = 0`, a XOR deixa B intacto e o carry-in fica em 0: `A + B`.\n\nNo teste da aula, `A = 9` e `B = 3`: com `M = 0` a saída é `1100` (12); com `M = 1`, `0110` (6). O professor observa que o último carry fica em 1 na subtração, mas **não detecta overflow nessa operação** — deixou essa investigação como exercício.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=iiTMiSu_xbU",
+      "challenge": {
+        "type": "quiz",
+        "question": "No teste do professor, A = 9 e B = 3. Com o seletor M em 1, qual é a saída do somador-subtrator de 4 bits?",
+        "options": [
+          "0110 — o resultado de 9 − 3, pois M = 1 ativa o complemento de 2.",
+          "1100 — o resultado de 9 + 3, como se M estivesse em 0.",
+          "1001 — A inalterado, porque a operação foi desligada.",
+          "1111 — todos os bits ligados, indicando overflow."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Compare as duas posições do seletor com o mesmo par de números: com M em 0 o professor viu a soma; ao passar para 1, basta aplicar o complemento de 2 de B. O carry final não é o sinal de overflow aqui."
+    },
+    {
+      "id": "cd-3-11",
+      "order": 30,
+      "wingId": "cd-wing-3",
+      "title": "Incrementadores e Decrementadores",
+      "summaryText": "Um **incrementador** é um circuito combinacional que **acrescenta uma unidade** ao dado de entrada: com `n` bits em A, a saída também tem `n` bits e vale `A + 1`. O professor mostra **três formas** de construí-lo: usar um **somador ripple** com uma das entradas fixa em `1`; usar o mesmo somador com a segunda entrada em `0` e o **carry-in em `1`**; ou cascatear **meio-somadores** — quatro para 4 bits — com o `1` apenas no meio-somador menos significativo e o transporte de cada um ligado à entrada B do seguinte.\n\nO **decrementador** faz o caminho inverso: subtrai uma unidade e entrega `A − 1` com a mesma largura. Segue os mesmos três princípios: um **subtrator ripple** com uma entrada em `1`, ou com a outra entrada em `0` e o **borrow-in (`C0`) em `1`**, ou uma cascata de **meio-subtratores** interligados exatamente como os meio-somadores.\n\nA ideia que permanece é a mesma dos somadores em cascata: uma **entrada de transporte bem posicionada** — carry-in ou borrow-in — resolve o `+1` e o `−1` sem exigir um bloco novo.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=XAGm1k_H49w",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "No segundo método do professor, a parcela B do somador fica em 0 e o +1 vem do carry-in. Ajuste o carry-in e escolha a operação que entrega 1 na saída.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Parcela B (zerada)",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Carry-in (C0)",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "OR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com a parcela B em 0 e o carry-in ajustado para 1, a **OR** devolve 1. É esse transporte que entra na soma: A + 0 + 1 = A + 1."
+      },
+      "hint": "A parcela B está zerada — o incremento não vem dela. Olhe o fio do transporte: é o carry-in que entra com o 1 na soma."
+    },
+    {
+      "id": "cd-4-1",
+      "wingId": "cd-wing-4",
+      "title": "Somadores BCD",
+      "summaryText": "Um somador BCD trabalha em **grupos de quatro bits**, um por dígito decimal. Como os códigos de 10 a 15 não existem no BCD, é preciso detectar e corrigir o resultado.\n\nO detector sai do mapa de Karnaugh: `z = z3·z2 + z1·z0 + c4`. Ou seja, soma-se 6 quando o dígito passou de 9 ou quando houve carry final.\n\nA correção é feita por um **segundo somador de 4 bits**, que acrescenta `0110` ao resultado, e o carry alimenta o próximo dígito. Somadores BCD podem ser cascateados para números maiores.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=fLZRFkFWQ4c",
+      "challenge": {
+        "type": "quiz",
+        "question": "Num somador BCD, em que momento se deve somar a correção 0110 (6)?",
+        "options": [
+          "Quando o dígito passa de 9 ou quando há carry final.",
+          "Sempre que o bit menos significativo estiver em 1.",
+          "Apenas quando a entrada B for maior que a entrada A.",
+          "Nunca: a correção é feita só na subtração."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Pense no 6 como um salto sobre os códigos inválidos 10 a 15, que o BCD não reconhece.",
+      "order": 31
+    },
+    {
+      "id": "cd-4-2",
+      "wingId": "cd-wing-4",
+      "title": "Multiplicadores em Array",
+      "summaryText": "A tabela da verdade de um multiplicador de 8 por 8 bits teria `2¹⁶` linhas — inviável. A saída é imitar a multiplicação feita à mão.\n\nCada produto de **1 bit por 1 bit** é uma porta **AND**. As parcelas parciais são deslocadas à esquerda e somadas com meio somadores e somadores completos, formando um **array multiplier** de `n + m` bits na saída.\n\nO arranjo é rápido, mas gasta muitos componentes. Para larguras grandes, como 16 bits, prefere-se repetir somas em vez de montar a matriz inteira.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=6mf8qFEBxEU",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Cada parcela parcial de um multiplicador vem de uma AND entre dois bits. Confirme com as duas entradas em 1.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Bit do multiplicando",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Bit do multiplicador",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com A = 1 e B = 1, a **AND** devolve 1: é o produto parcial. Desenhando as parcelas em colunas deslocadas e somando-as, obtém-se o produto final."
+      },
+      "hint": "Desenhe as parcelas em colunas antes de somar. Cada coluna nasce de uma única AND.",
+      "order": 32
+    },
+    {
+      "id": "cd-4-3",
+      "wingId": "cd-wing-4",
+      "title": "Comparadores de Magnitude",
+      "summaryText": "Um **comparador** recebe dois números de mesma largura e indica `A = B`, `A > B` ou `A < B`, com apenas uma saída alta por vez.\n\nA igualdade é detectada com **XNOR** bit a bit: `x3 = A3 XNOR B3`, e assim por diante. Então `A = B = x3·x2·x1·x0`.\n\nPara as desigualdades, compara-se do bit mais significativo ao menos: `A3·¬B3`, depois `x3·A2·¬B2`, e assim por diante. Também se pode derivar `A < B` de `¬(A=B)·¬(A>B)`.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=tVgocuuisjA",
+      "challenge": {
+        "type": "quiz",
+        "question": "Qual porta detecta que dois bits são iguais num comparador?",
+        "options": [
+          "XNOR",
+          "XOR",
+          "NAND",
+          "NOR"
+        ],
+        "correctIndex": 0
+      },
+      "hint": "A XOR acende quando os bits diferem. A porta procurada é a sua inversa.",
+      "order": 33
+    },
+    {
+      "id": "cd-4-4",
+      "wingId": "cd-wing-4",
+      "title": "Carry Look-ahead",
+      "summaryText": "O somador **ripple carry** é lento: cada bit precisa esperar o transporte do anterior. Num somador de 4 bits são quatro unidades de tempo.\n\nO **carry look-ahead** quebra essa dependência com três sinais: `g = A·B` (*generate*), `p = A XOR B` (*propagate*) e `k = ¬A·¬B` (*kill*). Com eles, `Cout = g + p·Cin` e `S = p XOR Cin`.\n\nSubstituindo recursivamente, `C1`, `C2`, `C3` são calculados **em paralelo**. O preço é a complexidade: na prática, usam-se blocos look-ahead de 4 bits em cascata.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=l56a1Rp-LNs",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "O sinal de geração é g = A·B. Com A e B em 1, escolha a operação que acende g.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Bit A",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Bit B",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com A = 1 e B = 1, a operação **AND** devolve 1: é `g`, o sinal que gera um transporte novo. Já `p` é XOR e apenas repassa o carry recebido."
+      },
+      "hint": "Geração exige os dois bits em 1. Propagação só pede que eles sejam diferentes.",
+      "loreFragment": {
+        "id": "log-cd-34-lookahead",
+        "title": "O Aviso Antecipado",
+        "content": "O transporte não precisava mais esperar a coluna anterior: um sinal dizia de antemão onde ele nasceria e onde se apagaria. Lin escreveu g, p e k na margem do caderno e, em baixo, uma pergunta sem resposta: quem decide o que merece ser antecipado?"
+      },
+      "order": 34
+    },
+    {
+      "id": "cd-4-5",
+      "wingId": "cd-wing-4",
+      "title": "Geradores e Verificadores de Paridade",
+      "summaryText": "Um código de **paridade** acrescenta um bit para detectar erros em canais ruidosos. Na paridade **par**, o bit extra é 1 se a quantidade de 1s for ímpar; na **ímpar**, é o contrário.\n\nO gerador de 4 bits não tem agrupamentos no mapa de Karnaugh: a simplificação algébrica reduz tudo a **XORs em cascata**. O verificador recalcula a paridade dos bits recebidos e compara com a transmitida, também por XOR.\n\nA limitação é importante: o esquema não detecta um número **par** de bits alterados, e o próprio bit de paridade também pode falhar.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=z0qUmHXd8ZA",
+      "challenge": {
+        "type": "quiz",
+        "question": "Qual é a limitação do código de paridade simples?",
+        "options": [
+          "Não detecta um número par de bits alterados.",
+          "Detecta apenas erros no bit de paridade.",
+          "Só funciona com palavras de exatamente 4 bits.",
+          "Corrige qualquer erro automaticamente."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Some os bits com XOR. Se dois bits mudarem juntos, a soma volta ao valor original.",
+      "order": 35
+    },
+    {
+      "id": "cd-4-6",
+      "wingId": "cd-wing-4",
+      "title": "Conversores de Código Binário I",
+      "summaryText": "Um **conversor de código** é um circuito combinacional que recebe um número escrito num código binário e entrega o equivalente escrito em outro código — por exemplo, BCD → Excess-3, binário → Gray ou Gray → Excess-3. O professor mostra que a receita de projeto é a mesma para qualquer par de códigos.\n\nO exemplo desenvolvido na aula é o conversor de **BCD para Excess-3**: para obter o equivalente, basta somar **3 unidades** ao dígito decimal de entrada e converter o resultado de volta para binário. Assim, `0000` (zero) vira `0011` (três) e `0001` (um) vira `0100` (quatro). Monta-se então a **tabela da verdade** que liga cada código BCD ao seu equivalente em Excess-3.\n\nComo o BCD só usa os padrões de `0000` a `1001`, as combinações de `1010` a `1111` são entradas inválidas e viram **don't care**. Com elas, os mapas de Karnaugh encolhem as expressões de cada bit de saída: `e3 = b3 + b2·b1 + b2·b0`, `e1` equivale a um **XNOR** entre `b1` e `b0`, e `e0 = ¬b0`. Tabela de conversão, expressões de saída, diagrama: esse é o caminho para qualquer conversor.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=h0vnz4ebT08",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Na conversão BCD → Excess-3 da aula, `e3 = b3 + b2·b1 + b2·b0`. Com `b3 = 1` e o termo `b2·b1 = 0`, escolha a operação que entrega `e3`.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "b3",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Termo b2·b1",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "OR",
+          "AND",
+          "NOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "A expressão de `e3` é a **soma** de `b3` com os produtos `b2·b1` e `b2·b0`. Com `b3 = 1`, a **OR** com o termo `b2·b1 = 0` já entrega `e3 = 1`; as outras operações oferecidas não reproduzem essa soma."
+      },
+      "hint": "Olhe a forma da expressão de `e3`: ela junta termos. Comece pelo `b3`, que já está aceso, e escolha a porta que mantém esse 1 mesmo com o outro termo apagado.",
+      "order": 36
+    },
+    {
+      "id": "cd-4-7",
+      "wingId": "cd-wing-4",
+      "title": "Conversores de Código Binário II",
+      "summaryText": "A conversão binário → **Gray** de 4 bits usa a reflexibilidade: `g3 = b3`, `g2 = b3 XOR b2`, `g1 = b2 XOR b1`, `g0 = b1 XOR b0`.\n\nTambém é possível converter binário de 4 bits para **BCD**, com uma saída de dezena (1 bit) e quatro de unidade. As expressões são obtidas por mapas de Karnaugh e valem somente para 4 bits de entrada.\n\nA moral é a de sempre: **o número não muda, muda a forma como ele é escrito**. Escolher o código certo pode simplificar muito o circuito que vem depois.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=RCbCm9TyZ9w",
+      "challenge": {
+        "type": "quiz",
+        "question": "Na conversão binário → Gray de 4 bits, como se obtém g2?",
+        "options": [
+          "b3 XOR b2",
+          "b3 AND b2",
+          "b2 XOR b1",
+          "b3 OR b2"
+        ],
+        "correctIndex": 0
+      },
+      "hint": "No Gray, apenas um bit muda por vez. Some com XOR o bit atual e o seu vizinho à esquerda.",
+      "order": 37
+    },
+    {
+      "id": "cd-4-8",
+      "wingId": "cd-wing-4",
+      "title": "Decodificadores de 7 Segmentos",
+      "summaryText": "O **display de sete segmentos** reúne sete LEDs, nomeados de `a` a `g`, que acendendo ou apagando formam números, letras e símbolos. Ele aparece em relógios, painéis e equipamentos digitais para mostrar informação ao usuário, e por isso vale a pena saber acioná-lo.\n\nExistem dois tipos comerciais, e a diferença é essencial: no display de **cátodo comum** o segmento acende com **nível lógico alto**, enquanto no de **ânodo comum** ele acende com **nível lógico baixo**. A aula projeta o driver justamente para cátodo comum — antes de projetar, é preciso saber com qual display se está trabalhando.\n\nO **decodificador (driver) de BCD para 7 segmentos** tem quatro entradas, `b3` a `b0`, e sete saídas, `a` a `g`. Para cada dígito de `0` a `9`, a **tabela da verdade** marca quais traços acendem: o `0` apaga só o `g`, o `1` acende apenas `b` e `c`, o `8` acende todos. Os códigos BCD inválidos, de `1010` a `1111`, entram como **don't care**, e os mapas de Karnaugh produzem uma expressão para cada segmento. No final, o professor observa que o mesmo driver poderia ser projetado para mostrar letras ou dígitos hexadecimais.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=NJwesHY5nPQ",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "No display de cátodo comum projetado na aula, o segmento acende com nível alto (1). Qual operação entrega o nível que acenderia o mesmo segmento num display de ânodo comum?",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Nível que acende no cátodo comum",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "NOT"
+        ],
+        "expectedOutput": 0,
+        "explanation": "Cátodo comum acende com nível alto; ânodo comum acende com nível baixo. A inversão **NOT** transforma o nível `1` do cátodo comum no nível `0` do ânodo comum — por isso identificar o tipo de display é indispensável antes de projetar o driver."
+      },
+      "hint": "Lembre da diferença de polaridade destacada na aula: o mesmo traço obedece a níveis opostos nos dois tipos de display. Que porta simples inverte um nível?",
+      "loreFragment": {
+        "id": "log-cd-38-segment",
+        "title": "O Traço que Falta",
+        "content": "O dígito acendia seis dos sete traços. O sétimo ficava apagado mesmo com a entrada correta, como se o código tivesse esquecido uma parte de si. Ninguém substituiu a lâmpada: dois dias depois, o mesmo traço faltava em outro mostrador."
+      },
+      "order": 38
+    },
+    {
+      "id": "cd-4-9",
+      "wingId": "cd-wing-4",
+      "title": "Decodificadores",
+      "summaryText": "Um **decodificador** converte `n` bits de entrada em até `2ⁿ` saídas, com apenas uma ativa por vez. Cada saída é o **mintermo** da combinação correspondente.\n\nOs formatos usuais são 2→4, 3→8, 4→10 (BCD/decimal) e 4→16 (hexadecimal). No 4→10, as entradas 10 a 15 são inválidas: pode-se não mapear nenhuma saída (risco mínimo) ou usar *don't cares* (custo mínimo).\n\nA entrada de habilitação `EN` multiplica cada saída: com `EN = 0`, todas zeram. Dois decodificadores 3→8 com `EN` complementados formam um 4→16.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=C8Y8ST2hnqA",
+      "challenge": {
+        "type": "quiz",
+        "question": "Um decodificador com três entradas produz quantas saídas?",
+        "options": [
+          "3",
+          "6",
+          "8",
+          "16"
+        ],
+        "correctIndex": 2
+      },
+      "hint": "Cada combinação binária das entradas merece uma saída própria: 2 elevado ao número de entradas.",
+      "order": 39
+    },
+    {
+      "id": "cd-4-10",
+      "wingId": "cd-wing-4",
+      "title": "Projetos com Decodificadores",
+      "summaryText": "Um decodificador `n → 2ⁿ` gera nas suas saídas todos os **mintermos** das `n` variáveis de entrada: o 2:4 tem quatro saídas, o 3:8 tem oito e o 4:16 tem dezesseis. Como toda expressão lógica pode ser escrita como **soma de mintermos**, basta ligar as saídas desejadas a uma porta **OR** para obter a função.\n\nO procedimento é bem mais simples do que desenhar todas as portas ou passar por mapas de Karnaugh. Se a expressão vier em soma de produtos incompleta, completa-se cada termo com as variáveis faltantes e descartam-se os repetidos. Se vier na forma compacta, como `F = Σm(2,3,6,7)`, é só ligar as linhas `2`, `3`, `6` e `7` à OR. Se o ponto de partida for uma **tabela da verdade**, nem é preciso simplificar: lê-se diretamente quais linhas têm saída `1`.\n\nA vantagem destacada na aula é que, com as mesmas variáveis, **um único decodificador** atende a várias funções — cada uma ganha sua própria porta OR ligada aos mintermos correspondentes. O resultado é um circuito mais rápido de projetar, menos sujeito a erros e, em geral, mais barato.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=y-Ni9BIpS8c",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "No exemplo `F = Σm(2,3,6,7)`, as saídas `m2` e `m6` do decodificador 3:8 estão em 1. Qual operação reúne esses mintermos na função `F`?",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Saída m2",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Saída m6",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "OR",
+          "XOR",
+          "NOR",
+          "NAND"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Cada saída do decodificador já é um mintermo pronto, e a função é a **soma** dos mintermos das linhas em que vale 1. Com `m2 = 1` e `m6 = 1`, apenas a **OR** devolve 1 entre as operações oferecidas."
+      },
+      "hint": "As saídas do decodificador já chegaram separadas. Olhe para o símbolo `Σ` da forma compacta: ele pede uma operação de junção, sem precisar simplificar nada.",
+      "order": 40
+    },
+    {
+      "id": "cd-5-1",
+      "wingId": "cd-wing-5",
+      "title": "Codificadores",
+      "summaryText": "O **codificador** faz a operação inversa do decodificador: recebe um elemento discreto e devolve seu código binário. Se houver `2ⁿ` entradas, são necessárias `n` saídas.\n\nNa conversão octal → binário, por exemplo: `m2 = x4 + x5 + x6 + x7`, `m1 = x2 + x3 + x6 + x7` e `m0 = x1 + x3 + x5 + x7`. A entrada `x0` não aparece porque seu código é `000`.\n\nHá um problema: nenhuma entrada ativa também produz `0000`. A solução é uma saída de **dado válido** `V = m3 + m2 + m1 + m0 + x0`, que distingue «nenhuma tecla» de «tecla 0».",
+      "youtubeUrl": "https://www.youtube.com/watch?v=_2RRcq8YIKk",
+      "challenge": {
+        "type": "quiz",
+        "question": "Para que serve a saída V de um codificador?",
+        "options": [
+          "Para indicar que pelo menos uma entrada está ativa.",
+          "Para aumentar o número de bits do código.",
+          "Para desligar o codificador quando não há entrada.",
+          "Para corrigir erros de paridade."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Sem V, a situação «nenhuma tecla» e a tecla 0 produzem o mesmo código. V separa as duas.",
+      "order": 41
+    },
+    {
+      "id": "cd-5-2",
+      "wingId": "cd-wing-5",
+      "title": "Codificadores com Prioridade",
+      "summaryText": "Se duas teclas, como 9 e 5, forem pressionadas juntas, um codificador comum gera um código inválido: 13. O **codificador com prioridade** escolhe a entrada de maior peso, `x9 > x8 > … > x0`.\n\nNo projeto 4→2 com `x3 > x2 > x1 > x0`, monta-se a tabela de funcionamento e derivam-se as expressões por Karnaugh, junto com a saída `V`.\n\nPara decimal → binário, evita-se a tabela de 1024 linhas com um **gerador de linhas intermediárias**: `z9 = x9`, `z8 = x8·¬x9`, e assim por diante. Só a maior prioridade passa para o codificador.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qfqoSlvIkiA",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Com x9 = 1 e x5 = 1, o gerador z5 = x5·¬x9. Escolha a operação que entrega z5.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "x5",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "¬x9",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 0,
+        "explanation": "Como x9 está ativo, ¬x9 = 0 e a **AND** devolve 0: a linha 5 é bloqueada. A prioridade escolhe 9, cujo código é 1001."
+      },
+      "hint": "O gerador de linhas é um filtro: a entrada de maior peso apaga as menores antes da codificação.",
+      "order": 42
+    },
+    {
+      "id": "cd-5-3",
+      "wingId": "cd-wing-5",
+      "title": "Multiplexers",
+      "summaryText": "Um **MUX** é uma chave digital: várias entradas, uma saída. Com `2ⁿ` entradas, são necessários `n` bits de seleção. No símbolo, as entradas ficam no lado maior do trapézio, a saída no menor e a seleção na lateral.\n\nPara o MUX 2→1: `F = ¬S·I0 + S·I1`. O MUX 4→1 pode ser montado com um decodificador 2→4, ANDs e uma OR final; cada entrada é multiplicada pelo mintermo da sua condição de seleção.\n\nHá versões 8→1 e com habilitação `EN` — com `EN = 0`, a saída zera. As aplicações vão do roteamento de dados à geração de funções lógicas.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=e70pe-Cdtfc",
+      "challenge": {
+        "type": "quiz",
+        "question": "Quantos bits de seleção usa um multiplexador 4→1?",
+        "options": [
+          "1",
+          "2",
+          "4",
+          "8"
+        ],
+        "correctIndex": 1
+      },
+      "hint": "Cada bit de seleção dobra o número de entradas. Dois bits dão quatro caminhos.",
+      "order": 43
+    },
+    {
+      "id": "cd-5-4",
+      "wingId": "cd-wing-5",
+      "title": "Associação de Multiplexadores",
+      "summaryText": "Há duas formas de associar MUXs. Para aumentar a **largura dos dados**, usa-se um MUX 4→1 de 1 bit para cada bit da palavra: quatro blocos paralelos produzem um MUX 4→1 de 4 bits, todos com a mesma seleção.\n\nA aplicação citada é escolher entre data, hora, alarme e cronômetro num display.\n\nPara aumentar o **número de entradas**, usa-se cascata: um MUX 4→1 feito de três MUXs 2→1, dois comandados por `S0` e o último por `S1`. O procedimento estende-se a 8→1.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=X8lHW9yfr30",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Num MUX 4→1, a seleção 10 (S1 = 1, S0 = 0) escolhe a entrada I2. Ajuste as chaves e confirme a condição.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "S1",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "S0",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com S1 = 1 e S0 = 0, a seleção `10` aponta I2. A operação **XOR** devolve 1 porque as chaves são diferentes — é a assinatura dessa combinação na cascata."
+      },
+      "hint": "A seleção é compartilhada por todos os MUXs em paralelo. Ajuste S1 e S0 antes de olhar os dados.",
+      "order": 44
+    },
+    {
+      "id": "cd-5-5",
+      "wingId": "cd-wing-5",
+      "title": "Funções com Multiplexadores I",
+      "summaryText": "O MUX é um bloco **universal**: qualquer função combinacional sai diretamente da tabela da verdade, sem mapa de Karnaugh, sem soma de mintermos e sem simplificação.\n\nAs variáveis da função vão para as entradas de seleção. Cada entrada de dado recebe o valor da saída na respectiva linha da tabela — `0`, `1`, `A` ou `¬A`.\n\nNum MUX 8→1 com `C, B, A` na seleção, a saída `F` é simplesmente o valor da entrada escolhida. Se sobrar uma variável, ela entra nos dados, não na seleção.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=_uBk4xDi-8c",
+      "challenge": {
+        "type": "quiz",
+        "question": "Ao implementar uma função com MUX, é preciso simplificar a expressão com Karnaugh?",
+        "options": [
+          "Não: cada linha da tabela vira diretamente uma entrada do MUX.",
+          "Sim: sem simplificação o MUX não funciona.",
+          "Só quando a função tiver mais de quatro variáveis.",
+          "Apenas se a função usar portas NAND."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "A tabela da verdade já contém a resposta: a coluna de saída é o que se liga nas entradas do MUX.",
+      "order": 45
+    },
+    {
+      "id": "cd-5-6",
+      "wingId": "cd-wing-5",
+      "title": "Funções com Multiplexadores II",
+      "summaryText": "Com MUX 4→1 e três entradas, `C` e `B` vão na **seleção** e `A` entra nos **dados** conforme a relação de `F` com `A` em cada par de linhas: `A`, `¬A`, `0` ou `1`.\n\nCom MUX 8→1 e quatro variáveis, `D, C, B` selecionam e `A` alimenta as entradas. Com MUX 4→1 e quatro variáveis, `D, C` selecionam e cada bloco de quatro linhas vira uma expressão em `B` e `A` — inclusive `¬A` e `A XNOR B`.\n\nUm MUX menor é mais barato, mas o projeto fica mais trabalhoso. A escolha é sempre um equilíbrio entre peças e esforço.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=wypiacFZFww",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Num par de linhas, F vale 1 quando A = 0 e 0 quando A = 1. O que entra no MUX?",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Variável A",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "NOT"
+        ],
+        "expectedOutput": 1,
+        "explanation": "A função pedida é `¬A`: com A = 0, a saída é 1. A operação **NOT** devolve 1 e é exatamente o que se liga à entrada do MUX nesse par de linhas."
+      },
+      "hint": "Compare F com A linha a linha. Quando elas são opostas, a entrada do MUX recebe A negado.",
+      "order": 46
+    },
+    {
+      "id": "cd-5-7",
+      "wingId": "cd-wing-5",
+      "title": "Teorema de Shannon",
+      "summaryText": "O teorema de Shannon dá a forma algébrica do que o MUX faz: `f(W1,…,Wn) = ¬W1·f(0,W2,…) + W1·f(1,W2,…)`.\n\nExpandir a função em torno de uma variável produz as duas **funções residuais** que alimentam as entradas `0` e `1` do multiplexador. Aplicando o teorema recursivamente, chega-se a todas as entradas sem montar a tabela da verdade.\n\nA variável de expansão pode ser qualquer uma. O teorema é a prova de que o MUX implementa qualquer função combinacional.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Kjtvyf6e-9U",
+      "challenge": {
+        "type": "quiz",
+        "question": "Na expansão de Shannon, o que recebe a entrada 1 do MUX?",
+        "options": [
+          "A função f com a variável escolhida substituída por 1.",
+          "Sempre o valor constante 1.",
+          "A função original sem nenhuma substituição.",
+          "O complemento da saída do MUX."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Substitua a variável escolhida por 0 e por 1 na expressão original. Cada resultado vai para uma entrada.",
+      "loreFragment": {
+        "id": "log-cd-47-shannon",
+        "title": "A Variável Escolhida",
+        "content": "Expandir uma função era escolher uma variável e perguntar o que sobrava quando ela valia zero — e quando valia um. As duas respostas cabiam nas duas entradas de uma chave. Sob a última linha da folha, alguém tinha escrito: e se a variável escolhida não estiver na função?"
+      },
+      "order": 47
+    },
+    {
+      "id": "cd-5-8",
+      "wingId": "cd-wing-5",
+      "title": "Demultiplexers",
+      "summaryText": "O **DEMUX** faz o caminho inverso do MUX: uma entrada é distribuída para uma das várias saídas. No símbolo, a entrada fica no lado menor do trapézio e as saídas no maior.\n\nNo 1→4, `S1S0 = 00` envia `E` para `Y0`, `01` para `Y1`, `10` para `Y2` e `11` para `Y3`; as demais saídas ficam em 0. São necessários `n` bits de seleção para `2ⁿ` saídas.\n\nO projeto é o de um decodificador 2→4 com a habilitação ligada ao dado: `Yi = E·mintermo`. Um 1→8 estende a ideia com um decodificador 3→8.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Jmw4OiI0O3A",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Com S1S0 = 00, o dado E vai para Y0 e as outras saídas ficam em 0. Confirme uma saída não selecionada.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Dado E",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Mintermo de outra saída",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 0,
+        "explanation": "Cada saída vale `E·mintermo`. Com E = 1 e o mintermo de uma saída não escolhida em 0, a **AND** devolve 0: o dado não chegou ali."
+      },
+      "hint": "Pense no DEMUX como um decodificador cujo ENABLE é o próprio dado. Sem o mintermo certo, a saída cala.",
+      "order": 48
+    },
+    {
+      "id": "cd-5-9",
+      "wingId": "cd-wing-5",
+      "title": "Associação de Demultiplexers",
+      "summaryText": "Para aumentar a **largura**, um DEMUX 1→4 de 4 bits usa quatro DEMUXs 1→4 de 1 bit — um por bit — com a mesma seleção `S1S0`.\n\nPara aumentar o **número de saídas**, usa-se cascata: um 1→4 montado com três DEMUXs 1→2. `S1` comanda o primeiro bloco e `S0` os dois seguintes.\n\nA análise das quatro combinações confirma que apenas a saída correspondente recebe o dado. A extensão para mais saídas segue o mesmo desenho.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=FWk2a7oTpxc",
+      "challenge": {
+        "type": "quiz",
+        "question": "Quantos DEMUXs de 1 bit são necessários para um DEMUX 1→4 de 4 bits?",
+        "options": [
+          "1",
+          "2",
+          "4",
+          "8"
+        ],
+        "correctIndex": 2
+      },
+      "hint": "Um bloco por bit da palavra. Em paralelo, todos compartilham a mesma seleção.",
+      "order": 49
+    },
+    {
+      "id": "cd-5-10",
+      "wingId": "cd-wing-5",
+      "title": "Deslocadores",
+      "summaryText": "Um **deslocador** é combinacional. À direita, entra `0` no MSB e perde-se o LSB; à esquerda, o contrário. `SH = 1` desloca e `SH = 0` mantém a entrada.\n\nExemplos: `0110 → 0011` à direita (divisão por 2) e `0110 → 1100` à esquerda (multiplicação por 2). Aplicações vão de multiplicar por potências de 2 à conversão serial ↔ paralelo.\n\nO projeto usa um MUX 2→1 por bit. O **barrel shifter** acumula deslocamentos de 1, 2 e 4 com três bits de controle; se `SHL` e `SHR` estiverem altos juntos, `SHL` tem prioridade.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=EBrHRwnVMsU",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Com a habilitação SH em 1 e o bit vizinho em 1, escolha a operação que autoriza o deslocamento.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "SH",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Bit vizinho",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com SH = 1 e o bit que entra em 1, a **AND** devolve 1: o MUX de cada bit escolhe o vizinho em vez do valor atual. `0110` vira `1100`."
+      },
+      "hint": "O deslocamento é decidido por uma habilitação. Quando ela fecha, cada bit escolhe entre ficar ou receber o vizinho.",
+      "loreFragment": {
+        "id": "log-cd-50-shift",
+        "title": "Uma Casa à Direita",
+        "content": "O registrador deslocava o conteúdo uma casa por vez. Em cada passo, o bit mais à esquerda era substituído por zero e o da direita desaparecia. No terceiro deslocamento, um nome inscrito na fita apareceu uma posição à direita do lugar devido — deslocado, mas legível."
+      },
+      "order": 50
+    },
+    {
+      "id": "cd-6-1",
+      "wingId": "cd-wing-6",
+      "title": "Unidade Lógica e Aritmética",
+      "summaryText": "A **ULA** (Unidade Lógica e Aritmética, ou *ALU*) é o bloco combinacional que reúne num só lugar as operações do processador: soma, subtração, incremento, complemento, transferência de A e operações lógicas como AND, OR e XOR, além de comparações.\n\nEla trabalha com **duas entradas de dados**, A e B, normalmente de mesma largura `n`; a saída também tem `n` bits. As **linhas de seleção** decidem qual operação aparece: com `k` bits de seleção são possíveis até `2^k` operações — três bits dão no máximo oito, quatro bits dão no máximo dezesseis.\n\nO projeto é direto: coloca-se um bloco para cada operação — somador, subtrator, incrementador, portas lógicas — e um **multiplexador** deixa passar, para a única saída, justamente o resultado do bloco apontado pelas linhas de seleção. É a abstração de tudo o que veio antes, com portas, somadores e MUXs trabalhando juntos.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=SemyzwoLxDo",
+      "challenge": {
+        "type": "quiz",
+        "question": "Na ULA da aula, como se escolhe qual operação aparece na saída?",
+        "options": [
+          "Um multiplexador escolhe, pelos bits de seleção, qual resultado de operação vai para a única saída.",
+          "As linhas de seleção definem quantos bits têm as entradas A e B.",
+          "Um comparador de magnitude executa todas as operações e as soma na saída.",
+          "Um decodificador converte a operação escolhida em código BCD."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Pense nos vários blocos de operação ligados às mesmas entradas A e B. Entre eles há uma caixa que deixa passar só um resultado — e são os bits de seleção quem a comandam.",
+      "order": 51
+    },
+    {
+      "id": "cd-6-2",
+      "wingId": "cd-wing-6",
+      "title": "Aplicação: Valor Absoluto",
+      "summaryText": "O primeiro projeto com blocos combinacionais calcula `Y = |X|`, com `X` e `Y` de 8 bits em **complemento de 2**.\n\nPelo bit de sinal `X7`: se `X7 = 0`, então `Y = X`; se `X7 = 1`, então `Y = −X`, obtido invertendo todos os bits e somando 1.\n\nO circuito usa inversores, um somador de 8 bits com a segunda entrada em `00000001` e um **MUX 2→1** cuja seleção é `X7`: `I0 = X` e `I1 = ¬X + 1`. A saída do MUX é `Y`. Tudo é conferido no Logisim.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=3uXHong2PvQ",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Com X7 = 1, o MUX escolhe a segunda entrada. Se ¬X + 1 já vale 1, qual é a saída Y?",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Seleção X7",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Resultado de ¬X + 1",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com X7 = 1, a seleção escolhe `I1 = ¬X + 1`. A **AND** entre seleção e dado devolve 1, que é o valor de Y para esse caso."
+      },
+      "hint": "Em complemento de 2, negar é inverter e somar 1. O bit de sinal apenas decide qual das duas versões sai.",
+      "order": 52
+    },
+    {
+      "id": "cd-6-3",
+      "wingId": "cd-wing-6",
+      "title": "Outras Aplicações Combinacionais",
+      "summaryText": "A aula fecha a sequência de aplicações combinacionais com um problema concreto: construir um **detector do menor** entre dois números de **8 bits**, A e B, com saída `F = min(A, B)`.\n\nA estratégia mostrada usa apenas dois blocos. Primeiro um **comparador de magnitude** informa, pela sua saída «menor», se `A < B`. Depois um **multiplexador 2:1** usa essa informação como sinal de seleção para deixar passar o valor de A ou o de B: se A é menor, `F = A`; se B é menor, `F = B`. O circuito escolhe o menor sem precisar de processador nem de lógica extra.\n\nNo Logisim, o professor configura as entradas em decimal sem sinal e testa: com `A = 15` e `B = 5`, a saída é `5`; com `A = 27` e `B = 15`, a saída é `15`. A **abstração** aparece outra vez — comparador e MUX são caixas já conhecidas, reaproveitadas para formar uma função completa.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=mcAnKpiPO-c",
+      "challenge": {
+        "type": "quiz",
+        "question": "Como é montado na aula o detector do menor entre dois números de 8 bits?",
+        "options": [
+          "A saída «menor» do comparador de magnitude comanda um multiplexador 2:1, que escolhe entre A e B.",
+          "Um somador de 8 bits subtrai A de B e inverte o resultado na saída.",
+          "Um decodificador 4:16 acende a linha correspondente ao menor valor.",
+          "Um flip-flop D guarda A e só libera B quando o relógio muda."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Comece pela pergunta que o comparador responde: «A é menor que B?». Essa resposta é justamente o sinal que diz ao multiplexador qual dos dois valores deve aparecer em F.",
+      "order": 53
+    },
+    {
+      "id": "cd-6-4",
+      "wingId": "cd-wing-6",
+      "title": "Fundamentos de Circuitos Sequenciais",
+      "summaryText": "Circuitos digitais dividem-se em duas classes. Nos **combinacionais**, a saída depende só das entradas atuais. Nos **sequenciais**, a saída depende também de valores armazenados: o **estado**.\n\nO estado representa uma situação real do sistema. Na máquina de lavar, molho → lavar → enxaguar → centrifugar: a mesma ação do botão «avançar» produz resultados diferentes conforme o estado em que a máquina está.\n\nOs estados são codificados em binário por **variáveis de estado** — dois bits bastam para quatro estados. A passagem de um a outro chama-se **transição de estado**.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Q0hxfNu0EGw",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Com duas variáveis de estado cabem quatro estados. Ajuste as chaves para o último deles e escolha a operação que ainda devolve 1.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Variável de estado 1",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Variável de estado 2",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Os quatro estados são `00`, `01`, `10` e `11`. Com as duas variáveis em 1, a operação **AND** devolve 1 — o último estado da codificação."
+      },
+      "hint": "Duas variáveis dão 2² combinações. O último estado tem as duas ligadas.",
+      "order": 54
+    },
+    {
+      "id": "cd-6-5",
+      "wingId": "cd-wing-6",
+      "title": "Máquinas de Estados Finitos",
+      "summaryText": "Um circuito sequencial pode ser descrito como uma **máquina de estados finitos** (FSM ou MDE): um número limitado de estados, entradas e saídas. Com **n variáveis de estado** — os bits que dizem em que estado a máquina está — há no máximo **2ⁿ estados possíveis**. Na máquina de lavar, por exemplo, «molho» e «lavagem» são combinações dessas variáveis.\n\nA arquitetura clássica separa dois blocos. As **funções combinacionais de transformação** recebem as entradas X e as variáveis de **estado atual** e produzem dois resultados: a saída Y, por uma função α, e as variáveis de **estado próximo**, por uma função β. São funções lógicas diferentes, feitas com as mesmas portas lógicas de sempre, mas alimentadas pelas mesmas variáveis: entradas e estado atual.\n\nO segundo bloco é o de **armazenamento ou registro do estado**: recebe o estado próximo e devolve o estado atual, que realimenta o bloco combinacional. A passagem de um estado a outro acontece na **atualização** das variáveis de estado, que pode ser natural ou forçada. Assim, a saída e o próximo estado dependem sempre das entradas *e* do que a máquina já guardava — é por isso que a mesma entrada pode ter efeitos diferentes em estados diferentes.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=rkfQKM_jQK8",
+      "challenge": {
+        "type": "quiz",
+        "question": "Na arquitetura de uma máquina de estados finitos, como são obtidos a saída e o próximo estado?",
+        "options": [
+          "Por duas funções combinacionais diferentes: uma entrega a saída e outra o próximo estado, ambas a partir das entradas e do estado atual.",
+          "Por uma única função que copia as entradas diretamente para a saída e ignora o estado.",
+          "Somente pelo bloco de memória, que calcula a saída sem consultar as entradas.",
+          "Por uma função de registro que só atua no instante em que a máquina é reiniciada."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Comece pelo bloco combinacional: ele recebe as entradas e as variáveis de estado atual e devolve dois resultados — um vira saída, o outro segue para os elementos de memória.",
+      "loreFragment": {
+        "id": "log-cd-55-state",
+        "title": "O Que Ficou",
+        "content": "A máquina não respondia só ao que recebia: respondia ao que já tinha visto. Entre uma entrada e outra, guardava um valor pequeno, silencioso, suficiente para mudar o significado da próxima ordem. O nome desse valor havia sido riscado do diagrama."
+      },
+      "order": 55
+    },
+    {
+      "id": "cd-6-6",
+      "wingId": "cd-wing-6",
+      "title": "Modelos Moore e Mealy",
+      "summaryText": "As máquinas classificam-se por como calculam a saída. Em **Mealy**, a saída depende do estado atual **e** das entradas. Em **Moore**, depende apenas do estado atual.\n\nEm ambos, o próximo estado depende de entradas e estado atual. Moore é preferido pela simplicidade de projeto e por tornar a saída menos dependente das entradas, embora seja mais sensível a ruído.\n\nQuanto à atualização, há o modo **fundamental** (assíncrono, baseado em atrasos, hoje quase abandonado) e o modo **pulsado**, com relógio. Neste, a mudança ocorre em nível alto/baixo ou na borda de subida/descida, com período igual ao do clock.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=6sVrWGekNX4",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Numa máquina Mealy com estado = 1 e entrada = 0, a saída é a AND dos dois. Qual é o valor?",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Estado atual",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Entrada",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 0,
+        "explanation": "Em Mealy a entrada participa da saída. Com estado = 1 e entrada = 0, a **AND** devolve 0. Em Moore, a entrada não entraria nessa conta."
+      },
+      "hint": "Mealy é estado mais entrada; Moore é só estado. Ajuste as chaves e veja qual das duas se aplica.",
+      "order": 56
+    },
+    {
+      "id": "cd-6-7",
+      "wingId": "cd-wing-6",
+      "title": "Tabela de Transição de Estados",
+      "summaryText": "A **tabela de transição de estados** relaciona, em uma só linha, o **estado atual**, a **entrada**, o **estado próximo** e a **saída** da máquina. No exemplo da aula, quatro estados (S0 a S3) e uma entrada x bastam para descrever completamente o funcionamento do circuito.\n\nA tabela também revela o modelo da máquina. Comparando linhas com o **mesmo estado** e entradas diferentes, percebemos se a saída muda: se ela permanece igual, a saída depende apenas do estado — modelo **Moore**; se varia com a entrada, é o modelo **Mealy**. No exemplo analisado, a saída não mudou quando x mudou, o que identifica uma máquina de Moore.\n\nQuando os estados são escritos por extenso (S0, S1, S2, S3), a tabela é **nominal**. Codificando cada estado em binário — duas variáveis para quatro estados, por exemplo 00, 01, 10 e 11 — ela passa a se parecer com uma **tabela da verdade**: estado atual e entrada de um lado, estado próximo e saída do outro. É essa forma binária que permite escrever as funções lógicas combinacionais do próximo estado e da saída na hora de projetar a máquina.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=qFXXLbwvWsg",
+      "challenge": {
+        "type": "quiz",
+        "question": "Ao analisar uma tabela de transição de estados, como você reconhece uma máquina de Moore?",
+        "options": [
+          "Quando, para um mesmo estado, a saída não muda com a entrada.",
+          "Quando a saída muda a cada mudança de entrada, mesmo no mesmo estado.",
+          "Quando a tabela não registra qual é o estado atual.",
+          "Quando os estados são escritos por extenso em vez de codificados em binário."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Compare duas linhas com o mesmo estado e entradas diferentes: se a saída continuar igual, ela depende somente do estado.",
+      "order": 57
+    },
+    {
+      "id": "cd-6-8",
+      "wingId": "cd-wing-6",
+      "title": "Diagrama de Transição",
+      "summaryText": "O **diagrama de transição** é a representação gráfica da tabela: estados são círculos e transições são flechas com a condição de entrada escrita sobre elas.\n\nNo modelo **Moore**, a saída vai dentro do círculo, pois depende só do estado. No modelo **Mealy**, aparece junto à transição, pois depende também da entrada.\n\nO caminho inverso também vale: a partir de um diagrama, preenche-se a tabela. As duas representações dizem a mesma coisa em linguagens diferentes.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Q0QNvjRt_pk",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "No modelo Moore, a saída fica dentro do círculo. Com o estado emitindo 1 e a entrada em 0, escolha a operação que entrega a saída.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Saída do estado",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Entrada",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "OR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Em Moore, a saída é a do estado, qualquer que seja a entrada. Com a saída do estado em 1, a operação **OR** devolve 1 — a entrada em 0 não apaga o valor guardado."
+      },
+      "hint": "Se a saída muda quando a entrada muda no mesmo estado, é Mealy. Se fica no círculo, é Moore.",
+      "order": 58
+    },
+    {
+      "id": "cd-6-9",
+      "wingId": "cd-wing-6",
+      "title": "Latch SR",
+      "summaryText": "Na arquitetura de Huffman, a lógica combinacional gera as saídas e o próximo estado; a memória guarda o estado atual. Sem sinal de controle é **latch**; sensível a nível é latch controlado; sensível a borda é **flip-flop**.\n\nO latch é **biestável**, como uma trava: mantém um dos dois valores. O latch SR usa um par realimentado de portas NOR (ou NAND), com entradas `S` e `R` e saídas complementares `Q` e `¬Q`.\n\n`S=1, R=0` faz *set*; `S=0, R=1` faz *reset*; `S=R=0` mantém; `S=R=1` leva à indeterminação — e é justamente por isso que essa combinação é proibida.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=YHEvh3PoPcE",
+      "challenge": {
+        "type": "quiz",
+        "question": "O que acontece num latch SR quando S = 1 e R = 1?",
+        "options": [
+          "Indeterminação: a combinação é proibida.",
+          "O latch entra em reset.",
+          "O valor de Q é mantido.",
+          "As duas saídas ficam em 0 permanentemente."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "¬Q deve ser sempre o complemento de Q. Pergunte-se se as duas entradas conseguem respeitar essa regra.",
+      "loreFragment": {
+        "id": "log-cd-59-latch",
+        "title": "A Trava",
+        "content": "Duas portas se alimentavam uma à outra e, por isso, nenhuma precisava de quem a mantivesse acesa. Bastava um pulso para decidir; depois, o valor se repetia em cada volta, esperando um «até aqui» que ninguém escreveu. Quando as duas entradas chegavam juntas, o par se calava — e a condição de parada continuava sem registro."
+      },
+      "order": 59
+    },
+    {
+      "id": "cd-6-10",
+      "wingId": "cd-wing-6",
+      "title": "Latch SR Controlado",
+      "summaryText": "O latch SR **controlado** acrescenta o sinal de habilitação `C`. Com `C = 0`, o latch está travado: `S` e `R` não alteram o valor guardado. Com `C = 1`, as entradas agem normalmente.\n\nO circuito é o latch SR comum mais duas portas lógicas ligadas a `C`. Como a resposta é ao **nível alto** do clock, é preciso escolher a frequência com cuidado para não deixar `S = R = 1` enquanto o latch estiver habilitado.\n\nA tabela de transição mantém `Q+ = Q` para `C = 0` e reproduz a tabela SR para `C = 1`. O bloco passa a ter entradas `C`, `S` e `R`, e saídas `Q` e `¬Q`.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=MaelrWb21QI",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Com a habilitação C = 0 e S = 1, o sinal S não chega ao latch. Confirme com uma AND.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Habilitação C",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Entrada S",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 0,
+        "explanation": "A entrada efetiva é `C·S`. Com C = 0 e S = 1, a **AND** devolve 0: o latch está travado e o valor de Q permanece como estava."
+      },
+      "hint": "C é o portão entre o exterior e o latch. Se ele estiver fechado, nenhuma entrada passa.",
+      "order": 60
+    },
+    {
+      "id": "cd-7-1",
+      "wingId": "cd-wing-7",
+      "title": "Latch D Transparente",
+      "summaryText": "O latch SR obriga a evitar a combinação proibida `S = R = 1`. A solução é colocar um **inversor** entre S e R, reduzindo tudo a uma única entrada `D`, com `R = D̄`.\n\nCom `C = 0`, o latch fica **travado** e retém o valor guardado. Com `C = 1`, torna-se **transparente**: `Q` copia `D` a cada mudança. Não há mais duas entradas para coordenar — há uma janela que se abre e se fecha.\n\nA tabela de transição e o diagrama de temporação mostram os dois regimes: retenção enquanto a janela está fechada, cópia enquanto está aberta.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=XZ5I9mJdg0w",
+      "challenge": {
+        "type": "quiz",
+        "question": "Com C = 0 e D mudando de 0 para 1, o que acontece com Q?",
+        "options": [
+          "Q retém o valor anterior.",
+          "Q copia o novo valor de D imediatamente.",
+          "Q zera junto com D.",
+          "Q entra em indeterminação."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Pense no controle como uma janela: quando fecha, o valor fica guardado.",
+      "order": 61
+    },
+    {
+      "id": "cd-7-2",
+      "wingId": "cd-wing-7",
+      "title": "Latches com Portas NAND",
+      "summaryText": "O latch SR também pode ser montado trocando as portas **NOR** por portas **NAND**. As saídas mudam de posição no desenho: `Q` fica em cima e `Q̄` embaixo.\n\nA ativação passa a ser complementar: `S = 0, R = 1` seta; `S = 1, R = 0` reseta; `S = R = 1` mantém; `S = R = 0` é a combinação proibida. O latch SR controlado com NAND obedece à mesma tabela do controlado com NOR.\n\nO latch D com NAND usa `D` direto e `D̄` — este, obtido por um inversor. A lógica das entradas inverteu, a ideia de guardar um bit permaneceu.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=XQe4qElLDWI",
+      "challenge": {
+        "type": "quiz",
+        "question": "Num latch SR montado com portas NAND, qual combinação de entradas é proibida?",
+        "options": [
+          "S = 0 e R = 0.",
+          "S = 1 e R = 1.",
+          "S = 0 e R = 1.",
+          "S = 1 e R = 0."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Com NAND, a lógica das entradas inverte em relação ao NOR: o que era «manter» muda de lugar.",
+      "order": 62
+    },
+    {
+      "id": "cd-7-3",
+      "wingId": "cd-wing-7",
+      "title": "Latches no Logisim",
+      "summaryText": "Na bancada, o latch SR aparece como duas portas **NOR** com realimentação cruzada. O Logisim não inicializa circuitos sequenciais: é preciso aplicar uma primeira condição antes de observar qualquer resultado.\n\nOs testes confirmam a tabela: `S = 1, R = 0` seta; `R = 1` reseta; `S = R = 0` retém. No latch SR controlado, `C = 0` bloqueia `S` e `R`; `C = 1` permite as mudanças. No latch D, `C = 1` copia `D` para `Q` e `C = 0` trava sem entrada indesejada.\n\nA aula termina anunciando a diferença que vem a seguir: o **flip-flop** responde à borda do clock, não ao nível.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=wYTRa2r3fjM",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Mudar D com C = 0 altera Q? Com a habilitação fechada e D ligado, escolha a operação que mantém a entrada efetiva em 0.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Habilitação C",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Entrada D",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 0,
+        "explanation": "A entrada efetiva é `C·D`. Com C = 0 e D = 1, a **AND** devolve 0: o latch está travado e Q permanece como estava antes da mudança em D."
+      },
+      "hint": "Observe quando a transferência ocorre: o nível do controle importa mais que o valor de D.",
+      "order": 63
+    },
+    {
+      "id": "cd-7-4",
+      "wingId": "cd-wing-7",
+      "title": "Flip-Flop D",
+      "summaryText": "Um **latch** é sensível ao **nível** do clock: enquanto o sinal fica alto, ele continua copiando a entrada para a saída. Num circuito sequencial realimentado, isso pode criar um **ciclo vicioso** — o estado atual muda, a lógica combinacional recalcula o estado próximo e, se o clock ainda estiver alto, o latch copia outra vez. Encurtar o tempo em nível alto até caber uma única cópia resolve, mas exigiria um ajuste diferente para cada circuito.\n\nA solução é o **flip-flop**, sensível à **borda** do clock: a transição de 0 para 1 (**borda de subida**) ou de 1 para 0 (**borda de descida**). Como a borda dura muito pouco, o elemento de memória fica ativo só no instante necessário e a lógica combinacional não tem tempo de gerar outro estado próximo enquanto a cópia acontece. Um mesmo dispositivo obedece a **apenas um tipo de borda**, nunca aos dois.\n\nNo **flip-flop D mestre-escravo** da aula, dois latches D em cascata trabalham de forma complementar: o **mestre** copia D com o clock alto e retém quando ele baixa; o **escravo**, com o clock invertido, habilita no nível baixo e transfere o valor retido para Q. Na prática, a saída assume D na **borda de descida**; invertendo o clock, ou trocando a posição do inversor, obtém-se a borda de subida. Entre duas bordas, D pode mudar à vontade que Q continua guardando o último valor.\n\nNa tabela de transição e no diagrama, o clock costuma não aparecer: a ausência dele já significa que as mudanças ocorrem na borda. No símbolo esquemático, o **triângulo** na entrada de clock marca o flip-flop, e um **pequeno círculo** ao lado dele indica borda de descida. Por isso o flip-flop D é o elemento de memória preferido em projetos síncronos.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=E12RmfvaIf8",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "No flip-flop D mestre-escravo, o mestre é habilitado no nível alto do clock e o escravo no nível baixo, porque um recebe o clock invertido. Ajuste as duas habilitações para que apenas um latch fique ativo e escolha a operação que confirma essa complementaridade.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Habilitação do mestre (clock)",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Habilitação do escravo (clock invertido)",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR",
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com o mestre habilitado (A = 1) e o escravo desabilitado (B = 0), a **XOR** devolve 1: exatamente um dos dois latches está ativo. Enquanto o clock está alto, o mestre copia D; quando o clock cai, o escravo habilita e passa esse valor para Q — é na borda de descida que a saída muda."
+      },
+      "hint": "Pense no inversor entre os dois latches: quando um copia, o outro precisa reter. Ajuste as habilitações para serem complementares e teste a operação que acende só quando elas divergem.",
+      "loreFragment": {
+        "id": "log-cd-64-edge",
+        "title": "A Borda da Costura",
+        "content": "A agulha só prendia o fio no instante em que a ponta cruzava o tecido; no restante do movimento, o fio passava solto. Na bancada, o valor esperava esse cruzamento para existir. Fora dele, ficava suspenso entre dois estados, sem lugar onde pousar."
+      },
+      "order": 64
+    },
+    {
+      "id": "cd-7-5",
+      "wingId": "cd-wing-7",
+      "title": "Flip-Flop JK e Flip-Flop T",
+      "summaryText": "O flip-flop **JK** nasce de um D com a lógica `D = J·Q̄ + K̄·Q`. Ele tem quatro ações: `00` mantém, `01` reseta, `10` seta e `11` **complementa** o estado.\n\nÉ sensível à borda do clock e não possui combinação proibida — justamente o ponto em que se distingue do latch SR. Lá, `S = R = 1` era indeterminação; aqui, `J = K = 1` virou uma operação útil.\n\nO flip-flop **T** deriva do JK com `J = K = T`: com `T = 0` ele mantém e com `T = 1` ele inverte a cada borda. JK é muito usado em máquinas de estados; T, em contadores.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=zQj0oDimU2I",
+      "challenge": {
+        "type": "quiz",
+        "question": "Com J = 1 e K = 1, o que faz o flip-flop JK na borda do clock?",
+        "options": [
+          "Complementa o estado armazenado.",
+          "Mantém o estado armazenado.",
+          "Seta Q em 1.",
+          "Entra em indeterminação."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Compare com o latch SR: o que era proibido aqui virou uma operação útil.",
+      "order": 65
+    },
+    {
+      "id": "cd-7-6",
+      "wingId": "cd-wing-7",
+      "title": "Entradas Assíncronas em Flip-Flops",
+      "summaryText": "Ao ligar ou reiniciar um sistema, é comum querer que todos os flip-flops comecem no mesmo estado — em geral em **nível lógico baixo**. Forçar isso pela entrada D e disparar um clock para cada um seria trabalhoso. Por isso os flip-flops costumam ganhar dois pinos extras: as **entradas assíncronas** de **set** e **reset**.\n\nElas são assíncronas porque sua ação **não depende do clock**: aplicado o nível ativo, o efeito é imediato. Com **set = 1 e reset = 0**, Q vai a 1; com **reset = 1 e set = 0**, Q vai a 0 — tanto faz o valor de D e o estado do clock. Com as duas em 0, o flip-flop volta a operar normalmente, copiando D na borda de clock. Com as duas em 1, a condição é **indeterminada** e precisa ser evitada.\n\nA tabela da aula resume esses casos para o flip-flop D com set e reset: as linhas com uma das entradas ativas ignoram D e o clock; só a linha com ambas inativas segue a regra normal do D. Existem dispositivos com entradas de set e reset ativas em nível baixo, então vale sempre conferir, na simulação, qual nível dispara cada ação.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=2qOUSXgKUbc",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "As entradas assíncronas agem sem esperar o clock. Ajuste set e reset para forçar Q a 1 com o clock inativo e escolha a operação que modela essa ação.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Set assíncrono",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Reset assíncrono",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "OR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Com set = 1 e reset = 0, a **OR** devolve 1: Q é forçado ao nível alto na hora, sem depender de D nem do clock. Invertendo (reset = 1, set = 0), Q vai a 0; com as duas em 0, vale a regra normal do flip-flop D na borda. Com as duas em 1, a situação é indeterminada."
+      },
+      "hint": "Comece observando o par set/reset: apenas uma das duas pode estar ativa para um resultado definido. Depois procure a operação que entrega 1 com set ativo e reset inativo.",
+      "order": 66
+    },
+    {
+      "id": "cd-7-7",
+      "wingId": "cd-wing-7",
+      "title": "Flip-Flops no Logisim",
+      "summaryText": "A biblioteca do Logisim oferece flip-flops **D**, **JK** e **T**. O D vem sem bolinha no clock e responde à **borda de subida**: `D` só passa para `Q` na transição `0 → 1`.\n\nMudar `D` enquanto o clock está em nível alto não altera `Q`. O JK foi testado em set, reset, manter e complementar — sempre na borda. O T mantém com `T = 0` e complementa com `T = 1` a cada subida.\n\nA bancada deixa visível o que a tabela já dizia: o sinal não é lido enquanto passa, mas no instante em que o relógio o interpela.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=6fEfOZJTQcQ",
+      "challenge": {
+        "type": "quiz",
+        "question": "Se D mudar logo após uma borda de subida, Q muda na hora?",
+        "options": [
+          "Não: Q só muda na próxima borda de subida.",
+          "Sim: Q acompanha D imediatamente.",
+          "Só se o clock estiver em nível baixo.",
+          "Q zera e espera uma nova borda."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Conte as bordas do clock, não os níveis: o flip-flop «tira foto» só na subida.",
+      "loreFragment": {
+        "id": "log-cd-67-bench",
+        "title": "A Bancada e a Cidadela",
+        "content": "Na bancada, a trava obedecia: um pulso, um valor, nenhuma surpresa. Lin desligou o simulador e voltou ao corredor, onde a mesma trava guardava um valor que ninguém lhe tinha dado. Anotou as duas observações na mesma linha e não as reconcilou."
+      },
+      "order": 67
+    },
+    {
+      "id": "cd-7-8",
+      "wingId": "cd-wing-7",
+      "title": "Análise de Circuitos Sequenciais I",
+      "summaryText": "Analisar um circuito sequencial é descobrir como ele funciona a partir do **diagrama lógico**, usando a **tabela de transição de estados** e o **diagrama de transição** para descrever o resultado. O procedimento da aula tem quatro passos.\n\nPrimeiro, com **n flip-flops**, o número máximo de estados é **2ⁿ**. Segundo, leem-se do diagrama as **equações de excitação** — as expressões que entram em cada flip-flop — e a **equação de saída**. Terceiro, com essas equações e as tabelas dos elementos de memória (D, JK, T ou SR), monta-se a tabela de transição em forma **binária**. Quarto, a partir dela, desenha-se o diagrama de estados.\n\nNo exemplo, havia uma entrada x, dois flip-flops D (variáveis de estado A e B) e uma saída y: as excitações D_A e D_B e a saída y foram tiradas do diagrama e preencheram a tabela linha a linha. Com **flip-flop D**, as colunas de excitação coincidem com as de **próximo estado** — atenção: isso não vale para JK ou SR, em que é preciso consultar a tabela do elemento. Depois, atribuindo os nomes S0 a S3 aos padrões de A e B, a tabela binária vira uma tabela nominal e o diagrama final.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=f9L2vdplWgM",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "No exemplo com dois flip-flops D, as excitações valem como próximo estado. Com D_A = 1 e D_B = 0, escolha a operação que responde: os dois bits do próximo estado estão em 1?",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Excitação D_A (próximo estado A)",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Excitação D_B (próximo estado B)",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "OR",
+          "AND",
+          "XOR"
+        ],
+        "expectedOutput": 0,
+        "explanation": "Como são flip-flops D, D_A e D_B são o próprio próximo estado: A⁺ = 1 e B⁺ = 0. A **AND** devolve 0 porque os dois bits não estão em 1 ao mesmo tempo. Com JK ou SR essa igualdade não valeria — seria preciso consultar a tabela do elemento de memória."
+      },
+      "hint": "Lembre-se de que o exemplo usa flip-flops D: o que entra em D aparece como próximo estado. A pergunta pede os dois bits juntos, então pense na operação que exige os dois em 1.",
+      "order": 68
+    },
+    {
+      "id": "cd-7-9",
+      "wingId": "cd-wing-7",
+      "title": "Análise de Circuitos Sequenciais II",
+      "summaryText": "O exemplo usa dois flip-flops **D**, lógica combinacional, entrada `x` e saída `y`. O roteiro tem cinco passos.\n\nPrimeiro, `2² = 4` estados. Depois, as equações de excitação `DA` e `DB` e a equação de saída `y = A·B`. Em seguida, a tabela binária: estado atual e entrada, excitação, próximo estado e saída. Com a tabela pronta, escreve-se a tabela nominal com `S0` a `S3`.\n\nComo `y` não depende de `x`, a máquina é **Moore**. O último passo é o diagrama de transição, com as condições `x = 0` e `x = 1` escritas nas setas.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=h_Mx1DL14yE",
+      "challenge": {
+        "type": "quiz",
+        "question": "Por que a máquina do exemplo é classificada como Moore?",
+        "options": [
+          "Porque a saída depende apenas de A e B, não de x.",
+          "Porque a saída muda junto com x.",
+          "Porque há dois flip-flops no circuito.",
+          "Porque a tabela tem quatro linhas."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Antes do diagrama, verifique se a saída «olha» para a entrada ou só para o estado.",
+      "order": 69
+    },
+    {
+      "id": "cd-7-10",
+      "wingId": "cd-wing-7",
+      "title": "Análise de Circuitos Sequenciais III",
+      "summaryText": "Esta aula repete o roteiro de análise — agora com **flip-flops JK**. Com dois elementos de memória, o número máximo de estados é `2² = 4`. O primeiro passo é escrever as **equações de excitação** das entradas J e K de cada flip-flop e a **equação de saída**; no circuito do exemplo, elas saem diretamente dos fios e a saída `y = B̄` depende apenas das variáveis de estado, identificando uma máquina **Moore**.\n\nA novidade está na tabela de transição: primeiro calcula-se a excitação (`J_A`, `K_A`, `J_B`, `K_B`) para cada combinação do estado atual `A, B` com a entrada `x`; só depois se usa a **tabela de funcionamento do JK** para obter o próximo estado. Com `J = K = 0` o valor é mantido, `J = 0, K = 1` zera, `J = 1, K = 0` liga e `J = K = 1` **complementa** o bit guardado — por isso é preciso olhar a excitação junto com o valor atual.\n\nA tabela binária vira tabela nominal quando se dão nomes `S0` a `S3` às quatro combinações; a escolha dos nomes é arbitrária. Como a saída depende só do estado, ela é escrita dentro de cada círculo do **diagrama de estados**, e as setas recebem apenas o valor da entrada `x`. Percorrer o diagrama com uma sequência de entradas é a conferência final.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=4Mx_cYvoZKY",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "No exemplo com JK, `J = K = 1` complementa o estado guardado. Com o estado atual `A = 1` e o modo complemento ativo (`B = 1`), escolha a operação que entrega o próximo estado de A.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Estado atual A",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "J = K = 1 (complemento ativo)",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "XOR"
+        ],
+        "expectedOutput": 0,
+        "explanation": "Na tabela do JK, `J = K = 1` complementa o valor guardado. Com A = 1, a operação **XOR** entre o estado atual e o modo complemento devolve 0 — é o próximo valor da variável de estado."
+      },
+      "hint": "Olhe a tabela do JK: quando J e K valem 1, a ordem não é ligar nem zerar, e sim inverter. Procure a operação que devolve 0 quando as duas entradas são iguais a 1.",
+      "order": 70
+    },
+    {
+      "id": "cd-7-11",
+      "wingId": "cd-wing-7",
+      "title": "Análise de Circuitos Sequenciais IV",
+      "summaryText": "O quarto exemplo analisa um circuito com dois flip-flops **T**, entrada `x` e saída `y`. Dois elementos de memória significam quatro estados.\n\nAs equações são `TA = B`, `TB = x` e `y = A·B`, o que caracteriza uma máquina **Moore**. Na tabela de transição, `T = 0` mantém a variável e `T = 1` a complementa.\n\nA tabela nominal batiza os estados de alfa, beta, gama e delta, cada um com sua saída. O diagrama final mostra as transições condicionadas por `x` — o mesmo desenho, agora lido como comportamento no tempo.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=__57NZcf52A",
+      "challenge": {
+        "type": "quiz",
+        "question": "Com T = 1, o que ocorre com a variável na borda do clock?",
+        "options": [
+          "Ela é complementada.",
+          "Ela é mantida.",
+          "Ela zera.",
+          "Ela passa a valer a entrada x."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Preencha a tabela coluna por coluna: primeiro a excitação de A, depois a de B.",
+      "order": 71
+    },
+    {
+      "id": "cd-8-1",
+      "wingId": "cd-wing-8",
+      "title": "Projeto de Circuitos Sequenciais I",
+      "summaryText": "O projeto vai da especificação textual ao circuito pela topologia de **Huffman**: lógica combinacional mais elementos de memória. São sete passos — escolher Moore ou Mealy, desenhar o diagrama, codificar os estados, escolher o flip-flop, montar a tabela, simplificar as equações e desenhar o circuito.\n\nNa arquitetura **Moore**, a saída vem só do estado; em **Mealy**, do estado e da entrada. Por isso se prefere Moore com flip-flop D: a saída fica sincronizada com o relógio.\n\nA tabela de desenvolvimento muda conforme o elemento: no flip-flop **D**, a excitação é simplesmente o próximo estado; no JK e no T, deriva da regra de funcionamento de cada um.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=3LXF2p2LSQU",
+      "challenge": {
+        "type": "quiz",
+        "question": "No flip-flop D, qual entrada realiza a transição 0 → 1?",
+        "options": [
+          "D = 1.",
+          "D = 0.",
+          "C = 0.",
+          "Q = 1."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Decida a arquitetura antes de codificar: ela define se a saída depende da entrada.",
+      "order": 72
+    },
+    {
+      "id": "cd-8-2",
+      "wingId": "cd-wing-8",
+      "title": "Gerador de Frequência",
+      "summaryText": "O contador de 2 bits percorre a sequência `00, 01, 10, 11` e recomeça. Não há entradas: apenas saídas que mudam a cada pulso de clock.\n\nA arquitetura é **Moore**, com quatro estados `A, B, C, D` e saídas `00, 01, 10, 11`. Codificados em `E1` e `E0`, os estados alimentam flip-flops **D**, para os quais a excitação é o próprio próximo estado.\n\nAs expressões finais são `D1 = E1 XOR E0` e `D0 = Ē0`. O circuito resultante tem dois flip-flops e realimentação — um gerador de frequência completo a partir de um ciclo de quatro passos.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=EUvxMNTFN4s",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Após o estado 11, D1 = E1 XOR E0. Com E1 = 1 e E0 = 1, escolha a operação que entrega o novo bit.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "E1",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "E0",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "XOR"
+        ],
+        "expectedOutput": 0,
+        "explanation": "`1 XOR 1 = 0`. Com E0 também indo a 0, o próximo estado é `00`: o contador fecha o ciclo e recomeça."
+      },
+      "hint": "Escreva a sequência em uma linha antes de codificar; o ciclo guia o diagrama.",
+      "order": 73
+    },
+    {
+      "id": "cd-8-3",
+      "wingId": "cd-wing-8",
+      "title": "Projeto de Circuitos Sequenciais III",
+      "summaryText": "A aula projeta um **gerador de sequência controlado**. Quando a entrada `A` vale `1`, a sequência percorre `00 → 01 → 10 → 11 → 00` a cada borda do clock; quando `A` vale `0`, ela **congela no estágio atual** até a entrada voltar a `1`. Adota-se a arquitetura **Moore**: cada estágio da sequência vira um estado e a saída correspondente fica dentro do círculo.\n\nO diagrama de transição sai diretamente do enunciado: com `A = 1`, cada estado avança para o próximo; com `A = 0`, todos têm **auto-transição**. Como há quatro estados, bastam **duas variáveis de estado** (`E1`, `E0`) — a codificação `00, 01, 10, 11` é escolha arbitrária — e o projeto usa **flip-flops D**, para os quais a excitação de cada variável é exatamente o próximo estado.\n\nDepois vêm os passos mecânicos: tabela com estado atual, entrada, próximo estado e saída; **mapas de Karnaugh** para simplificar excitações e saída; desenho do circuito e simulação no Logisim. Para simular, é preciso habilitar o **pulso de clock**, ligar o mesmo sinal às entradas de clock dos dois flip-flops e ajustar a frequência para ver os estágios desfilarem.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=7Y0oWahVWUw",
+      "challenge": {
+        "type": "quiz",
+        "question": "No gerador de sequência controlado do exemplo, há quatro estágios: 00, 01, 10 e 11. Quantas variáveis de estado — e, usando flip-flops D, quantos flip-flops — são necessárias?",
+        "options": [
+          "Duas.",
+          "Uma.",
+          "Quatro.",
+          "Três."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Conte os estágios da sequência e procure a menor potência de 2 que comporta todos eles. Cada variável de estado pede um flip-flop.",
+      "order": 74
+    },
+    {
+      "id": "cd-8-4",
+      "wingId": "cd-wing-8",
+      "title": "Gerador Controlado com Flip-Flops JK",
+      "summaryText": "O mesmo gerador agora obedece a um controle: gera `00, 01, 10, 11` enquanto `A = 1`; com `A = 0`, permanece no estado atual.\n\nO reprojeto com flip-flops **JK** mostra que qualquer máquina pode ser implementada com outro tipo de elemento de memória. O JK dobra as equações de excitação — há `J` e `K` por variável —, mas reduz a lógica combinacional necessária.\n\nA tabela preenche `J1, K1, J0, K0` a partir do estado atual e do próximo. As expressões são obtidas em mapas de Karnaugh e o circuito é simulado no Logisim.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=zctwOD5i9mQ",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Com A = 0 o gerador congela. O avanço é A·pulso; com A = 0 e pulso = 1, escolha a operação que entrega 0.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Controle A",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Pulso de clock",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 0,
+        "explanation": "O avanço depende das duas condições. Com A = 0 e pulso = 1, a **AND** devolve 0: o gerador fica parado no estado em que estava."
+      },
+      "hint": "Diagrama e arquitetura não mudam com o flip-flop — só muda a tabela de excitação.",
+      "order": 75
+    },
+    {
+      "id": "cd-8-5",
+      "wingId": "cd-wing-8",
+      "title": "Projeto de Circuitos Sequenciais V",
+      "summaryText": "Esta aula mostra o circuito sequencial como **controlador**: uma máquina de estados aciona um dispositivo segundo uma regra. O exemplo é um **temporizador de laser**: ao pressionar o botão `B`, o laser deve ficar ligado por `30 ns`. Como o clock tem período de `10 ns`, isso equivale a **três ciclos de clock**. Adota-se a arquitetura **Moore**, com a saída dependente apenas do estado.\n\nO diagrama nasce da especificação. No estado `A` o laser está desligado e a máquina espera o botão; ao pressioná-lo, passa por `B`, `C` e `D` com o laser aceso, um ciclo em cada estado — as transições `B → C → D` não dependem da entrada. O detalhe crucial é que o botão **não está sincronizado com o clock** e pode ficar em nível alto por mais de um ciclo: voltar direto de `D` para `A` religaria o laser sem um novo aperto. Por isso entra o estado `E`, com saída `0`, cuja única função é **esperar o botão ser solto** antes de retornar a `A`.\n\nSão cinco estados, logo **três variáveis de estado** (`E2, E1, E0`) e três **flip-flops D** — escolhidos porque, embora aumentem a lógica combinacional, são mais simples de usar que os JK. A codificação `000, 001, 010, 011, 100` é arbitrária; os códigos não usados recebem próximo estado `A` e saída `0` como **medida de segurança**, embora também possam ser tratados como *don't care*. Fecham o projeto a tabela de transição, os **mapas de Karnaugh** e o diagrama com as expressões de excitação e da saída.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=QZQeMbeXnoQ",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Ao fim dos três ciclos, se o botão ainda estiver pressionado, a máquina entra no estado `E` para esperar o soltar. Com o tempo esgotado em `1` e o botão ainda ativo em `1`, escolha a operação que representa essa situação.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Três ciclos concluídos",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Botão ainda pressionado",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND",
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "O estado `E` existe justamente para o caso em que as duas condições ocorrem juntas: os três ciclos se esgotaram e o botão continua alto. Com as duas entradas em 1, a operação **AND** devolve 1; em `E` a máquina espera até o botão ser solto para voltar a `A`."
+      },
+      "hint": "Pense no motivo de existir o estado `E`: ele só é necessário quando as duas condições aparecem **juntas**. Qual porta acende apenas nesse caso?",
+      "order": 76
+    },
+    {
+      "id": "cd-8-6",
+      "wingId": "cd-wing-8",
+      "title": "Projeto de Circuitos Sequenciais VI",
+      "summaryText": "Mais uma aplicação de controle: uma **bomba de recalque** leva água da cisterna para a caixa d'água. Dois sensores fornecem as entradas — `a0` indica presença de água na cisterna e `a1` indica que a caixa está cheia. A máquina tem apenas dois estados, **bomba desligada** (saída `0`) e **bomba ligada** (saída `1`), e a saída é o próprio estado.\n\nAs regras do enunciado viram transições. Desligada, a bomba só parte quando há água na cisterna e a caixa ainda não está cheia; ligada, permanece assim enquanto houver água na origem e a caixa não encher; desliga se a cisterna esvaziar **ou** se a caixa ficar cheia. Com muitas entradas, o professor recomenda montar primeiro a **tabela de transição nominal** e só depois convertê-la para binária, mantendo a mesma ordem das combinações.\n\nAs combinações dos sensores tratadas como impossíveis não ficam sem destino: recebem o estado **desligado**, mais seguro, em vez de virarem *don't care* — assim, um erro de leitura não liga a bomba. Como são dois estados, basta **uma variável de estado** (`y`) e um único flip-flop; usando D, a excitação é o próximo estado. Depois vêm os **mapas de Karnaugh** para as expressões e o circuito final.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Ez3nIadMiR8",
+      "challenge": {
+        "type": "quiz",
+        "question": "Na máquina da bomba de recalque, em que situação a bomba deve sair do estado 'ligada'?",
+        "options": [
+          "Quando a cisterna esvazia ou a caixa d'água fica cheia.",
+          "Quando a caixa d'água esvazia, mesmo com água na cisterna.",
+          "Somente quando os dois sensores indicam ausência de água.",
+          "A cada borda de clock, independentemente dos sensores."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "A bomba segue enquanto há água na origem e espaço na caixa. Pense nas duas maneiras de essa condição deixar de valer.",
+      "order": 77
+    },
+    {
+      "id": "cd-8-7",
+      "wingId": "cd-wing-8",
+      "title": "Detector de Borda com Espera",
+      "summaryText": "A máquina detecta a borda `0 → 1` de `x`: a saída `y` fica alta por **cinco ciclos** de clock e depois volta a zero.\n\nHá uma armadilha. Se `x` continuar em 1, o sistema não pode disparar de novo — por isso existe o estado `G`, que espera `x` voltar a 0 antes de rearmar. São sete estados, de `A` a `G`, três variáveis de estado e arquitetura **Moore**.\n\nOs códigos não usados são tratados como *don't care* e direcionados ao estado inicial. Mapas de Karnaugh produzem as expressões de excitação e de saída.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=BQC1pypMw1c",
+      "challenge": {
+        "type": "quiz",
+        "question": "Por que criar o estado G nesse projeto?",
+        "options": [
+          "Para esperar x voltar a 0 e só rearmar com uma nova borda.",
+          "Para contar os cinco pulsos em que y fica alta.",
+          "Para zerar a saída antes do quinto pulso.",
+          "Para armazenar o valor de x indefinidamente."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Pergunte se o sistema pode disparar de novo sem «soltar o botão»; se não, crie um estado de espera.",
+      "loreFragment": {
+        "id": "log-cd-78-loop",
+        "title": "O Retorno sem Destino",
+        "content": "A seta do último estado voltava ao primeiro e continuava voltando, mesmo depois de a contagem ter terminado. Quem desenhou o diagrama não escreveu o que fazer quando o pulso seguinte chegasse — e o retorno, sem esse escrito, seguiu apontando para si mesmo."
+      },
+      "order": 78
+    },
+    {
+      "id": "cd-8-8",
+      "wingId": "cd-wing-8",
+      "title": "Codificação Manchester",
+      "summaryText": "Na codificação **Manchester**, o bit `0` é a transição `0 → 1` — metade do período em 0, metade em 1 — e o bit `1` é a transição `1 → 0`.\n\nO projeto converte dados binários seriais na entrada para o sinal Manchester na saída. A máquina é **Moore**, com estados de `A` a `E`, incluindo esperas que garantem que cada nível dure meia duração de bit.\n\nOs códigos não utilizados viram *don't care* na tabela de transição. Expressões de excitação e saída saem dos mapas de Karnaugh, e o circuito é montado com flip-flops D.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=eW3VQYW-sTw",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "O bit 1 em Manchester é a transição 1 → 0. Com o nível atual em 1 e o seguinte em 0, escolha a operação que acende quando há mudança.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Nível atual",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "Próximo nível",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "A **XOR** devolve 1 quando os níveis diferem. Essa mudança `1 → 0` é justamente a assinatura do bit 1 em Manchester."
+      },
+      "hint": "Desenhe a forma de onda antes do diagrama: cada metade de bit vira um estado.",
+      "order": 79
+    },
+    {
+      "id": "cd-8-9",
+      "wingId": "cd-wing-8",
+      "title": "Controle de Motor de Passo",
+      "summaryText": "As entradas `H` indicam `10` para horário, `01` para anti-horário e `00` ou `11` para parado. Quatro saídas de fase — `P, M, L, Y` — comandam o motor.\n\nA sequência horária percorre `1 → 2 → 3 → 4` e a inversa, `4 → 3 → 2 → 1`. Cada passo é um estado: alfa, beta, gama e delta, com saídas `1001`, `1010`, `0110` e `0101`. Motor parado significa permanecer no estado atual.\n\nO projeto é **Moore**, com quatro estados, duas variáveis e flip-flops D. As expressões são simuladas no Logisim com túneis para organizar os fios.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=WzW6nU7NUus",
+      "challenge": {
+        "type": "quiz",
+        "question": "O que acontece com o motor quando H = 11?",
+        "options": [
+          "Ele fica parado no passo atual.",
+          "Ele gira no sentido horário.",
+          "Ele gira no sentido anti-horário.",
+          "Ele zera todas as fases."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Monte primeiro a tabela de passos do enunciado; as setas dela viram transições.",
+      "order": 80
+    },
+    {
+      "id": "cd-8-10",
+      "wingId": "cd-wing-8",
+      "title": "Detector de Paridade Serial",
+      "summaryText": "O detector de paridade **ímpar** faz `Z = 1` quando a quantidade de bits `1` recebidos é ímpar. A entrada `x` fornece um bit por pulso de clock.\n\nA máquina é **Moore**, com dois estados: `A` (par, `Z = 0`) e `B` (ímpar, `Z = 1`). Em `A`, `x = 0` leva a `A` e `x = 1` leva a `B`; em `B`, `x = 0` mantém `B` e `x = 1` volta a `A`.\n\nBasta uma variável de estado. Com flip-flop D, `D = E XOR x` e `Z = E` — o estado é a própria paridade acumulada. Tudo é simulado no Logisim.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=ta-esYaoz4E",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "No detector de paridade, D = E XOR x. Com E = 0 e x = 1, escolha a operação que entrega o próximo estado.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Estado E",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Entrada x",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "`0 XOR 1 = 1`: a máquina vai ao estado B, que representa paridade ímpar, e Z passa a 1."
+      },
+      "hint": "O estado só precisa lembrar se a contagem é par ou ímpar, não o total.",
+      "order": 81
+    },
+    {
+      "id": "cd-8-11",
+      "wingId": "cd-wing-8",
+      "title": "Contador Múltiplo de Três",
+      "summaryText": "A máquina **Mealy** detecta se a quantidade acumulada de bits `1` é maior que zero e divisível por 3.\n\nOs estados `S0` a `S3` representam o resto da divisão por 3, com `S3` indicando que já houve pelo menos um bit `1`. A saída depende de estado **e** entrada: em `S2`, receber `x = 1` leva a `S3` com `Z = 1`; em `S3`, `x = 0` mantém `Z = 1` e `x = 1` leva a `S1`.\n\nA codificação usa duas variáveis, flip-flops D e uma tabela cujas células trazem «próximo estado/saída» — a saída mora na transição.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=5Ya0o-pGumA",
+      "challenge": {
+        "type": "quiz",
+        "question": "Em S2, receber x = 1 faz Z ir a 1. Por quê?",
+        "options": [
+          "Porque 2 + 1 = 3 bits 1, divisível por 3.",
+          "Porque o estado S2 sempre emite 1.",
+          "Porque a máquina é Moore.",
+          "Porque a entrada zera o estado."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Em Mealy, escreva a saída em cada seta, não dentro do círculo do estado.",
+      "loreFragment": {
+        "id": "log-cd-82-trace",
+        "title": "A Decisão sem Assinatura",
+        "content": "No canto da tabela, uma coluna de decisões vinha sem nenhuma marca de quem a tinha traçado. As setas estavam corretas, os próximos estados também — mas a autoria do traço parecia ter desaparecido antes de a tinta secar."
+      },
+      "order": 82
+    },
+    {
+      "id": "cd-9-1",
+      "wingId": "cd-wing-9",
+      "title": "Detector 101 com Sobreposição",
+      "summaryText": "A máquina detecta a sequência `101` e faz `Y = 1` a cada ocorrência. Arquitetura **Moore**, flip-flops D determinados no enunciado.\n\nA sequência de exemplo mostra **sobreposição**: o `1` que fecha uma ocorrência abre a seguinte. O arco principal é `S0 →(1) S1 →(0) S10 →(1) S101`, com `Y = 1` apenas em `S101`.\n\nAs demais transições completam o desenho: `S0` com 0 permanece, `S1` com 1 permanece, `S10` com 0 volta a `S0`, e `S101` com 0 vai a `S10` e com 1 vai a `S1`. As expressões finais são `D1 = E1·Ē0·x + E0·x̄`, `D0 = x` e `Y = E1`.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=seZk9pKNYaA",
+      "challenge": {
+        "type": "quiz",
+        "question": "Na entrada 10101, quantas vezes Y vai a 1?",
+        "options": [
+          "Duas.",
+          "Uma.",
+          "Três.",
+          "Nenhuma."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Quando a sequência fecha, veja qual sufixo ainda serve como início de outra.",
+      "order": 83
+    },
+    {
+      "id": "cd-9-2",
+      "wingId": "cd-wing-9",
+      "title": "Somador Serial",
+      "summaryText": "O somador serial recebe `A` e `B`, um bit por clock, e devolve a saída `S`. O **carry** fica guardado na própria máquina para a próxima soma.\n\nComparado ao somador com propagação de carry, é mais lento — cada bit espera o seu pulso —, mas ocupa muito menos circuito quando a palavra é longa.\n\nA arquitetura é **Moore**, com quatro estados: `A` (soma 0, carry 0), `B` (soma 1, carry 0), `C` (soma 0, carry 1) e `D` (soma 1, carry 1). As transições vêm de `A + B + carry` do estado atual. Codificação em duas variáveis, flip-flops D, tabela binária e expressões finais.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=29rFIM-izEc",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "No estado C (carry = 1), com A = 0 e B = 0, a soma final é 1. Escolha a operação que entrega o bit de soma antes do carry.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Bit A",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Bit B",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "XOR"
+        ],
+        "expectedOutput": 0,
+        "explanation": "`A XOR B = 0`; somando o carry guardado no estado C, o bit de saída vira 1 e o novo carry é 0. Por isso o próximo estado é B."
+      },
+      "hint": "Some sempre os dois bits de entrada com o carry guardado no estado.",
+      "order": 84
+    },
+    {
+      "id": "cd-9-3",
+      "wingId": "cd-wing-9",
+      "title": "Alarme com Botão Longo",
+      "summaryText": "O alarme de carro tem duas entradas: `remote`, o botão, e `sensus`, o sensor. A saída é a sirene. `remote` alterna entre desarmado e armado; `sensus = 1` com o alarme armado dispara a sirene, e só `remote = 1` a desativa.\n\nO problema é que o botão fica em 1 por vários clocks e alternaria o alarme repetidamente. A solução são os **estados de sincronização** `ATS` e `BTS`, que esperam o botão ser solto antes de aceitar outra pressão.\n\nSão cinco estados — `A`, `ATS`, `B`, `BTS` e `C` —, três variáveis, flip-flops D e implementação final com multiplexadores.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=aYaEqsyxRP0",
+      "challenge": {
+        "type": "quiz",
+        "question": "Por que existe o estado ATS no projeto do alarme?",
+        "options": [
+          "Para esperar remote voltar a 0 e registrar uma única pressão.",
+          "Para disparar a sirene no mesmo clock.",
+          "Para contar quantos pulsos o sensor emitiu.",
+          "Para desarmar o alarme automaticamente."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Trate botões como sinais longos: o diagrama deve contar uma pressão, não cada clock.",
+      "order": 85
+    },
+    {
+      "id": "cd-9-4",
+      "wingId": "cd-wing-9",
+      "title": "Moore e Mealy: Duas Escritas",
+      "summaryText": "O mesmo detector da sequência `1010` é projetado nas duas arquiteturas para comparação.\n\nEm **Moore**, são cinco estados — `S0`, `S1`, `S10`, `S101` e `S1010` —, com saída 1 apenas no último e três flip-flops. Em **Mealy**, são quatro estados: não se cria um estado extra só para mudar a saída, que passa a viver na transição. Bastam dois flip-flops.\n\nA desvantagem de Mealy é a saída mudar com a entrada antes do clock, sem sincronismo. A vantagem é o custo menor. As duas máquinas dizem a mesma coisa com gramáticas diferentes.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=AfWMnhgDO4k",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Mealy usou dois flip-flops contra três de Moore. Com duas variáveis de estado, S1 = 1 e S0 = 0, escolha a operação que acende quando exatamente uma está ligada.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "S1",
+            "initialValue": 1
+          },
+          {
+            "id": "B",
+            "label": "S0",
+            "initialValue": 0
+          }
+        ],
+        "allowedOperations": [
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "Duas variáveis comportam quatro estados. Com S1 = 1 e S0 = 0, a **XOR** devolve 1 — exatamente uma delas está ligada."
+      },
+      "hint": "Compare o instante da mudança da saída: ela acompanha a entrada ou espera o clock?",
+      "loreFragment": {
+        "id": "log-cd-86-duality",
+        "title": "Duas Escritas do Mesmo Estado",
+        "content": "O mesmo desenho aparecia duas vezes na parede: numa, a luz morava dentro do círculo; noutra, vivia na seta que chegava. As duas folhas davam a mesma resposta e nenhuma admitia ser a cópia da outra."
+      },
+      "order": 86
+    },
+    {
+      "id": "cd-9-5",
+      "wingId": "cd-wing-9",
+      "title": "Minimização de Máquinas de Estados",
+      "summaryText": "Minimizar é reduzir estados **sem alterar o comportamento**: a máquina continua dando a mesma saída para a mesma sequência de entrada.\n\nDois estados são **equivalentes** quando têm as mesmas saídas e os mesmos próximos estados — ou próximos estados equivalentes — para cada entrada. No exemplo de cinco estados, `B` equivale a `D`. Substituindo `D` por `B`, `A` também equivale a `E`, e restam três estados.\n\nA economia vai de três flip-flops para dois. Como a inspeção visual falha em casos maiores, surgem os métodos sistemáticos: tabela de implicação e particionamento sucessivo.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=AJj8DpeW_yY",
+      "challenge": {
+        "type": "quiz",
+        "question": "Por que B e D são equivalentes no exemplo?",
+        "options": [
+          "Para x = 0 e x = 1 têm as mesmas saídas e os mesmos destinos.",
+          "Porque ocupam posições vizinhas no diagrama.",
+          "Porque um pertence a Moore e o outro a Mealy.",
+          "Porque ambos usam o mesmo flip-flop."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Compare duas linhas da tabela: primeiro as saídas, depois os destinos.",
+      "order": 87
+    },
+    {
+      "id": "cd-9-6",
+      "wingId": "cd-wing-9",
+      "title": "Tabela de Implicação",
+      "summaryText": "A **tabela de implicação** é o método sistemático para minimizar quando a inspeção visual já não funciona.\n\nSão cinco passos: montar a tabela triangular com todos os pares de estados; marcar com `X` os pares cujas saídas diferem; anotar os próximos estados de cada par para cada entrada; marcar os pares cujos destinos não sejam equivalentes; repetir até não haver mudanças.\n\nOs pares que ficarem sem marca ao final são estados equivalentes. Num exemplo, cinco estados reduzem a três — `S1 = S2` e `S3 = S4` —; outro caso com sete estados Mealy leva à mesma economia, de três para dois flip-flops.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=9PCN3yNe4JU",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Pares com saídas diferentes recebem X na tabela. Com saída A = 0 e saída B = 1, escolha a operação que confirma a diferença.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Saída do estado A",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Saída do estado B",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "XOR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "A **XOR** devolve 1 quando as saídas diferem. É por isso que o par é marcado com `X` e não pode ser fundido."
+      },
+      "hint": "Se algum destino já estiver marcado, marque o par também.",
+      "order": 88
+    },
+    {
+      "id": "cd-9-7",
+      "wingId": "cd-wing-9",
+      "title": "Particionamento Sucessivo",
+      "summaryText": "O **particionamento sucessivo** é iterativo. Começa com `S`, o conjunto de todos os estados; a primeira partição `P1` agrupa os estados que têm as mesmas saídas para cada entrada.\n\nPara cada bloco, verificam-se os próximos estados em cada condição de entrada. Permanecem juntos apenas aqueles cujos destinos caem no mesmo bloco; os demais são separados.\n\nRepete-se até `Pn = Pn−1`. Os estados que ficaram no mesmo bloco final são equivalentes. Num exemplo, sete estados viram `{A,D}`, `{B,C}`, `{E}`, `{F}` e `{G}`; outro caso usa oito estados Mealy.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Z1hZhMn29WY",
+      "challenge": {
+        "type": "quiz",
+        "question": "Quando o particionamento sucessivo termina?",
+        "options": [
+          "Quando a nova partição é igual à anterior.",
+          "Quando todos os estados ficam sozinhos.",
+          "Quando surgem exatamente três blocos.",
+          "Quando o sinal de clock para."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "A cada rodada, separe apenas o estado que aponta para um bloco diferente dos colegas.",
+      "order": 89
+    },
+    {
+      "id": "cd-9-8",
+      "wingId": "cd-wing-9",
+      "title": "Convertendo Moore e Mealy",
+      "summaryText": "Na conversão **Mealy → Moore**, há duas regras. Se todas as transições que chegam a um estado têm a mesma saída, essa saída vira a saída do estado, sem mudar a quantidade de estados.\n\nHavendo saídas diferentes, cria-se um estado para cada valor de saída e repetem-se, nos estados divididos, as transições de saída.\n\nNa conversão **Moore → Mealy**, mantêm-se os estados, atribui-se a cada transição a saída do estado de chegada e depois minimiza-se. Mealy tem no máximo o mesmo número de estados de Moore — geralmente menos —, mas perde o sincronismo da saída.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=NXjf7GWlA6A",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "Ao converter Moore → Mealy, a saída do estado de destino é colada na seta. Com entrada = 0 e saída do destino = 1, escolha a operação que entrega essa saída.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Entrada",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Saída do destino",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "OR"
+        ],
+        "expectedOutput": 1,
+        "explanation": "A saída colada na seta vem do destino, não da entrada. Com a saída do destino em 1, a **OR** devolve 1 mesmo com entrada 0."
+      },
+      "hint": "Ao converter para Mealy, «cole» a saída do destino em cada seta e procure estados iguais.",
+      "order": 90
+    },
+    {
+      "id": "cd-9-9",
+      "wingId": "cd-wing-9",
+      "title": "Estado Inicial de uma Máquina",
+      "summaryText": "Códigos não usados — por exemplo `101`, `110` e `111` quando há apenas cinco estados — costumam ser tratados como *don't care*. Mas ao energizar o circuito, os flip-flops partem de valores aleatórios, e esses códigos podem ocorrer de fato.\n\nHá duas soluções. A primeira é tornar a máquina **auto-corretiva**, dando aos códigos ociosos um destino válido no próximo clock. A segunda é garantir um **estado inicial fixo** com um circuito de *power-on reset* (POR), que zera os flip-flops brevemente ao ligar.\n\nO circuito típico de POR combina `R1`, `R2`, um diodo, um capacitor eletrolítico e um botão, explorando carga e descarga.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=gpObH7mDB-I",
+      "challenge": {
+        "type": "quiz",
+        "question": "O que garante que a máquina comece sempre no estado A?",
+        "options": [
+          "O circuito de power-on reset (POR).",
+          "A marcação de don't care nos códigos ociosos.",
+          "O uso de flip-flops do tipo T.",
+          "A codificação Manchester da saída."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Mesmo com POR, dê aos códigos ociosos um destino válido como segurança extra.",
+      "order": 91
+    },
+    {
+      "id": "cd-9-10",
+      "wingId": "cd-wing-9",
+      "title": "Restrições de Tempo em Máquinas de Estados",
+      "summaryText": "As entradas de um flip-flop não podem mudar muito perto da borda do clock. O **setup time** é o tempo mínimo de estabilidade antes da borda; o **hold time** é o mínimo depois dela.\n\nViolar esses tempos leva à **metaestabilidade**: `Q` fica em tensão intermediária e acaba estabilizando aleatoriamente em 0 ou 1. Não é uma resposta errada — é uma resposta sem garantia.\n\nInternamente, escolhe-se uma frequência de clock que permita a estabilização. Em entradas externas, como botões, usa-se um flip-flop **sincronizador** com setup e hold pequenos: ele reduz o risco, mas não o elimina.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=Kib0DmQCLjQ",
+      "challenge": {
+        "type": "logic_toggle",
+        "question": "A captura é segura só quando setup e hold são respeitados. Com setup violado (0) e hold respeitado (1), escolha a operação que sinaliza risco.",
+        "inputs": [
+          {
+            "id": "A",
+            "label": "Setup respeitado",
+            "initialValue": 0
+          },
+          {
+            "id": "B",
+            "label": "Hold respeitado",
+            "initialValue": 1
+          }
+        ],
+        "allowedOperations": [
+          "AND"
+        ],
+        "expectedOutput": 0,
+        "explanation": "A condição segura exige as duas. Com setup = 0 e hold = 1, a **AND** devolve 0 — há risco de metaestabilidade."
+      },
+      "hint": "Separe os mundos: sinais internos você controla; botões do usuário, nunca.",
+      "order": 92
+    },
+    {
+      "id": "cd-9-11",
+      "wingId": "cd-wing-9",
+      "title": "Codificação de Estados",
+      "summaryText": "Até aqui a **codificação dos estados** seguia a **largura mínima**: o menor número de bits — e portanto de flip-flops — capaz de representar todos os estados. Quatro estados pedem dois bits, oito pedem três e cinco também pedem três. A aula mostra que essa escolha não é obrigatória e que a **atribuição dos códigos é arbitrária**: a mesma máquina `A, B, C, D` pode receber `00, 01, 10, 11` de várias maneiras.\n\nO ponto central é que **codificações diferentes geram lógicas combinacionais diferentes**. Trocar apenas os códigos de dois estados no exemplo tornou a expressão do próximo estado bem mais simples, sem mudar nenhuma transição do diagrama. Há uma relação de compromisso: usar **mais flip-flops** do que o mínimo tende a reduzir a lógica. No extremo, a codificação **one-hot** usa um bit por estado — `0001, 0010, 0100, 1000` para quatro estados —, com um único `1` por vez; a lógica do próximo estado fica mínima, mas o custo em flip-flops aumenta e é preciso garantir uma inicialização válida.\n\nA codificação **Gray** mantém a largura da binária, porém numera os estados de modo que **apenas um bit muda** entre consecutivos; o professor a recomenda quando há muito ruído ou atraso de propagação. Para escolher bons códigos com largura mínima, ele resume três **heurísticas**, em ordem de prioridade: estados com o **mesmo próximo estado** devem ficar próximos; estados que levam ao **mesmo estado** devem ficar próximos; estados com a **mesma saída** devem ficar próximos. 'Próximo' significa ocupar células adjacentes no mapa de Karnaugh, e proximidades que aparecem mais vezes pesam mais na decisão.",
+      "youtubeUrl": "https://www.youtube.com/watch?v=XYAXzeIpNXw",
+      "challenge": {
+        "type": "quiz",
+        "question": "Segundo a aula, o que acontece quando a mesma máquina de estados recebe uma codificação diferente?",
+        "options": [
+          "O diagrama fica igual, mas a lógica de próximo estado e de saída pode mudar.",
+          "O número de estados da máquina aumenta.",
+          "As transições passam a depender apenas do clock.",
+          "A saída deixa de depender do estado atual."
+        ],
+        "correctIndex": 0
+      },
+      "hint": "Compare duas codificações para `A, B, C, D`: as setas do diagrama não mudam, mas a tabela binária — e por consequência as expressões — muda.",
+      "loreFragment": {
+        "id": "log-cd-93-encoding",
+        "title": "A Pergunta que Volta",
+        "content": "A última linha da tabela de codificação repetia, com um atraso de um pulso, a mesma pergunta que o vão fizera no começo. O Ruído a devolvia agora em forma de estado, como se devolver o que sabe fosse a única saída possível."
+      },
+      "order": 93
     }
-  ]
+  ],
+  "description": "Do sinal analógico à memória de estados: noventa e três aulas, noventa e três terminais. Da base binária à codificação final, cada resposta acesa devolve um pouco de luz ao Pátio."
 }

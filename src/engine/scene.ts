@@ -92,8 +92,9 @@ export function buildDisciplineScene(
   completedIds: Set<string>,
 ): Scene {
   const theme = discipline.wings[0]?.themeColors ?? discipline.themeColors
+  const width = 260 + discipline.levels.length * 330 + 240
   const platforms: Platform[] = [
-    { x: 0, y: GROUND_Y, w: 4000, h: WORLD_HEIGHT - GROUND_Y, kind: 'ground' },
+    { x: 0, y: GROUND_Y, w: width, h: WORLD_HEIGHT - GROUND_Y, kind: 'ground' },
   ]
   const terminals: TerminalNode[] = []
   const completedCount = discipline.levels.filter((level) =>
@@ -118,7 +119,6 @@ export function buildDisciplineScene(
     terminals.push({ level, x, y: baseY, state })
   })
 
-  const width = 260 + discipline.levels.length * 330 + 240
   return {
     area: 'discipline',
     width,
@@ -153,6 +153,8 @@ export function nearestInteractable(
 
   for (const terminal of scene.terminals) {
     if (terminal.state !== 'available') continue
+    // Filtro barato antes da raiz: fora do raio em x, a distância já é maior.
+    if (Math.abs(terminal.x - x) > radius) continue
     const distance = Math.hypot(terminal.x - x, terminal.y - 44 - y)
     if (distance < bestDistance) {
       best = terminal
