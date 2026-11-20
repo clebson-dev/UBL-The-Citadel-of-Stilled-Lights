@@ -44,6 +44,10 @@
 
 **Fragmentos associados.** `log-cd-01-architects` — o primeiro fragmento, plantado no primeiro terminal e ligado ao desenho de Vetra. `log-cd-02-noise` e `log-cd-03-receptacle` também nascem nesta Ala: a interferência nos barramentos e o vão sob o Pátio são as outras duas primeiras vozes do Setor.
 
+**Topologia aprovada.** A Ala percorre três movimentos. T1 e T2 ficam rente ao chão, com dois bancos de leitura entre eles; T3 sobe numa plataforma baixa, ainda sob luz difusa. De T4 a T7 o trajeto alterna chão e plataformas curtas — T5 e T7 elevados — sob cones de luz progressivamente mais definidos. T8 volta ao chão, T9 sobe e T10 repousa sobre um pedestal largo, sob o halo mais amplo da Ala. Os cabos correm baixos e acendem no sentido do trajeto, acompanhando a trava de cada terminal. Nenhuma plataforma exige um salto maior que o alcance do Andarilho.
+
+**Marcas no cenário.** A **Linha em Branco** aparece na placa inclinada do primeiro banco: duas linhas traçadas e uma última linha vazia, que treme quando ninguém está olhando de perto. **O Eixo que Abre para Dentro** está gravado na face do pedestal de T10, com as dobradiças do lado de dentro da porta desenhada. Como todas as marcas recorrentes, são elementos visuais: não têm letreiro, não são comentados e nunca viram `loreFragment`.
+
 ---
 
 ## Marcas recorrentes para o `level-architect`

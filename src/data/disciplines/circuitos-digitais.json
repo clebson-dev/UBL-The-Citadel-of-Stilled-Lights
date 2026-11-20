@@ -139,20 +139,20 @@
       "order": 1,
       "wingId": "cd-wing-1",
       "title": "Analógico, Digital e o Bit",
-      "summaryText": "Um sinal **analógico** pode assumir infinitos valores de amplitude: a voz é assim. Um sinal **digital** só admite alguns valores — em geral dois, representados por `0` e `1`. A lâmpada, que está ou acesa ou apagada, é digital.\n\nOs níveis elétricos costumam ser cerca de `0 V` para o baixo e `5 V` para o alto. Trabalhar com apenas dois estados torna o projeto mais simples, o armazenamento mais fácil e o circuito **imune a ruído**: uma pequena variação de tensão não muda o valor lido.\n\nO mundo físico é analógico, mas podemos convertê-lo: a conversão **A/D** amostra, quantiza e codifica; a conversão **D/A** faz o caminho de volta. A perda é desprezível na maioria dos casos.",
+      "summaryText": "Um **sinal analógico** percorre infinitos valores de amplitude — é o caso da voz, cujo volume pode variar continuamente. Um **sinal digital** admite apenas valores finitos; no caso mais comum, dois: o **nível lógico 0** (desligado, baixo) e o **nível lógico 1** (ligado, alto). A lâmpada é digital porque está acesa ou apagada; contar com os dedos também é digital, pois há um número limitado de resultados. Um sinal digital *pode* ter mais de dois níveis — o que importa é ser finito.\n\nUm **circuito digital** recebe entradas digitais e devolve saídas digitais. Mesmo assim, continua sendo um circuito eletrônico: transistores e diodos trabalham com tensões, e costuma-se representar o alto por `+5 V` e o baixo por `0 V` (níveis **TTL**). Computadores, chips de celular, câmeras, videogames e dispositivos médicos são exemplos. Em relação ao analógico, o digital é mais fácil de projetar e de armazenar, e mais preciso: a **imunidade a ruído** faz com que pequenas variações de tensão não alterem o valor lido. Ainda é mais versátil e mais barato.\n\nComo a natureza é majoritariamente analógica, um sistema digital precisa de conversão. A **conversão A/D** amostra o sinal, quantiza os valores e os codifica em binário: são as três etapas usadas ao gravar a voz no microfone. No caminho de volta, a **conversão D/A** reconstrói o analógico para o alto-falante. As duas conversões introduzem uma pequena perda, desprezível nos sistemas modernos, e costumam trabalhar juntas — sensor, circuito digital e atuador.",
       "youtubeUrl": "https://www.youtube.com/watch?v=1lsU6RoU9Ko",
       "challenge": {
         "type": "quiz",
-        "question": "Qual é a diferença principal entre um sinal analógico e um sinal digital?",
+        "question": "Ao gravar a voz pelo microfone, o sinal passa pela conversão analógico-digital. Qual é a ordem correta das três etapas?",
         "options": [
-          "O analógico assume infinitos valores de amplitude; o digital, apenas finitos, em geral 0 e 1.",
-          "O digital é sempre mais rápido do que o analógico, qualquer que seja o circuito.",
-          "O analógico só existe em lâmpadas; o digital, apenas em gravações de voz.",
-          "A conversão A/D aumenta a perda de informação em vez de reduzi-la."
+          "Codificação → quantização → amostragem",
+          "Quantização → amostragem → codificação",
+          "Amostragem → quantização → codificação",
+          "Amostragem → codificação → quantização"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
       },
-      "hint": "Olhe o eixo vertical da amplitude e conte quantos valores diferentes ele pode assumir.",
+      "hint": "Volte à figura da aula: a onda da voz é contínua. O que você faz primeiro para que o circuito consiga lê-la? Depois vem a limitação dos valores possíveis e, por fim, a escrita em bits.",
       "loreFragment": {
         "id": "log-cd-01-architects",
         "title": "O Primeiro Desenho",
@@ -164,32 +164,32 @@
       "order": 2,
       "wingId": "cd-wing-1",
       "title": "Bases, Bits e Bytes",
-      "summaryText": "Um **sistema de numeração** é o conjunto de símbolos usado para representar quantidades; a **base** define quais dígitos existem e o peso de cada posição. A regra geral é simples: some cada dígito multiplicado pela base elevada à sua posição.\n\nNa base 10, `471932 = 4·10⁴ + 7·10³ + 1·10² + 9·10 + 3·2 + 2`… na prática, cada casa vale dez vezes a seguinte. Na base 2 só existem `0` e `1`: cada posição vale uma potência de 2. Um **bit** é um dígito binário e um **byte** reúne 8 bits.\n\nCom `n` bits cabem `2ⁿ` valores, e o maior deles é `2ⁿ − 1`. Em 8 bits são 256 valores, de 0 a 255. Na conversão decimal → binário por divisões sucessivas, os restos são lidos **de trás para frente**.",
+      "summaryText": "Um **número** representa uma quantidade; o conjunto de símbolos usado para representá-lo é um **sistema de numeração**. A **base** indica quantos dígitos existem e define o peso de cada posição. Pela **regra geral de formação**, multiplica-se cada dígito pela base elevada à sua posição relativa e soma-se tudo: `47.932₁₀ = 4·10⁴ + 7·10³ + 9·10² + 3·10¹ + 2·10⁰`. O que muda de uma base para outra é apenas a base — a regra é sempre a mesma.\n\nNa contagem, quando uma casa atinge seu dígito máximo, acrescenta-se um à casa seguinte e zeram-se as anteriores: por isso as unidades mudam a cada passo e as dezenas, a cada dez. Com `n` dígitos escrevem-se `10ⁿ` números, e o maior deles é `10ⁿ − 1`. Na eletrônica digital importam três bases: **decimal** (10), **binária** (2) e **hexadecimal** (16).\n\nNo **binário** só existem `0` e `1`, e cada posição vale uma potência de 2: `1110₂ = 8 + 4 + 2 = 14₁₀`. Um dígito binário é um **bit**, oito bits formam um **byte**; o bit de menor peso é o **LSB** e o de maior peso é o **MSB**. Usamos binário porque bastam dois níveis de tensão — o decimal pediria dez — e porque ele combina diretamente com o transistor ligado/desligado. Para converter decimal em binário há dois caminhos: soma ponderada de potências de 2 ou **divisões sucessivas por 2**, lendo os restos de trás para frente. Com `n` bits cabem `2ⁿ` valores (em 8 bits, 256, de 0 a 255).",
       "youtubeUrl": "https://www.youtube.com/watch?v=RuXmtYdmQKY",
       "challenge": {
         "type": "logic_toggle",
-        "question": "Com dois bits cabem quatro valores. Ajuste as chaves para o maior deles e escolha a operação que continua devolvendo 1.",
+        "question": "Com quatro bits, o bit mais significativo vale 2³ = 8 e o menos significativo vale 2⁰ = 1. Deixe o MSB ligado e o LSB desligado, e escolha a operação que acende a saída nesse caso.",
         "inputs": [
           {
             "id": "A",
-            "label": "Bit de maior peso",
+            "label": "Bit de maior peso (MSB)",
             "initialValue": 0
           },
           {
             "id": "B",
-            "label": "Bit de menor peso",
-            "initialValue": 0
+            "label": "Bit de menor peso (LSB)",
+            "initialValue": 1
           }
         ],
         "allowedOperations": [
           "AND",
           "OR",
-          "XOR"
+          "NOR"
         ],
         "expectedOutput": 1,
-        "explanation": "O maior valor com dois bits é `11₂` (3). Com A = 1 e B = 1, a operação **AND** devolve 1. A OR também devolveria, mas a AND é a que exige as duas casas ocupadas — justamente o maior valor."
+        "explanation": "Com A = 1 (MSB) e B = 0 (LSB), a operação **OR** devolve 1: basta uma entrada ligada. A AND exigiria as duas em 1 e a NOR só acende quando ambas estão em 0."
       },
-      "hint": "O maior número com dois bits tem as duas casas ligadas. Depois disso, pense em qual operação exige as duas entradas em 1.",
+      "hint": "Ligue a chave do bit de maior peso e desligue a do menor. Agora compare as três operações oferecidas com essa dupla de valores: qual delas continua acendendo?",
       "loreFragment": {
         "id": "log-cd-02-noise",
         "title": "Interferência no Barramento",
@@ -201,20 +201,20 @@
       "order": 3,
       "wingId": "cd-wing-1",
       "title": "Hexadecimal e Conversões",
-      "summaryText": "A base 16 usa os símbolos `0` a `9` e `A` a `F`, com `A = 10`, `B = 11`, …, `F = 15`. Cada dígito hexadecimal corresponde a **exatamente quatro bits**, e é essa correspondência que torna as conversões rápidas.\n\nPara converter hexa → decimal, aplique a regra geral: `2AF₁₆ = 2·256 + 10·16 + 15 = 687`. Para hexa → binário, troque cada dígito pelos seus quatro bits. Para binário → hexa, agrupe de quatro **da direita para a esquerda**, completando com zeros à esquerda se faltar.\n\nDecimal → hexa segue por divisões sucessivas por 16, com os restos lidos de trás para frente: `423₁₀ = 1A7₁₆`.",
+      "summaryText": "Na base 16, o **sistema hexadecimal** usa os símbolos `0` a `9` e `A` a `F`, com `A = 10`, `B = 11`, `C = 12`, `D = 13`, `E = 14` e `F = 15`. Como toda base, obedece à regra geral de formação: cada dígito é ponderado por `16` elevado à sua posição. A contagem segue o mesmo princípio — depois de `9` vem `A`, e quando a casa estoura em `F` a seguinte avança (`...FF` → `100`).\n\nA propriedade mais útil é que **cada dígito hexadecimal corresponde a exatamente quatro bits**. Assim, hexa → binário é substituir símbolo por símbolo (`CF8₁₆` → `1100 1111 1000₂`), e binário → hexa é agrupar de quatro **da direita para a esquerda**, completando com zeros à esquerda quando faltar. É por isso que o hexadecimal é uma forma compacta de escrever cadeias longas de bits, com menos risco de engano. Com três dígitos hexadecimais cabem `16³ = 4096` valores, de 0 a 4095.\n\nPara hexa → decimal, troca-se `A`–`F` pelos equivalentes decimais e aplica-se a regra geral: `2AF₁₆ = 2·256 + 10·16 + 15 = 687₁₀`. Para decimal → hexa, usa-se a **sucessiva divisão por 16**, lendo os restos de trás para frente e convertendo em letra todo resto acima de 9: `423₁₀ = 1A7₁₆`. O caminho decimal → binário → hexadecimal também funciona.",
       "youtubeUrl": "https://www.youtube.com/watch?v=MhaGPACGIEs",
       "challenge": {
         "type": "quiz",
-        "question": "Quanto vale 2AF₁₆ em decimal?",
+        "question": "O professor converte 423₁₀ para hexadecimal por divisões sucessivas por 16 e lê os restos de trás para frente. Qual resultado ele encontra?",
         "options": [
-          "687",
-          "697",
-          "557",
-          "692"
+          "A17₁₆",
+          "1A7₁₆",
+          "1A6₁₆",
+          "1B7₁₆"
         ],
-        "correctIndex": 0
+        "correctIndex": 1
       },
-      "hint": "Troque A por 10 e F por 15 antes de aplicar a regra geral: 2·256 + 10·16 + 15.",
+      "hint": "Divida por 16 até o quociente zerar: 423, depois 26, depois 1. Antes de ler a sequência de trás para frente, lembre de trocar o resto 10 pela letra que lhe corresponde.",
       "loreFragment": {
         "id": "log-cd-03-receptacle",
         "title": "O Receptáculo Adormecido",
@@ -226,63 +226,63 @@
       "order": 4,
       "wingId": "cd-wing-1",
       "title": "Exercícios de Numeração",
-      "summaryText": "A regra geral resolve qualquer conversão quando se identifica o peso de cada casa. Em `1011011₂`, some `2⁶ + 2⁴ + 2³ + 2¹ + 2⁰` para chegar a `91₁₀`.\n\nNo caminho de volta, `167₁₀ = 128 + 32 + 4 + 2 + 1 = 10100111₂`. Para binário → hexa, agrupe de quatro: `3AF₁₆ = 0011 1010 1111₂`. E `532₁₀ = 214₁₆`, porque as divisões por 16 deixam restos `4`, `5` e `2`, lidos de trás para frente.\n\nRepetir essas conversões em voz alta é o jeito mais seguro de fixar a ideia: **a base muda, a quantidade não**.",
+      "summaryText": "Os exercícios mostram que a **regra geral de formação** resolve qualquer conversão quando se identifica o peso de cada casa. De binário para decimal, basta somar as potências de 2 onde há `1`: `1011011₂ = 2⁶ + 2⁴ + 2³ + 2¹ + 2⁰ = 91₁₀`.\n\nNo sentido inverso, escreve-se o número como soma de potências de 2 — `167₁₀ = 128 + 32 + 4 + 2 + 1 = 10100111₂` — ou aplicam-se **divisões sucessivas por 2**, lendo os restos de trás para frente. A conversão binário ↔ hexadecimal apoia-se nos grupos de quatro bits: `3AF₁₆ = 0011 1010 1111₂`. Já decimal → hexadecimal usa divisões por 16: `532₁₀ = 214₁₆`, pois os restos `4`, `1` e `2` são lidos na ordem inversa.\n\nA ideia que amarra a aula é simples: **a base muda, a quantidade não**. Repetir as conversões em voz alta e conferir cada resultado em decimal é o modo mais seguro de fixar o procedimento.",
       "youtubeUrl": "https://www.youtube.com/watch?v=Pg2tvTNfBzQ",
       "challenge": {
         "type": "logic_toggle",
-        "question": "A conversão de 532 para hexadecimal termina com o resto 2. Ajuste as chaves e escolha a operação que devolve 1 quando exatamente uma delas estiver ligada.",
+        "question": "Na aula, 167₁₀ é escrito como 128 + 32 + 4 + 2 + 1. As chaves A e B representam os pesos 2⁷ (128) e 2⁵ (32). Ligue as duas e escolha a operação que acende somente quando as duas casas estão ocupadas.",
         "inputs": [
           {
             "id": "A",
-            "label": "Resto final",
+            "label": "Peso 2⁷ (128)",
             "initialValue": 0
           },
           {
             "id": "B",
-            "label": "Outro resto",
+            "label": "Peso 2⁵ (32)",
             "initialValue": 0
           }
         ],
         "allowedOperations": [
           "AND",
-          "OR",
-          "XOR"
+          "XOR",
+          "NAND"
         ],
         "expectedOutput": 1,
-        "explanation": "Com A = 1 e B = 0, a operação **XOR** devolve 1: ela acende quando as entradas são diferentes. É o mesmo cuidado de observar qual casa mudou ao agrupar quatro bits."
+        "explanation": "Com A = 1 e B = 1, a operação **AND** devolve 1: ela exige as duas entradas ligadas, como a soma de 167 exige a presença simultânea dos dois pesos. A XOR apaga com entradas iguais e a NAND também devolve 0 nesse caso."
       },
-      "hint": "Ligue apenas uma das chaves. Em seguida, procure a operação que acende quando as entradas divergem."
+      "hint": "Os dois pesos aparecem na soma de 167, então as duas chaves devem ficar ligadas. Entre as operações oferecidas, procure a que só acende quando as duas condições acontecem juntas."
     },
     {
       "id": "cd-1-5",
       "order": 5,
       "wingId": "cd-wing-1",
       "title": "Códigos Binários",
-      "summaryText": "Um **código** é uma representação de números, letras, palavras, estágios ou símbolos — o **código Morse**, feito de pontos e traços, é o exemplo clássico. Como a maioria dos sistemas digitais trabalha com **dados binários**, qualquer informação precisa ser traduzida em sequências de bits. O professor usa o controle de temperatura do motor de um carro: **frio (abaixo de 80 °C) → 00**, **normal (entre 80 °C e 100 °C) → 01** e **quente (acima de 100 °C) → 10**. Atribuir uma sequência de bits a cada elemento discreto de informação é o que se chama **codificação**.\n\nQuando se quer a menor quantidade possível de bits, usa-se o **código de largura mínima**: para `n` elementos, `L = ⌈log₂ n⌉`. Para seis elementos (A a F), `⌈log₂ 6⌉ = 3` bits — com 2 bits só cabem 4 sequências, com 3 cabem 8. Nem todo código é de largura mínima: o **one-hot**, por exemplo, gasta um bit por símbolo e mantém apenas um deles ligado por vez.\n\nA aula apresenta os códigos padronizados: **BCD** (cada dígito decimal vira 4 bits, então `35` vira `0011 0101` — não é a conversão do número inteiro), **Gray** ou reflexivo (**não posicional**: palavras consecutivas diferem por um único bit; constrói-se copiando o código anterior com `0` na frente e depois espelhando com `1`), **Johnson** (desloca sucessivamente `1`s e depois `0`s), **excesso 3** (soma 3 ao número antes de converter) e **ASCII** (7 bits para 128 caracteres, com o estendido de 8 bits para 256). Gray e one-hot representam estados e medem deslocamento — não servem para aritmética.",
+      "summaryText": "Um **código** é uma representação de números, letras, palavras, estados ou símbolos — o **código Morse**, feito de pontos e traços, é o exemplo clássico. Como os sistemas digitais trabalham com **dados binários**, toda informação precisa virar sequência de bits. A aula usa o motor de um carro: **frio (abaixo de 80 °C) → 00**, **normal (80 a 100 °C) → 01** e **quente (acima de 100 °C) → 10**. Atribuir uma sequência de bits a cada elemento discreto é **codificar**.\n\nQuando se busca o menor número de bits, usa-se o **código de largura mínima**: `L = ⌈log₂ n⌉`. Para seis elementos (A a F), `L = 3`, porque com 2 bits cabem apenas 4 sequências e com 3 cabem 8. Nada impede usar mais bits — o que se perde é a propriedade de largura mínima. Entre os códigos padronizados estão o **BCD** (cada dígito decimal vira 4 bits: `35 → 0011 0101`, e não a conversão do número inteiro), o **Gray** ou reflexivo (**não posicional**), o **one-hot** (um bit ligado por símbolo), o **Johnson** (deslocamento de `1`s e depois de `0`s), o **excesso 3** (soma 3 antes de converter) e o **ASCII** (7 bits para 128 caracteres; o estendido usa 8 bits para 256).\n\nO **código Gray** merece atenção: de uma palavra à seguinte muda **apenas um bit**, o que o torna útil em medição de deslocamento angular e em conversores A/D. Constrói-se copiando o código anterior com `0` na frente e depois espelhando a sequência com `1` na frente. Por ser não posicional, não serve para aritmética — o mesmo vale para o one-hot.",
       "youtubeUrl": "https://www.youtube.com/watch?v=ZQkNfdwaG2c",
       "challenge": {
         "type": "quiz",
-        "question": "Na aula, o professor converte o decimal 35 para BCD. Qual sequência de bits ele obtém?",
+        "question": "O código Gray é usado em instrumentação e medição de deslocamento angular. Qual é a sua principal característica?",
         "options": [
-          "0011 0101 — cada dígito convertido separadamente em 4 bits.",
-          "0101 0011 — os dígitos convertidos, mas na ordem trocada.",
-          "100011 — o número 35 inteiro convertido para binário.",
-          "0011 0100 — o último dígito tratado como se fosse 4."
+          "Ele é posicional e por isso permite somar e subtrair diretamente.",
+          "Cada palavra ocupa exatamente oito bits, como no ASCII estendido.",
+          "Ele mantém um único bit ligado por símbolo, como o one-hot.",
+          "Entre duas palavras consecutivas, muda apenas um bit."
         ],
-        "correctIndex": 0
+        "correctIndex": 3
       },
-      "hint": "Você está no caminho certo: no BCD a conversão é **dígito por dígito**, sempre com 4 bits para cada um. Comece pelo 3 (`0011`) e só depois converta o 5 (`0101`)."
+      "hint": "Compare as duas contagens de 2 bits vistas na aula: na contagem binária, `01 → 10` muda dois bits de uma vez. Repare no que acontece na sequência do Gray."
     },
     {
       "id": "cd-1-6",
       "order": 6,
       "wingId": "cd-wing-1",
       "title": "Aritmética Binária",
-      "summaryText": "As quatro operações com números binários positivas — adição, subtração, multiplicação e divisão — são executadas pela **ULA**. A adição segue a mesma lógica do papel, da direita para a esquerda: `0 + 0 = 0`, `0 + 1 = 1` e `1 + 1 = 0` com **vai-um**. Exemplo: `1100₂ + 0110₂ = 10010₂` (12 + 6 = 18).\n\nA subtração usa empréstimos: quando `0 − 1` aparece, pede-se um empréstimo à casa seguinte. Vale sempre conferir o resultado em decimal.\n\nNa multiplicação, as parcelas parciais são deslocadas à esquerda e somadas; a tabuada só tem `0` e `1`. A divisão repete comparações e subtrações, como na decimal.",
+      "summaryText": "As quatro operações da aritmética com números binários positivos — adição, subtração, multiplicação e divisão — acontecem na **ULA** (unidade lógica e aritmética) do processador.\n\nNa **adição**, soma-se da direita para a esquerda como no papel: `0 + 0 = 0`, `0 + 1 = 1` e `1 + 1 = 0` com **vai-um** para a casa seguinte. Assim, `1100₂ + 0110₂ = 10010₂`, o que confere com `12 + 6 = 18` em decimal. Na **subtração**, quando aparece `0 − 1`, pede-se **empréstimo** à casa à esquerda; a aula trata do caso em que o minuendo é maior que o subtraendo e recomenda conferir cada resultado em decimal.\n\nNa **multiplicação**, cada bit do multiplicador gera uma parcela parcial deslocada à esquerda, e as parcelas são somadas — a tabuada só tem `0` e `1`. A **divisão** é a mais trabalhosa: repete comparações e subtrações, como a divisão decimal, descendo bit por bit.",
       "youtubeUrl": "https://www.youtube.com/watch?v=gBsNWWscIcg",
       "challenge": {
         "type": "logic_toggle",
-        "question": "Some 1 + 1 na coluna menos significativa. Qual operação entrega o bit de vai-um?",
+        "question": "Some 1 + 1 na coluna menos significativa: o algarismo que fica na coluna é 0 e o vai-um vai para a próxima. Ajuste as duas chaves em 1 e escolha a operação que devolve o **bit da soma**, não o transporte.",
         "inputs": [
           {
             "id": "A",
@@ -296,50 +296,50 @@
           }
         ],
         "allowedOperations": [
+          "XOR",
           "AND",
-          "OR",
-          "XOR"
+          "OR"
         ],
-        "expectedOutput": 1,
-        "explanation": "Com A = 1 e B = 1, a operação **AND** devolve 1 — é o transporte gerado quando os dois bits da coluna valem 1. A XOR entregaria o bit de soma, que é 0."
+        "expectedOutput": 0,
+        "explanation": "Com A = 1 e B = 1, a operação **XOR** devolve 0 — é o algarismo que fica na coluna. A AND devolve 1 e entrega justamente o vai-um; a OR também devolveria 1."
       },
-      "hint": "Ligue as duas chaves. Uma operação dá o resultado da casa; a outra dá o vai-um. Escolha a segunda."
+      "hint": "Ligue as duas chaves. Uma operação entrega o vai-um, a outra entrega o algarismo da casa — você quer a segunda. Teste mentalmente cada uma com o par `1, 1` antes de escolher."
     },
     {
       "id": "cd-1-7",
       "order": 7,
       "wingId": "cd-wing-1",
       "title": "Números com Sinal",
-      "summaryText": "Há duas formas usuais de representar inteiros com sinal. Na **sinal-magnitude**, o bit mais significativo (MSB) é o sinal — `0` para positivo, `1` para negativo — e os demais bits guardam o módulo. O problema é que existem dois zeros: `+0` e `−0`.\n\nNo **complemento de 2**, inverte-se todos os bits do positivo e soma-se 1. Assim há um único zero e o MSB continua indicando o sinal. Em 6 bits, `+21 = 010101` e `−21 = 101011`.\n\nA grande vantagem é que a subtração vira soma: `A − B = A + complemento2(B)`. O mesmo somador serve para as duas operações. Cuidado com o **overflow**: se o resultado sai da faixa que a quantidade de bits comporta, o sinal pode mudar de forma inesperada.",
+      "summaryText": "Para representar inteiros com sinal há duas convenções. Na **sinal-magnitude**, o bit mais significativo (MSB) guarda o sinal — `0` para positivo, `1` para negativo — e os demais bits guardam o módulo. É simples inverter um número trocando só o bit de sinal, e multiplicação e divisão ficam facilitadas; o problema é que existem **dois zeros** (`+0` e `−0`) e que soma e subtração ficam complicadas — justamente as operações mais comuns no computador.\n\nNo **complemento de 2**, o negativo vem do positivo: **invertem-se todos os bits e soma-se 1**. Há um **único zero**, o MSB continua indicando o sinal e a faixa ganha um valor negativo a mais. Em 6 bits, `+21 = 010101` e `−21 = 101011`; para recuperar o módulo de um número negativo, basta aplicar o complemento de 2 uma segunda vez.\n\nA grande vantagem aparece na aritmética: `A − B = A + complemento2(B)`, então o mesmo somador serve para somar e subtrair, sem um circuito exclusivo para a subtração. Cuidado com o **overflow**: com quantidade fixa de bits, o resultado pode sair da faixa representável — por exemplo, a soma de dois positivos terminando menor que as parcelas, ou uma subtração que deveria ser positiva e aparece com sinal negativo. O sistema deve sinalizar esse erro.",
       "youtubeUrl": "https://www.youtube.com/watch?v=PceEtFggO_Q",
       "challenge": {
         "type": "quiz",
-        "question": "Qual afirmativa sobre o complemento de 2 está correta?",
+        "question": "Usando 6 bits em complemento de 2, qual é a representação de −21?",
         "options": [
-          "Existe uma única representação para o zero.",
-          "Existem dois zeros: +0 e −0, como em sinal-magnitude.",
-          "O bit mais significativo deixa de indicar o sinal.",
-          "A subtração precisa de um circuito separado do somador."
+          "110101₂",
+          "101010₂",
+          "101011₂",
+          "010101₂"
         ],
-        "correctIndex": 0
+        "correctIndex": 2
       },
-      "hint": "Compare as duas convenções pelo destino do zero: em uma delas ele aparece duas vezes; na outra, uma só."
+      "hint": "Comece escrevendo +21 em seis bits. Inverta todos os bits e some 1: esse último passo é o que separa o complemento de 2 da simples inversão — e também da sinal-magnitude."
     },
     {
       "id": "cd-1-8",
       "order": 8,
       "wingId": "cd-wing-1",
       "title": "Aritmética BCD",
-      "summaryText": "Em **BCD** (*Binary Coded Decimal*), cada dígito decimal de 0 a 9 é representado por quatro bits. É o código tradicional das calculadoras: `25` vira `0010 0101`.\n\nNa adição, soma-se binariamente e depois se corrige. Se um dígito passou de `9` (`1001`) ou gerou vai-um, soma-se `0110` (6) àquele grupo de quatro bits e propaga-se o transporte. O exemplo `25 + 9` termina em `34`, ou `0011 0100`.\n\nA subtração BCD segue três etapas: complementar o subtraendo, somar e corrigir os dígitos sem empréstimo somando `10` (`1010`). A correção só é necessária quando o resultado sai do intervalo `0–9` do código.",
+      "summaryText": "Alguns sistemas digitais, como calculadoras, usam o **BCD** (*Binary Coded Decimal*) para representar e mostrar números: cada dígito decimal de 0 a 9 vira um grupo de quatro bits, então `25` é `0010 0101`. Como é um código binário, as operações lembram as do binário — mas os grupos BCD não podem passar de `1001` (9), e é aí que entram as correções.\n\nNa **adição BCD**, soma-se grupo por grupo, da direita para a esquerda. Se o resultado de um grupo passou de `9` **ou** se houve vai-um, soma-se `0110` (6) àquele grupo: isso o traz de volta à faixa `0–9` e propaga o transporte para o grupo seguinte. Na aula, `25 + 9` termina em `34`, ou `0011 0100`. A correção é necessária tanto quando o número ultrapassa 9 quanto quando o último vai-um foi gerado.\n\nNa **subtração BCD**, o procedimento tem três etapas: complementar o subtraendo, somar as parcelas e corrigir os grupos em que não houve o último vai-um, somando `10` (`1010`). A correção existe apenas para manter cada grupo dentro do intervalo válido do código.",
       "youtubeUrl": "https://www.youtube.com/watch?v=i48FGijMVO0",
       "challenge": {
         "type": "logic_toggle",
-        "question": "A correção BCD é necessária se o dígito passou de 9 OU se houve vai-um. Ajuste as chaves e escolha a operação que sinaliza a correção.",
+        "question": "Na adição BCD corrige-se se o dígito passou de 9 OU se houve vai-um. Deixe ligada apenas a chave 'houve vai-um' e escolha a operação que ainda sinaliza a correção.",
         "inputs": [
           {
             "id": "A",
             "label": "Passou de 9",
-            "initialValue": 0
+            "initialValue": 1
           },
           {
             "id": "B",
@@ -350,43 +350,43 @@
         "allowedOperations": [
           "AND",
           "OR",
-          "XOR"
+          "NOR"
         ],
         "expectedOutput": 1,
-        "explanation": "Basta uma das condições para corrigir. Com A = 1 e B = 0, a operação **OR** devolve 1; a OR acende quando pelo menos uma entrada está ligada."
+        "explanation": "Com A = 0 e B = 1, a operação **OR** devolve 1: o vai-um sozinho já exige a correção. A AND pediria as duas condições ao mesmo tempo e a NOR só acenderia com ambas em 0."
       },
-      "hint": "Ligue só a chave que representa o dígito fora da faixa. A operação certa não exige as duas condições ao mesmo tempo."
+      "hint": "Desligue a chave do dígito fora da faixa e ligue a do vai-um. Agora procure a operação que continua acendendo mesmo com uma única condição presente."
     },
     {
       "id": "cd-1-9",
       "order": 9,
       "wingId": "cd-wing-1",
       "title": "Ferramentas de Descrição",
-      "summaryText": "A **álgebra booleana** (Boole, 1854; Shannon, 1938) descreve relações entre variáveis binárias, com `1` para verdadeiro e `0` para falso. Uma variável pode ser um nível de tensão — `0` a `0,8 V` como baixo, `2` a `5 V` como alto — ou um estado como chave aberta/fechada: a convenção é escolhida por quem projeta.\n\nOs operadores são **NOT**, **AND**, **OR**, **NAND**, **NOR**, **XOR** e **XNOR**. Um circuito **combinacional** depende só das entradas atuais; um **sequencial** depende também de estados armazenados.\n\nPara descrever um circuito há quatro ferramentas: tabela da verdade (**sempre** com `2ⁿ` linhas), diagrama de temporização (pode ser incompleto), expressão lógica e diagrama de circuito. A tabela de transição de estados só faz sentido para circuitos sequenciais.",
+      "summaryText": "Em circuitos digitais, entradas e saídas são variáveis **booleanas**: `1` para verdadeiro e `0` para falso. Essa analogia vem da **álgebra booleana** (Boole, 1854; Shannon, 1938). Uma variável pode representar um nível de tensão — algo como `0` a `0,8 V` para baixo e `2` a `5 V` para alto — ou um estado lógico, como chave aberta/fechada: a convenção é escolhida por quem projeta. Com entradas `A`, `B` e `C`, escrevemos `Z = f(A, B, C)`, e essa função é descrita por uma expressão com operadores como **NOT, AND, OR, NAND, NOR, XOR e XNOR**.\n\nOs circuitos se dividem em duas classes excludentes. No **combinacional**, a saída depende só dos valores atuais das entradas. No **sequencial**, depende também de valores armazenados dentro do circuito — o seu **estado** —, então conhecer as entradas não basta para prever a saída.\n\nA aula apresenta as ferramentas de descrição. Para circuitos combinacionais há quatro: **tabela da verdade** (sempre com `2ⁿ` linhas para `n` entradas, e ferramenta completa), **diagrama de temporização** (relação no tempo entre as ondas de entrada e de saída; pode ficar incompleto), **expressão lógica** e **diagrama de circuito lógico** (símbolos padronizados ligados por fios, com entradas à esquerda e saídas à direita). O **diagrama e a tabela de transição de estados** só fazem sentido para circuitos sequenciais. Como as formas completas são equivalentes, é possível converter uma nas outras.",
       "youtubeUrl": "https://www.youtube.com/watch?v=jzR0kYsay2U",
       "challenge": {
         "type": "quiz",
-        "question": "Um circuito combinacional tem três entradas. Quantas linhas tem a sua tabela da verdade?",
+        "question": "Entre as ferramentas vistas na aula, qual é exclusiva de circuitos sequenciais?",
         "options": [
-          "3",
-          "6",
-          "8",
-          "9"
+          "Diagrama de temporização",
+          "Tabela de transição de estados",
+          "Tabela da verdade",
+          "Expressão lógica"
         ],
-        "correctIndex": 2
+        "correctIndex": 1
       },
-      "hint": "Cada combinação binária possível das entradas ocupa uma linha. Com três entradas, são 2 elevado a 3."
+      "hint": "Pense no que distingue o circuito sequencial: ele guarda estados internos. Qual das ferramentas precisaria mostrar a passagem de um estado para outro?"
     },
     {
       "id": "cd-1-10",
       "order": 10,
       "wingId": "cd-wing-1",
       "title": "Portas Lógicas: OR, AND e XOR",
-      "summaryText": "Uma **porta lógica** é uma decisão mínima feita com elétrons: recebe sinais de entrada e devolve um único sinal de saída. A **OR** (`+`) devolve 1 se pelo menos uma entrada estiver em 1; a **AND** (`·`) exige todas as entradas em 1; a **NOT** inverte.\n\nA **XOR** devolve 1 quando as duas entradas são diferentes, e a **XNOR** quando são iguais. Juntando a negação às duas portas básicas surgem a **NAND** (`NOT(AND)`) e a **NOR** (`NOT(OR)`), tratadas como caixas-pretas.\n\nNum alarme com duas janelas e uma porta, qualquer sensor em 1 dispara a OR de três entradas. Já um borrifador só aciona quando a temperatura está alta **e** o sistema está habilitado: uma AND.",
+      "summaryText": "Uma **porta lógica** é o circuito que implementa uma **função lógica** sobre entradas binárias e devolve uma única saída binária. Por dentro há transistores, mas na eletrônica digital ela é tratada como **caixa-preta**: importa o que faz, não como é montada.\n\nA **OR** (`+`, que aqui quer dizer “ou”, e não soma) acende se pelo menos uma entrada estiver em `1` — só apaga quando todas são `0`. Foi assim que a aula resolveu o alarme de uma casa com duas janelas e uma porta: qualquer sensor em `1` dispara a saída. A **AND** (`·`) exige todas as entradas em `1` e por isso comanda o borrifador que só age quando a temperatura está alta **e** o sistema está habilitado. A **NOT** tem uma entrada e apenas inverte: `0 → 1`, `1 → 0`.\n\nDessas funções derivam as demais. A **NOR** é o NOT da OR: só devolve `1` quando todas as entradas são `0`. A **NAND** é o NOT da AND: só devolve `0` quando todas são `1`. A **XOR** acende quando as duas entradas são diferentes (`01` ou `10`) e apaga quando são iguais; a **XNOR**, sua complementar, acende na coincidência (`00` ou `11`). Para essas duas últimas, a definição formal considera exatamente duas entradas.",
       "youtubeUrl": "https://www.youtube.com/watch?v=-4b58LvY6NI",
       "challenge": {
         "type": "logic_toggle",
-        "question": "Escolha a porta que devolve 1 somente quando as duas entradas estiverem em 0.",
+        "question": "Um sensor deve acender quando exatamente uma das duas entradas está em 1 — ou seja, quando os dois sinais divergem. Ajuste A em 1 e B em 0 e escolha a porta correta.",
         "inputs": [
           {
             "id": "A",
@@ -396,19 +396,18 @@
           {
             "id": "B",
             "label": "Entrada B",
-            "initialValue": 0
+            "initialValue": 1
           }
         ],
         "allowedOperations": [
           "AND",
-          "OR",
-          "NOR",
-          "NAND"
+          "XOR",
+          "NOR"
         ],
         "expectedOutput": 1,
-        "explanation": "Com A = 0 e B = 0, a **NOR** devolve 1: ela é o NOT da OR, que só acende quando nenhuma entrada está em 1. A NAND devolveria 1, mas também acende com uma entrada em 0 — a NOR é a que exige as duas baixas."
+        "explanation": "Com A = 1 e B = 0, a porta **XOR** devolve 1: as entradas são diferentes. A AND devolveria 0 por exigir as duas em 1, e a NOR também devolveria 0 porque não acende quando há uma entrada alta."
       },
-      "hint": "Comece da OR e depois aplique a inversão. A porta procurada só acende no caso em que a OR apagaria.",
+      "hint": "Deixe uma chave ligada e a outra desligada. Volte à tabela-verdade da aula e procure a porta que acende nas linhas `01` e `10`, mas apaga em `00` e `11`.",
       "loreFragment": {
         "id": "log-cd-10-inward",
         "title": "A Dobradiça Invertida",

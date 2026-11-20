@@ -35,6 +35,27 @@ export interface Scene {
 const GROUND_Y = 470
 const WORLD_HEIGHT = 540
 
+/** ID canônico da Ala 1 — o renderer usa-o para aplicar a atmosfera aprovada. */
+export const WING_ONE_ID = 'cd-wing-1'
+
+/**
+ * Topologia aprovada pelo `level-architect` para a Ala 1.
+ * Cada par é (x do terminal, y do pé). As alturas ficam entre 60 e 74 px
+ * acima do chão — dentro do alcance do pulo do Andarilho (~94 px).
+ */
+const WING_ONE_NODES = [
+  { x: 260, y: GROUND_Y },
+  { x: 540, y: GROUND_Y },
+  { x: 840, y: 404 },
+  { x: 1180, y: GROUND_Y },
+  { x: 1500, y: 410 },
+  { x: 1880, y: GROUND_Y },
+  { x: 2220, y: 398 },
+  { x: 2600, y: GROUND_Y },
+  { x: 2960, y: 410 },
+  { x: 3340, y: 396 },
+] as const
+
 const hubTheme: ThemeColors = {
   background: '#070d18',
   light: '#57e0ff',
@@ -101,13 +122,28 @@ export function buildDisciplineScene(
     completedIds.has(level.id),
   ).length
 
+  // A Ala 1 tem topologia própria; as demais mantêm o ritmo linear original.
+  const wingOneLevels =
+    discipline.id === 'circuitos-digitais'
+      ? discipline.levels.filter((level) => level.wingId === WING_ONE_ID)
+      : []
+  const applyWingOne = wingOneLevels.length === WING_ONE_NODES.length
+
   discipline.levels.forEach((level, index) => {
-    const x = 260 + index * 330
-    const elevated = index % 2 === 1
+    const node = applyWingOne && index < WING_ONE_NODES.length ? WING_ONE_NODES[index] : undefined
+    const x = node?.x ?? 260 + index * 330
+    const elevated = node ? node.y < GROUND_Y : index % 2 === 1
     // Altura sempre <= 90px acima do chão: o pulo do Andarilho alcança (~94px).
-    const ledgeY = 398 - (index % 3) * 8
+    const ledgeY = node?.y ?? 398 - (index % 3) * 8
     if (elevated) {
-      platforms.push({ x: x - 76, y: ledgeY, w: 172, h: 14, kind: 'ledge' })
+      const isPedestal = node !== undefined && index === WING_ONE_NODES.length - 1
+      platforms.push({
+        x: isPedestal ? x - 105 : x - 76,
+        y: ledgeY,
+        w: isPedestal ? 210 : 172,
+        h: 14,
+        kind: isPedestal ? 'pillar' : 'ledge',
+      })
     }
     const baseY = elevated ? ledgeY : GROUND_Y
     const completed = completedIds.has(level.id)
@@ -118,6 +154,14 @@ export function buildDisciplineScene(
         : 'locked'
     terminals.push({ level, x, y: baseY, state })
   })
+
+  if (applyWingOne) {
+    // Bancos de leitura entre T1–T2 e T2–T3, onde fica a placa da Linha em Branco.
+    platforms.push(
+      { x: 372, y: GROUND_Y - 18, w: 54, h: 18, kind: 'pillar' },
+      { x: 660, y: GROUND_Y - 18, w: 54, h: 18, kind: 'pillar' },
+    )
+  }
 
   return {
     area: 'discipline',

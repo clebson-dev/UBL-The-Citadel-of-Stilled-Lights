@@ -1,4 +1,4 @@
-import type { PortalNode, Scene, TerminalNode } from './scene'
+import { WING_ONE_ID, type PortalNode, type Scene, type TerminalNode } from './scene'
 import type { PlayerBody } from './physics'
 import { assetManager, type AssetManager, type AssetKey } from './assetManager'
 
@@ -55,7 +55,10 @@ export class Renderer {
     ctx.translate(-cameraX, 0)
     this.drawParallax(state)
     this.drawPlatforms(state)
-    if (scene.area === 'discipline') this.drawCables(state)
+    if (scene.area === 'discipline') {
+      this.drawWingOneAtmosphere(state)
+      this.drawCables(state)
+    }
     this.drawTerminals(state)
     this.drawPortals(state)
     this.drawPlayer(state)
@@ -162,7 +165,24 @@ export class Renderer {
       ctx.fillStyle = rgba(scene.theme.light, 0.35)
       ctx.fillRect(platform.x, top, platform.w, 2)
 
-      if (platform.kind === 'ledge') {
+      if (platform.kind === 'pillar') {
+        // Pedestal/banco: haste até o chão quando há altura para isso.
+        const ground = scene.platforms.find((item) => item.kind === 'ground')
+        const baseY = ground?.y ?? top + platform.h
+        const shaftHeight = Math.max(0, baseY - top - platform.h)
+        if (shaftHeight > 0) {
+          const shaft = ctx.createLinearGradient(0, top + platform.h, 0, baseY)
+          shaft.addColorStop(0, '#101d30')
+          shaft.addColorStop(1, '#060c16')
+          ctx.fillStyle = shaft
+          ctx.fillRect(platform.x + 18, top + platform.h, platform.w - 36, shaftHeight)
+          ctx.fillStyle = rgba(scene.theme.light, 0.12)
+          ctx.fillRect(platform.x + 18, top + platform.h, 2, shaftHeight)
+          ctx.fillRect(platform.x + platform.w - 20, top + platform.h, 2, shaftHeight)
+        }
+        ctx.fillStyle = rgba(scene.theme.cableInactive, 0.7)
+        ctx.fillRect(platform.x + 26, top + platform.h - 3, platform.w - 52, 2)
+      } else if (platform.kind === 'ledge') {
         // Pingos de energia pendentes na borda.
         ctx.fillStyle = rgba(scene.theme.cableInactive, 0.9)
         for (let x = platform.x + 12; x < platform.x + platform.w - 8; x += 28) {
@@ -188,6 +208,180 @@ export class Renderer {
         }
       }
     }
+  }
+
+  /** Atmosfera e marcas ambientais da Ala 1 (especificação aprovada). */
+  private drawWingOneAtmosphere(state: RenderState): void {
+    const terminals = state.scene.terminals.filter(
+      (terminal) => terminal.level.wingId === WING_ONE_ID,
+    )
+    for (const terminal of terminals) this.drawWingOneLight(state, terminal)
+    this.drawBlankLinePlate(state, terminals)
+    this.drawSchematicKeys(state, terminals)
+    this.drawInwardHinge(state, terminals)
+  }
+
+  private drawWingOneLight(state: RenderState, terminal: TerminalNode): void {
+    const { ctx } = this
+    const { scene, cameraX, viewWidth, time, reducedMotion } = state
+    if (terminal.x < cameraX - 200 || terminal.x > cameraX + viewWidth + 200) return
+
+    const order = terminal.level.order
+    const { light } = scene.theme
+    const breathe = reducedMotion ? 0 : Math.sin(time * 0.8 + order) * 0.015
+
+    ctx.save()
+    if (order <= 3) {
+      // Três primeiros terminais: luz difusa, sem cone definido.
+      const radius = 132
+      const halo = ctx.createRadialGradient(
+        terminal.x, terminal.y - 54, 8,
+        terminal.x, terminal.y - 54, radius,
+      )
+      halo.addColorStop(0, rgba(light, 0.06 + breathe))
+      halo.addColorStop(1, rgba(light, 0))
+      ctx.fillStyle = halo
+      ctx.fillRect(terminal.x - radius, terminal.y - 54 - radius, radius * 2, radius * 2)
+    } else if (order <= 7) {
+      // Cones progressivamente mais definidos de T4 a T7.
+      const step = order - 4
+      const sway = reducedMotion ? 0 : Math.sin(time * 0.6 + order) * 7
+      const topY = terminal.y - 208
+      const topHalf = 12 - step * 2
+      const bottomHalf = 62 - step * 8
+      const beam = ctx.createLinearGradient(0, topY, 0, terminal.y - 20)
+      beam.addColorStop(0, rgba(light, 0))
+      beam.addColorStop(1, rgba(light, 0.055 + step * 0.012 + breathe))
+      ctx.fillStyle = beam
+      ctx.beginPath()
+      ctx.moveTo(terminal.x - topHalf + sway, topY)
+      ctx.lineTo(terminal.x + topHalf + sway, topY)
+      ctx.lineTo(terminal.x + bottomHalf, terminal.y - 20)
+      ctx.lineTo(terminal.x - bottomHalf, terminal.y - 20)
+      ctx.closePath()
+      ctx.fill()
+    } else {
+      // Halo progressivamente mais amplo até o pedestal final.
+      const isFinal = order === 10
+      const radius = isFinal ? 190 : 150
+      const halo = ctx.createRadialGradient(
+        terminal.x, terminal.y - 58, 10,
+        terminal.x, terminal.y - 58, radius,
+      )
+      halo.addColorStop(0, rgba(light, (isFinal ? 0.12 : 0.09) + breathe))
+      halo.addColorStop(0.6, rgba(light, isFinal ? 0.05 : 0.035))
+      halo.addColorStop(1, rgba(light, 0))
+      ctx.fillStyle = halo
+      ctx.fillRect(terminal.x - radius, terminal.y - 58 - radius, radius * 2, radius * 2)
+      if (isFinal) {
+        ctx.strokeStyle = rgba(scene.theme.accent, 0.18)
+        ctx.lineWidth = 1
+        ctx.beginPath()
+        ctx.ellipse(terminal.x, terminal.y - 10, 92, 12, 0, 0, Math.PI * 2)
+        ctx.stroke()
+      }
+    }
+    ctx.restore()
+  }
+
+  /** Marca nº 1: placa de leitura com a última linha vazia e trêmula. */
+  private drawBlankLinePlate(state: RenderState, terminals: TerminalNode[]): void {
+    const first = terminals.find((terminal) => terminal.level.order === 1)
+    if (!first) return
+    const { ctx } = this
+    const { scene, cameraX, viewWidth, time, reducedMotion } = state
+    // Primeiro banco: x=372..426, topo em y=452. A placa apoia-se nele.
+    const x = 378
+    const y = 416
+    if (x + 56 < cameraX || x - 6 > cameraX + viewWidth) return
+
+    ctx.save()
+    ctx.translate(x, y)
+    ctx.rotate(-0.08)
+    ctx.fillStyle = '#111f31'
+    ctx.beginPath()
+    ctx.moveTo(0, 0)
+    ctx.lineTo(52, -4)
+    ctx.lineTo(48, 34)
+    ctx.lineTo(-4, 38)
+    ctx.closePath()
+    ctx.fill()
+    ctx.strokeStyle = rgba(scene.theme.light, 0.32)
+    ctx.lineWidth = 1
+    ctx.stroke()
+
+    ctx.strokeStyle = rgba(scene.theme.light, 0.26)
+    for (let line = 0; line < 2; line += 1) {
+      const lineY = 10 + line * 9
+      ctx.beginPath()
+      ctx.moveTo(6, lineY)
+      ctx.lineTo(42 - line * 8, lineY - 0.5)
+      ctx.stroke()
+    }
+    // A linha vazia só treme quando ninguém está olhando de perto.
+    const unwatched = state.nearby !== first
+    const tremor = reducedMotion || !unwatched ? 0 : Math.sin(time * 1.7) * 0.6
+    ctx.strokeStyle = rgba(scene.theme.accent, 0.22)
+    ctx.strokeRect(6, 30 + tremor, 34, 6)
+    ctx.restore()
+  }
+
+  /** Chaves esquemáticas flutuando sobre o terminal de aritmética binária. */
+  private drawSchematicKeys(state: RenderState, terminals: TerminalNode[]): void {
+    const sixth = terminals.find((terminal) => terminal.level.order === 6)
+    if (!sixth) return
+    const { ctx } = this
+    const { scene, cameraX, viewWidth, time, reducedMotion } = state
+    if (sixth.x < cameraX - 100 || sixth.x > cameraX + viewWidth + 100) return
+    const bob = reducedMotion ? 0 : Math.sin(time * 1.2) * 3
+
+    ctx.save()
+    ctx.font = '600 10px system-ui, sans-serif'
+    ctx.textAlign = 'center'
+    ;(['0', '1'] as const).forEach((label, index) => {
+      const keyX = sixth.x - 30 + index * 60
+      const keyY = sixth.y - 110 + bob - index * 4
+      ctx.strokeStyle = rgba(scene.theme.light, 0.38)
+      ctx.lineWidth = 1
+      ctx.strokeRect(keyX - 9, keyY - 9, 18, 18)
+      ctx.beginPath()
+      ctx.moveTo(keyX, keyY - 9)
+      ctx.lineTo(keyX + 7, keyY - 17 - index * 3)
+      ctx.stroke()
+      ctx.fillStyle = rgba(scene.theme.light, 0.55)
+      ctx.fillText(label, keyX, keyY + 4)
+    })
+    ctx.restore()
+  }
+
+  /** Marca nº 2: dobradiças invertidas no pedestal do último terminal. */
+  private drawInwardHinge(state: RenderState, terminals: TerminalNode[]): void {
+    const last = terminals.find((terminal) => terminal.level.order === 10)
+    if (!last) return
+    const { ctx } = this
+    const { scene, cameraX, viewWidth } = state
+    if (last.x < cameraX - 60 || last.x > cameraX + viewWidth + 60) return
+    const x = last.x
+    const y = last.y + 26
+
+    ctx.save()
+    ctx.fillStyle = 'rgba(6, 12, 22, 0.85)'
+    ctx.fillRect(x - 24, y, 48, 30)
+    ctx.strokeStyle = rgba(scene.theme.cableInactive, 0.9)
+    ctx.lineWidth = 1.5
+    ctx.strokeRect(x - 24, y, 48, 30)
+    ctx.strokeStyle = rgba(scene.theme.light, 0.35)
+    ctx.lineWidth = 1
+    for (const offset of [6, 22]) {
+      ctx.beginPath()
+      ctx.arc(x - 19, y + offset, 2.4, 0, Math.PI * 2)
+      ctx.stroke()
+      ctx.beginPath()
+      ctx.moveTo(x - 19, y + offset)
+      ctx.lineTo(x - 9, y + offset)
+      ctx.stroke()
+    }
+    ctx.restore()
   }
 
   private drawCables(state: RenderState): void {
